@@ -1,36 +1,31 @@
-import React, { Component } from 'react';
+import { useState, useCallback} from "react";
 import {Switch, Route,Redirect} from 'react-router-dom';
 import SinglePlayerLogin from './SinglePlayer.Login';
 import SinglePlayerCreate from './SinglePlayer.Create';
 
-export default class SinglePlayer extends Component {
+export default function SinglePlayer()  {
 
-    constructor(props)
-   {
-     super(props);
-     this.setName = this.setName.bind(this);
-     this.state = {
-         name:""
-     }
-   }
 
-      
-   setName(value)
-   {
-       this.setState({
-        name:value
-       });
-   }
+const[name,setName] = useState();
 
-    render() {
+const changeName =(value) =>
+{
+    setName(value);
+};
+
+
+// const callbak = useCallback((name)=>
+// {
+//    console.log("value changes");
+// },[name]);
+
         return (
             <div>
             <Switch>
-            <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={this.state.name} OnChange={this.setName} />}/>
-            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate name={this.state.name} />} />
+            <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name} OnChangeName={changeName} />}/>
+            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate name={name} />} />
             <Redirect to="/SinglePlayer/Login" /> 
           </Switch>
             </div>
-        )
-    }
+        );
 }

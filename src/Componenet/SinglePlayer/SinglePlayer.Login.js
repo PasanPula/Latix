@@ -1,37 +1,32 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router';
+import { useHistory } from 'react-router';
 
- class SinglePlayerLogin extends Component {
-    
-   constructor(props)
-   {
-     super(props);
-     this.onChangeName = this.onChangeName.bind(this);
-     this.onSubmit = this.onSubmit.bind(this)
-   }
+function SinglePlayerLogin ({ name, OnChangeName}) {
 
-   onChangeName(e)
-   {
-     this.props.OnChange(e.target.value)
-   }
-   onSubmit(e)
-   {
-    e.preventDefault();
-    this.props.history.push("/SinglePlayer/Create");
-   }
+  const history = useHistory();
 
+  const onSubmit = (e) => 
+  {
+     e.preventDefault();
+     history.push("/SinglePlayer/Create");
+  }
 
-    render() {
+  const onChange = (e) =>
+  {
+    OnChangeName(e.target.value);
+  }
+ 
+
         return (
             <div>
-           <form onSubmit={this.onSubmit}>
-           <input
+           <form onSubmit={onSubmit}>
+          
+           <input 
            autoFocus 
            placeholder="Name"
             type="text"
             name="name"
-            value={this.props.name}
-            onChange={this.onChangeName}
+            value={name}
+            onChange={onChange}
             required
           />
            <button>Login
@@ -40,7 +35,7 @@ import { withRouter } from 'react-router';
             
             </div>
         )
-    }
+
 }
 
-export default withRouter (SinglePlayerLogin);
+export default SinglePlayerLogin;
