@@ -1,0 +1,32 @@
+.celtex > input[type="text"] {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  font-size: 30px;
+  height: 5vw;
+  width: 5vw;
+  text-align: center;
+  border-style: none;
+}
+
+.correct {
+  color: black;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+input[type="text"].wrong {
+  color: white;
+  box-shadow: rgb(255, 135, 135) 0px 3px 8px;
+  background-color: rgb(245, 114, 114);
+  transform-origin: bottom center;
+  transition: all ease-in-out 0.5s;
+}
+
+input[type="text"].Display {
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  /* transition: transform 0.5s; */
+  transition: all ease-in-out 0.5s;
+  background-color: rgb(114, 204, 181);
+  /* box-shadow: rgb(130, 243, 213) 0px 3px 8px; */
+  color: white;
+}

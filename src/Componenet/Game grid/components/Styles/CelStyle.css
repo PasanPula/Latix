@@ -1,0 +1,18 @@
+.CelDiv > input[type="text"] {
+  box-shadow: rgba(128, 181, 243, 0.966) 0px 3px 8px;
+  border-radius: 10px;
+  font-size: 30px;
+  height: 5vw;
+  width: 5vw;
+  text-align: center;
+  border-style: none;
+  pointer-events: none;
+}
+.norml {
+  background: white;
+  color: black;
+}
+.enter {
+  background: rgb(41, 124, 248);
+  color: white;
+}

@@ -1,0 +1,29 @@
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1vw;
+}
+
+.flex-box > div {
+  /* background: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  margin-right: 0.4vw;
+  margin-top: 0.1vw;
+ 
+  /* border-radius: 10px; */
+  /* padding: 2vw;
+  font-size: 30px; */
+}
+
+.Fixed {
+  width: 32vw;
+}
+
+.Fixed > div {
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
