@@ -1,0 +1,24 @@
+.CelDiv > input[type="text"] {
+  box-shadow: rgba(128, 181, 243, 0.966) 0px 3px 8px;
+  border-radius: 10px;
+  font-size: 30px;
+  height: 5vw;
+  width: 5vw;
+  text-align: center;
+  border-style: none;
+  pointer-events: none;
+ 
+}
+.norml {
+  /* background: white; */
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.enter {
+  background: rgb(41, 124, 248,0.8);
+  color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

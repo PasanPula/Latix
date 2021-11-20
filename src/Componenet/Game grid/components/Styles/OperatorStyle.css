@@ -1,0 +1,17 @@
+.operator >input[type="text"] {
+   
+    border-radius: 10px;
+    font-size: 30px;
+    height: 5vw;
+    width: 5vw;
+    text-align: center;
+    border-style: none;
+    pointer-events: none;
+}
+
+input[type="text"].blue 
+{
+    box-shadow: rgba(128, 181, 243, 0.966) 0px 3px 8px;
+    background: rgb(41, 124, 248,0.8);
+    color: white;
+}
