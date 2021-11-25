@@ -63,7 +63,7 @@ import SelectButton from "./SinglePlayer.create_components/SelectButton";
          }
          else 
          {
-            props.SetOperator('+h')
+            props.SetOperator('+')
          }
     }
     const setSize = (id) =>

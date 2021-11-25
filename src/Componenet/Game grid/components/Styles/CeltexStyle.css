@@ -1,13 +1,29 @@
 .celtex > input[type="text"] {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  /* border-radius: 10px; */
   font-size: 30px;
   height: 5vw;
   width: 5vw;
   text-align: center;
   border-style: none;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #4f4f4f;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.8),
+    1px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+
+
 }
 
+.celtex > input[type="text"]:hover,
+.celtex > input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.5);
+}
 .correct {
   color: black;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
@@ -21,12 +37,14 @@ input[type="text"].wrong {
   transition: all ease-in-out 0.5s;
 }
 
-input[type="text"].Display {
+input[type="text"].Display:hover,
+input[type="text"].Display:focus {
   transform: scaleY(1);
   transform-origin: bottom center;
   /* transition: transform 0.5s; */
   transition: all ease-in-out 0.5s;
-  background-color: rgb(114, 204, 181);
+  background-color: rgb(95, 182, 160);
   /* box-shadow: rgb(130, 243, 213) 0px 3px 8px; */
   color: white;
+  transform: scale(1.1);
 }

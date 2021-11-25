@@ -12,6 +12,6 @@
 input[type="text"].blue 
 {
     box-shadow: rgba(128, 181, 243, 0.966) 0px 3px 8px;
-    background: rgb(41, 124, 248);
+    background: rgb(41, 124, 248,0.8);
     color: white;
 }

@@ -1,6 +1,6 @@
 import "./Styles/GenerateStyle.css";
 import "./Styles/GridStyle.css"
-import { useState, useCallback} from "react";
+import { useState, useCallback, memo, forwardRef,useImperativeHandle} from "react";
 import Cel from "./Cel";
 import CelTex from "./CelTex";
 import Button from "./Button";
@@ -8,16 +8,26 @@ import Text from "./Text";
 import Operator from "./Operator";
 
 
-export default function Generate({rowNumbers,coloumNumbers,gridSize,MathOperator})
+function Generate({setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers,gridSize,MathOperator},ref)
 { 
-  const[Correct_,setcorrect]=useState(0); // store the current number of correct
-  const[incorrect_,setincorrect] = useState(0); // store the current number of incorrect
+  // const[Correct_,setcorrect]=useState(0); // store the current number of correct
+  // const[incorrect_,setincorrect] = useState(0); // store the current number of incorrect
   const[wrong] = useState([]); // store id of the incorrect answer
   const[Correct] = useState([]); // store the correct answer  as array
   const[rowstat,setrow] = useState(''); // store the value chage row 
   const[column,setcolumn] = useState(""); //  store the value chnage column
-  const[show,setshow] = useState(false); //  store wether submit button is click or not
-   
+  const[showBool,setshow] = useState(false); //  store wether submit button is click or not
+
+
+  
+  const setShowbool  =useCallback((bool)=> // handdling the sumbit or not 
+  {
+     setshow(bool);
+  },[ setshow]);
+  
+
+  useImperativeHandle(ref, () => ({setShow: (bool) => {return setShowbool(bool)}}), [setShowbool]);
+
 
     const RowColChnage =useCallback((ID)=>  //  function for exacting column, row from ID
     {
@@ -25,16 +35,18 @@ export default function Generate({rowNumbers,coloumNumbers,gridSize,MathOperator
       setcolumn('col-'+ID[1]);  
     },[setrow,setcolumn]);
 
-    function Update() //  updating current correct and wrong answers
+    const Update = useCallback (() => //  updating current correct and wrong answers
     {
-        setcorrect(Correct.length);
-        setincorrect(wrong.length);
-    }
+      console.log(Correct.length ,wrong.length );
+      setCorrectCount(Correct.length);
+      setinCorrectCount(wrong.length);
+    },[setCorrectCount,setinCorrectCount,Correct.length,wrong.length]);
     
-    const answercheck=(id,correct,aswer)=> //  function for checking answers
+
+    const answercheck=useCallback ((id,correct,aswer)=> //  function for checking answers
     {
        
-        if(aswer!==''&&aswer!==" "&&!show)
+        if(aswer!==''&&aswer!==" "&&!showBool)
         {
            if(correct=== aswer)
            {
@@ -81,26 +93,21 @@ export default function Generate({rowNumbers,coloumNumbers,gridSize,MathOperator
         else
         {
           
-          if(Correct.includes(id)&&!show)
+          if(Correct.includes(id)&&!showBool)
           {
             //console.log("yes enters");
             Correct.pop(id);
             Update();
           }
-          else if(wrong.includes(id)&&!show)
+          else if(wrong.includes(id)&&!showBool)
           {
             wrong.pop(id);
             Update();
           }
             
         }
-    }
+    },[Correct, Update, showBool, wrong]);
 
-    const onshow  =useCallback((sow)=> // handdling the sumbit or not 
-    {
-       setshow(sow);
-    },[ setshow]);
-    
     
      
      
@@ -119,41 +126,45 @@ export default function Generate({rowNumbers,coloumNumbers,gridSize,MathOperator
              for(let i=0;i<gridSize;i++)
              {
                 row.push(
-                 <CelTex MathOperator={MathOperator} key={index.toString()+i.toString()} item1={item} item2={rowNumbers[i]} id={index.toString()+i.toString()} RowColChnage={RowColChnage} answer={answercheck} show={show}  />
+                 <CelTex MathOperator={MathOperator} key={index.toString()+i.toString()} item1={item} item2={rowNumbers[i]} id={index.toString()+i.toString()} RowColChnage={RowColChnage} answer={answercheck} show={showBool}  />
                 )
              }
              return(
              
-              <div class="flex-box">
+              <div key={index} className="flex-box">
                 {row}
               </div>
              );
          });
            
-          const button = (
-              <div className="bottom">
-              <Button onshow={onshow}/>
-              <Text text="Correct" value={(show)?Correct_:0}/>
-              <Text text = "Wrong" value={(show)?incorrect_:0} />
-             </div>
-          )
+          // const button = (
+          //     <div className="bottom">
+          //     <Button onshow={onshow}/>
+          //     <Text text="Correct" value={(show)?Correct_:0}/>
+          //     <Text text = "Wrong" value={(show)?incorrect_:0} />
+          //    </div>
+          // )
     return( 
-    <div  class="Container">
-      <div class="Grid1">
-        <div class="flex-box">
-          <div class="flex-box">{operator}{row1}</div> 
-           {rows} {button}
+      <>
+ 
+      <div className="Grid1">
+        <div className="flex-box">
+          <div className="flex-box">{operator}{row1}</div> 
+           {rows}
+            {/* {button} */}
         </div>
       </div>
-      <div class="Grid2">
-            <div class="Fixed">
+      {/* <div className="Grid2">
+            <div className="Fixed">
                 <div>Timer</div>
                 <div>Start Button</div>
                 <div> <Button onshow={onshow}/></div>
                 <div>Correct {(show)?Correct_:0}</div>
                 <div>Wrong {(show)?incorrect_:0}</div>
               </div>
-        </div>
-    </div> 
+        </div> */}
+    </>
     )
 }
+
+export default memo(forwardRef(Generate));

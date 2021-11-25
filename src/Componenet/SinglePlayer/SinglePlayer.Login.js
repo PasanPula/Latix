@@ -21,7 +21,6 @@ function SinglePlayerLogin ({ name, OnChangeName}) {
            <form onSubmit={onSubmit}>
           
            <input 
-           autoFocus 
            placeholder="Name"
             type="text"
             name="name"

@@ -1,6 +1,5 @@
-//import "./style.css"
 import "./Styles/CeltexStyle.css"
-import react,{useState,useRef,useEffect } from "react";
+import react,{useState,useRef,useEffect, useCallback } from "react";
 
 function CelTex(parms)
 { 
@@ -12,12 +11,15 @@ function CelTex(parms)
     const sum = useRef('0');
 
    useEffect(() => {
+
     if(parms.MathOperator==='X')
     {
-        sum.current = eval(parms.item1.toString().concat('*',parms.item2.toString())).toString();
+        let result = eval(parms.item1.toString().concat('*',parms.item2.toString())).toString();
+        sum.current = parseInt(result).toString();
     }else
     {
-        sum.current = eval(parms.item1.toString().concat(parms.MathOperator,parms.item2.toString())).toString();
+        let result = eval(parms.item1.toString().concat(parms.MathOperator,parms.item2.toString())).toString();
+        sum.current = parseInt(result).toString();
     }
    }, [parms.item1 , parms.item2,parms.MathOperator]);
    
@@ -25,6 +27,8 @@ function CelTex(parms)
   
     function valuechnage(e)
     {
+    if(e.target.value.match("^-?[0-9]{0,3}\d*(.\d+)?$"))
+     {
       setvalue(e.target.value); 
       if(e.target.value === sum.current ||e.target.value==="" ) //  change the color accoring to the correct or wrong
       {
@@ -36,9 +40,10 @@ function CelTex(parms)
           setcorrect(false);
          setcorlor('wrong'); //class for red  text color
       }
-
     }
-    function yes(e) // call parent function for checking correct answer or wrong answer
+    }
+
+  const answerValidate = useCallback ((e) => // call parent function for checking correct answer or wrong answer
     {
         parms.answer(parms.id,sum.current,Value);
         if(correct===false && parms.show)
@@ -49,10 +54,11 @@ function CelTex(parms)
             
         }
 
-    }
-    function forcus(e)
+    },[parms, Value, correct, previous]);
+
+  const loseFocus = useCallback((e) =>
     {
-        parms.RowColChnage(parms.id);
+        // parms.RowColChnage(parms.id);
         if(correct===false && parms.show)
         {
             setprivious(Value);
@@ -60,11 +66,11 @@ function CelTex(parms)
             setvalue(sum.current)
         }
         
-    }
+    },[Value, correct, parms.show])
 
    return(
        <div className="celtex">
-           <input type="text" key={parms.id}  className={(parms.show)?corlor:'correct'} id={parms.id} value={Value} pattern="\d*$" maxLength="3" onChange={valuechnage} onMouseEnter={forcus } onFocus={()=>parms.RowColChnage(parms.id)}  onMouseLeave={yes} readOnly={(parms.show)?true:false}/>
+           <input type="text" key={parms.id}  className={(parms.show)?corlor:'correct'} id={parms.id} value={Value} pattern="^-?[0-9]\d*(\.\d+)?$" maxLength="3" onChange={valuechnage} onMouseEnter={loseFocus } onFocus={()=>parms.RowColChnage(parms.id)}  onMouseLeave={answerValidate } readOnly={(parms.show)?true:false}/>
        </div>
    );
 }

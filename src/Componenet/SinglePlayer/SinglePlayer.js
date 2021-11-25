@@ -2,17 +2,19 @@ import { useState, useCallback, useRef} from "react";
 import {Switch, Route,Redirect} from 'react-router-dom';
 import SinglePlayerLogin from './SinglePlayer.Login';
 import SinglePlayerCreate from './SinglePlayer.Create';
-import Grid from "../Game grid/grid";
+import SinglePlayerPlay from "./SinglePlayer.Play";
 
 export default function SinglePlayer()  {
 
 
-const[name,setName] = useState();
-// const [gridSize,setgridSize] = useState(5);
-// const [operrator,setOperator] = useState('+');
-// const [time,setTime] = useState(5);
-// const [numberRangeStart,setnumberRangeStart] = useState(1);
-// const [numberRangeEnd,setnumberRangeEnd] = useState(10);
+const name = useRef();
+
+const Correct = useRef(0);
+const incorrect = useRef(0);
+// const [Correct,setcorrectCount] = useState(0); // store the current number of correct
+// const [incorrect,setincorrectCount]  = useState(0);
+// const[showBool,setshow] = useState(false);
+const showBool = useRef(false);
 
 
 const gridSize = useRef(5);
@@ -22,53 +24,65 @@ const numberRangeStart = useRef(1);
 const numberRangeEnd = useRef(10);
 
 
+const setCorrectCount =useCallback((value) =>
+{
+  Correct.current = value;
+},[]);
+
+const setinCorrectCount =useCallback((value) =>
+{
+  incorrect.current = value;
+},[]);
+
+const setShow = useCallback(
+  (bool) => {
+    showBool.current = bool;
+  },
+  [],
+);
+
+
 const changeName =(value) =>
 {
-    setName(value);
+  name.current = value;
 };
 
 const SetGridSize = (value) =>
 {
   
   gridSize.current = value;
-   console.log("gridsize:"+gridSize);
 }
 
 
 const SetOperator =  (value) =>
 {
   operator.current =value;
-  console.log("operator",value);
 }
 
 
 const SetTime = (value) =>
 {
   time.current = value;
-  console.log("time"+value);
 }
 
 const SetnumberRangeStart = (value) =>
 {
   numberRangeStart.current = value;
-  console.log("range Start"+value);
 }
 
 const SetnumberRangeEnd = (value) =>
 {
   numberRangeEnd.current =value;
-  console.log("range End"+value);
 }
 
-console.log("gridsize:"+gridSize);
 
         return (
             <div>
             <Switch>
-            <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name} OnChangeName={changeName} />}/>
-            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate  name={name} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd}  />} />
-            <Route  path="/SinglePlayer/play" component={()=> < Grid  gridSize ={gridSize.current} operator = {operator.current} time={time.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} / >} />
-            <Redirect to="/SinglePlayer/Login" /> 
+            <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} />}/>
+            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate  name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd}  />} />
+            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay setShow={setShow} showBool={showBool.current} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} time={time.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} />} />
+            <Redirect to="/SinglePlayer/Login" />  
           </Switch>
             </div>
         );

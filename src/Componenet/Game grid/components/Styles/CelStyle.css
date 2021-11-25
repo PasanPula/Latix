@@ -7,12 +7,18 @@
   text-align: center;
   border-style: none;
   pointer-events: none;
+ 
 }
 .norml {
-  background: white;
+  /* background: white; */
+  background: rgba(255, 255, 255, 0.6);
   color: black;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .enter {
-  background: rgb(41, 124, 248);
+  background: rgb(41, 124, 248,0.8);
   color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
