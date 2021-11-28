@@ -11,10 +11,11 @@ const name = useRef();
 
 const Correct = useRef(0);
 const incorrect = useRef(0);
+const timeSpent = useRef("00:00");
 // const [Correct,setcorrectCount] = useState(0); // store the current number of correct
 // const [incorrect,setincorrectCount]  = useState(0);
 // const[showBool,setshow] = useState(false);
-const showBool = useRef(false);
+// const showBool = useRef(false);
 
 
 const gridSize = useRef(5);
@@ -34,12 +35,10 @@ const setinCorrectCount =useCallback((value) =>
   incorrect.current = value;
 },[]);
 
-const setShow = useCallback(
-  (bool) => {
-    showBool.current = bool;
-  },
-  [],
-);
+const setTimeSpent = (val)=>
+{
+   timeSpent.current = val;
+}
 
 
 const changeName =(value) =>
@@ -81,7 +80,7 @@ const SetnumberRangeEnd = (value) =>
             <Switch>
             <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} />}/>
             <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate  name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd}  />} />
-            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay setShow={setShow} showBool={showBool.current} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} time={time.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} />} />
+            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} time={time.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} />} />
             <Redirect to="/SinglePlayer/Login" />  
           </Switch>
             </div>

@@ -3,12 +3,10 @@ import "./Styles/GridStyle.css"
 import { useState, useCallback, memo, forwardRef,useImperativeHandle} from "react";
 import Cel from "./Cel";
 import CelTex from "./CelTex";
-import Button from "./Button";
-import Text from "./Text";
 import Operator from "./Operator";
 
 
-function Generate({setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers,gridSize,MathOperator},ref)
+function Generate({ resultValueCountRef,setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers,gridSize,MathOperator},ref)
 { 
   // const[Correct_,setcorrect]=useState(0); // store the current number of correct
   // const[incorrect_,setincorrect] = useState(0); // store the current number of incorrect
@@ -18,15 +16,20 @@ function Generate({setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers
   const[column,setcolumn] = useState(""); //  store the value chnage column
   const[showBool,setshow] = useState(false); //  store wether submit button is click or not
 
+ 
 
   
   const setShowbool  =useCallback((bool)=> // handdling the sumbit or not 
   {
-     setshow(bool);
-  },[ setshow]);
+    resultValueCountRef.current.setResultValueCount(Correct.length,wrong.length);
+    setshow(bool);
+     
+  },[Correct.length, resultValueCountRef, wrong.length]);
   
 
-  useImperativeHandle(ref, () => ({setShow: (bool) => {return setShowbool(bool)}}), [setShowbool]);
+  // useImperativeHandle(ref, () => ({}), [showBool]);
+  useImperativeHandle(ref, () => ({setShow: (bool) => {return setShowbool(bool)},showVal: () => {return showBool}}), [setShowbool, showBool]);
+ 
 
 
     const RowColChnage =useCallback((ID)=>  //  function for exacting column, row from ID

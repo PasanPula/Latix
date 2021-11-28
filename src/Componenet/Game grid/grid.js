@@ -5,14 +5,16 @@ import { useHistory } from 'react-router';
 
 
 
-function Grid({ setCorrectCount ,setinCorrectCount,MathOperator ,numberRangeStart,numberRangeEnd,gridSize},ref) {
+function Grid({ resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOperator ,numberRangeStart,numberRangeEnd,gridSize},ref) {
 
-    useImperativeHandle(ref, () => ({setShow: (bool) => {return setShowref.current.setShow(bool) }}), []);
-
+    
     const[rowNumbers,setRowNumbers] = useState([]);
     const[coloumNumbers,setcoloumNumbers] = useState([]);
     const history = useHistory();
     const setShowref = useRef();
+
+    useImperativeHandle(ref, () => ({setShow: (bool) => {return setShowref.current.setShow(bool) },showVals: () => {return setShowref.current.showVal() }}), []);
+
 
 
 
@@ -33,7 +35,6 @@ function Grid({ setCorrectCount ,setinCorrectCount,MathOperator ,numberRangeStar
         }
 
         const unloadCallback = (event) => {
-            history.push("/");
             event.preventDefault();
             event.returnValue = "";
             return "";
@@ -51,7 +52,7 @@ function Grid({ setCorrectCount ,setinCorrectCount,MathOperator ,numberRangeStar
 
     return (
         <div>
-            < Generate    ref={setShowref} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={coloumNumbers}/>
+            < Generate  ref={setShowref}  resultValueCountRef={ resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={coloumNumbers}/>
         </div>
     )
 }
