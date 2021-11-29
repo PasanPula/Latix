@@ -70,7 +70,7 @@ function CelTex(parms)
 
    return(
        <div className="celtex">
-           <input type="text" key={parms.id}  className={(parms.show)?corlor:'correct'} id={parms.id} value={Value} pattern="^-?[0-9]\d*(\.\d+)?$" maxLength="3" onChange={valuechnage} onMouseEnter={loseFocus } onFocus={()=>parms.RowColChnage(parms.id)}  onMouseLeave={answerValidate } readOnly={(parms.show)?true:false}/>
+           <input autoComplete="off" type="text" key={parms.id}  className={(parms.show)?corlor:'correct'} id={parms.id} value={Value} pattern="^-?[0-9]\d*(\.\d+)?$" maxLength="3" onChange={valuechnage} onMouseEnter={loseFocus } onFocus={()=>parms.RowColChnage(parms.id)}  onMouseLeave={answerValidate } readOnly={(parms.show)?true:false}/>
        </div>
    );
 }

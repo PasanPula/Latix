@@ -80,7 +80,7 @@ const SetnumberRangeEnd = (value) =>
             <Switch>
             <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} />}/>
             <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate  name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd}  />} />
-            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} time={time.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} />} />
+            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} />} />
             <Redirect to="/SinglePlayer/Login" />  
           </Switch>
             </div>

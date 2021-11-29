@@ -21,6 +21,7 @@ function Generate({ resultValueCountRef,setCorrectCount , setinCorrectCount ,row
   
   const setShowbool  =useCallback((bool)=> // handdling the sumbit or not 
   {
+    console.log(resultValueCountRef);
     resultValueCountRef.current.setResultValueCount(Correct.length,wrong.length);
     setshow(bool);
      
