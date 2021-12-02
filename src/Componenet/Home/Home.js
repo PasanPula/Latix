@@ -7,17 +7,17 @@ const Home = ()=>{
     return(
         <div >
             <div className="mb-2 center">
-                <Link to="/SinglePlayer">
+                <Link to="/Singleplayer">
                     <Button variant="primary" size="lg" className="button">
                         Single Play
                     </Button>
                 </Link>
                 <br/>
-                {/* <Link to="/Multi_play">
+                <Link to="/Multiplay">
                     <Button variant="primary" size="lg" className="button">
                         Multi Play
                     </Button>
-                </Link> */}
+                </Link>
             </div>
             {/* <Link to="/Single_play">Single Play</Link> */}
         </div>

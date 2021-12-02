@@ -1,33 +1,37 @@
 import { useState } from "react";
 import { useHistory } from 'react-router';
-import SelectButton from "./SinglePlayer.create_components/SelectButton";
-
+// import SelectButton from "./SinglePlayer.create_components/SelectButton";
+import SelectionButton from "../select button/SelectionButton";
 
 
  function SinglePlayerCreate (props) {
 
-    const[ operators] =  useState(["+","-","/","X"]);
+    const[ operators] =  useState(["+","-","/","*"]);
     const [ modes ]  =  useState(["Easy","Medium","Hard"]); 
     const [ size ]  =  useState(["5X5","8X8","10X10"]); 
     const history = useHistory();
 
+    const [selectedMode,setSelectedMode] = useState("Easy");
+    const [selectedOperator,setSelectedOperator] = useState("+");
+    const [selectedSize,setSelectedSize] = useState("5X5");
+  
 
-    const setMode = (id) =>
+
+    const setMode = (mode) =>
     {
-        console.log(id);
-         if(id ==='0')
+         if(mode ==="Easy")
          {
              props.SetTime(5);
              props.SetnumberRangeStart(1);
              props.SetnumberRangeEnd(10);
         }
-         else if (id ==='1')
+         else if (mode ==="Medium")
          {
             props.SetTime(4);
             props.SetnumberRangeStart(6);
             props.SetnumberRangeEnd(20);
          }
-         else if (id ==='2')
+         else if (mode ==="Hard")
          {
             props.SetTime(3);
             props.SetnumberRangeStart(15);
@@ -39,46 +43,43 @@ import SelectButton from "./SinglePlayer.create_components/SelectButton";
             props.SetnumberRangeStart(1);
             props.SetnumberRangeEnd(10);
          }
+
+         setSelectedMode(mode);
     }
 
 
-    const setOperator = (id) =>
+    const HandlesetOperator = (val) =>
     {
-        console.log(id);
-         if( id === '0')
-         {
-             props.SetOperator('+')
-         }
-         else if( id === '1')
-         {
-            props.SetOperator('-')
-         }
-         else if ( id === '2')
-         {
-            props.SetOperator('/')
-         }
-         else if ( id === '3')
-         {
-            props.SetOperator('X')
-         }
-         else 
-         {
-            props.SetOperator('+')
-         }
+      
+      if(val==="X")
+      {
+         props.SetOperator("*");
+         setSelectedOperator("*");
+      }
+      else
+      {
+         props.SetOperator(val);
+         setSelectedOperator(val);
+      }
+      
     }
-    const setSize = (id) =>
+    
+    const HandleSetSize = (val) =>
     {
-         if(id === '0')
+         if(val === "5X5")
          {
-            props.SetGridSize(5)
+            props.SetGridSize(5);
+            setSelectedSize("5X5");
          }
-         else if(id === '1')
+         else if(val === "8X8")
          {
-            props.SetGridSize(8)
+            props.SetGridSize(8);
+            setSelectedSize("8X8");
          }
-         else if(id === '2')
+         else if(val === "10X10")
          {
             props.SetGridSize(10)
+            setSelectedSize("10X10");
          }
          else 
          {
@@ -95,14 +96,17 @@ import SelectButton from "./SinglePlayer.create_components/SelectButton";
 
         return (
             <div>
-                <h5>Welcome {props.name}</h5>
+                <h5 style={{color:"white"}} >Welcome {props.name}</h5>
                 <form>
-                 <h3>Select your Game Mode</h3>
-                 <SelectButton btnStyle={'button'} btnSelectedStyle={'button selected'} contentsArr={modes}  onValueChange={setMode  }/>
-                 <h3>Select your Mathamatical operator</h3>
-                 <SelectButton btnStyle={'button'} btnSelectedStyle={'button selected'} contentsArr={operators} onValueChange={setOperator } />
-                 <h3>Select your worksheet size</h3>
-                 <SelectButton btnStyle={'button'} btnSelectedStyle={'button selected'} contentsArr={size} onValueChange={setSize} />
+                 <h3 style={{color:"white"}}>Select your Game Mode</h3>
+
+                 <SelectionButton valueList={modes} pickedValue={selectedMode} setPickvalue={setMode} />
+                 {/* <SelectButton btnStyle={'button'} btnSelectedStyle={'button selected'} contentsArr={modes}  onValueChange={setMode  }/> */}
+                 <h3 style={{color:"white"}}>Select your Mathamatical operator</h3>
+                 <SelectionButton valueList={operators} pickedValue={selectedOperator} setPickvalue={HandlesetOperator} />
+                 <h3 style={{color:"white"}}>Select your worksheet size</h3>
+                 <SelectionButton valueList={size} pickedValue={selectedSize} setPickvalue={HandleSetSize} />
+                 {/* <SelectButton btnStyle={'button'} btnSelectedStyle={'button selected'} contentsArr={size} onValueChange={setSize} /> */}
                 
             
                 </form>
