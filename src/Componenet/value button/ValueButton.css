@@ -1,0 +1,124 @@
+
+  .wrap {
+    width: 160px;
+    /* margin: auto; */
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 #c9ced1;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  /* ------------------------------ COUNTER BEGIN ------------------------------ */
+  .counter__increment, .counter__decrement {
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .counter {
+    position: relative;
+    width: 7.5rem;
+    height: 1.875rem;
+    border: 1px solid #2f3640;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .counter__input {
+    border: none;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #2f3640;
+    font-size: 0.875rem;
+    background-color: transparent;
+  }
+  .counter__increment, .counter__decrement {
+    position: absolute;
+    top: 0;
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    /* height: 1.875rem; */
+    width: 2.1875rem;
+    font-weight: normal;
+    color: #2f3640;
+    text-decoration: none;
+    border: none;
+    /* border: 0;
+    text-align: center; */
+  }
+  .counter__increment:hover, .counter__increment:active, .counter__decrement:hover, .counter__decrement:active {
+    color: #2f3640;
+    text-decoration: none;
+    background-color: #20bd2d;
+  }
+  .counter__increment {
+    right: 0;
+    border-left: 1px solid #2f3640;
+    line-height: 1.6875rem;
+  }
+  .counter__decrement {
+    left: 0;
+    top: 0;
+    border-right: 1px solid #2f3640;
+    line-height: 1.6875rem;
+  }
+  
+  /* ------------------------------ COUNTER END ------------------------------ */
+
+
+  /* @font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/dosis/v22/HhyJU5sn9vOmLxNkIwRSjTVNWLEJ0LQl2xMB.ttf) format('truetype');
+  }
+  body {
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
+    background: #ecf0f1;
+    color: #34495e;
+    padding-top: 40px;
+    text-shadow: white 1px 1px 1px;
+  } */
+  /* .value {
+    border-bottom: 4px dashed #bdc3c7;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    width: 150px;
+    height: 50px;
+    line-height: 60px;
+    margin: 40px auto;
+    letter-spacing: -0.07em;
+    text-shadow: white 2px 2px 2px;
+  }
+  input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    background-color: #bdc3c7;
+    width: 150px;
+    height: 5px;
+    border-radius: 5px;
+    margin: 0 auto;
+    outline: 0;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #e74c3c;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  ​ input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: white;
+    border: 2px solid #e74c3c;
+  }
+  input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.6);
+  } */
