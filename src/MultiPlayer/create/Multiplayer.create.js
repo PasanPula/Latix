@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import SelectionButton from '../../select button/SelectionButton';
-import ValueButton from '../../value button/ValueButton';
-import RangeSlide from '../../range slider/RangeSlide';
+import SelectionButton from '../../Componenet/select button/SelectionButton'
+import ValueButton from '../../Componenet/value button/ValueButton';
+import RangeSlide from '../../Componenet/range slider/RangeSlide';
 
 export default function MultiPlayerCreate({rangeStart,HandleRangeStart,rangeEnd,HandleRangeEnd,size,HandleSetSize,HandleSetTime,time,selectedOperator,HandleSelectedOperator}) {
 

@@ -1,7 +1,7 @@
-import Home from './Componenet/Home/Home';
+import Home from "./Home/Home"
 import {Switch, Route} from 'react-router-dom';
-import SinglePlayer from './Componenet/SinglePlayer/SinglePlayer';
-import MultiPlayer from './Componenet/MultiPlayer/MultiPlayer';
+import MultiPlayer from "./MultiPlayer/MultiPlayer";
+import SinglePlayer from './SinglePlayer/SinglePlayer';
 
 function App() {
   return (

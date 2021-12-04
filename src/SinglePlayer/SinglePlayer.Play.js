@@ -1,8 +1,8 @@
 import {memo, useRef} from 'react';
-import Timer from '../Timer/Timer';
-import Grid from '../Game grid/grid';
-import Button from '../Game grid/components/Button';
-import CorrectIncorrectDisplay from '../crt.incrt.display/Correct.Incorrect.Display';
+import Timer from '../Componenet/Timer/Timer';
+import Grid from '../Componenet/Game grid/grid';
+import Button from '../Componenet/Game grid/components/Button';
+import CorrectIncorrectDisplay from '../Componenet/crt.incrt.display/Correct.Incorrect.Display';
 
 
 function SinglePlayerPlay({setTimeSpent,Correct,incorrect ,setinCorrectCount,setCorrectCount,time,operator,numberRangeStart,numberRangeEnd,gridSize}) {

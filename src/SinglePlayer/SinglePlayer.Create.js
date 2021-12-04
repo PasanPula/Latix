@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useHistory } from 'react-router';
-// import SelectButton from "./SinglePlayer.create_components/SelectButton";
-import SelectionButton from "../select button/SelectionButton";
+import SelectionButton from '../Componenet/select button/SelectionButton';
 
 
  function SinglePlayerCreate (props) {

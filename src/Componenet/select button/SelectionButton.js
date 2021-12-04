@@ -8,7 +8,6 @@ export default function SelectionButton({valueList,pickedValue,setPickvalue}) {
   }
 
 
-
   const options = valueList.map((loan, key) => {
             const isCurrent = pickedValue === loan
             return (
