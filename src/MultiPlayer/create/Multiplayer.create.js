@@ -19,12 +19,18 @@ export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,Handl
       const[rangeStarts,rangeStartComponent] = useSlider(1,0,30-size);
       const[rangeEnd,rangeEndComponent] = useSlider(parseInt(rangeStarts)+size,parseInt(rangeStarts)+size,30);
 
-      useEffect(() => {
+      // useEffect(() => {
 
-         console.log(rangeStarts,":",rangeEnd)
-         console.log(randomUnique(rangeStarts,rangeEnd,size))
+      //   //  console.log(rangeStarts,":",rangeEnd)
+      //   //  console.log(randomUnique(rangeStarts,rangeEnd,size))
+      //   randomUnique(rangeStarts,rangeEnd,size)
         
-      }, [rangeStarts,rangeEnd,size]);
+      // }, [rangeStarts,rangeEnd,size]);
+
+    const btClick = () => 
+    {
+      console.log(randomUnique(rangeStarts,rangeEnd,size));
+    }
 
     const HandlesetTime = (val) => 
     {
@@ -68,6 +74,8 @@ export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,Handl
 
             <h4 style={{color:'white'}} >End</h4>
             {rangeEndComponent}
+
+            <button onClick={btClick} >click</button>
 
 
         </div>
