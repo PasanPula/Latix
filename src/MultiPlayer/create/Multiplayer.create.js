@@ -22,14 +22,14 @@ export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,Handl
       // useEffect(() => {
 
       //   //  console.log(rangeStarts,":",rangeEnd)
-      //   //  console.log(randomUnique(rangeStarts,rangeEnd,size))
-      //   randomUnique(rangeStarts,rangeEnd,size)
+      //    console.log(randomUnique(rangeStarts,rangeEnd,size))
+      //   // randomUnique(rangeStarts,rangeEnd,size)
         
       // }, [rangeStarts,rangeEnd,size]);
 
     const btClick = () => 
     {
-      console.log(randomUnique(rangeStarts,rangeEnd,size));
+      console.log(randomUnique(parseInt(rangeStarts),parseInt(rangeEnd),parseInt(size)));
     }
 
     const HandlesetTime = (val) => 
