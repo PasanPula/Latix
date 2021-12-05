@@ -8,11 +8,11 @@ export const randomUnique = (lower,upper,count)=>
      pool.push(i);
    }
     var result = [];
-    for(var i=1; i<=count;i++)
+    for(var k=1; k<=count;k++)
     {
-        const random = Math.floor(Math.random() * (pool.length- i));
+        const random = Math.floor(Math.random() * (pool.length- k));
         result.push(pool[random]);
-        pool[random] = pool[pool.length - i];
+        pool[random] = pool[pool.length - k];
     }
     return result;
 }

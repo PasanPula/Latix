@@ -1,42 +1,42 @@
-import {useState,useRef} from 'react';
+import {useState,useRef, useEffect} from 'react';
 import {Switch, Route,Redirect} from 'react-router-dom';
 import MultiPlayerMode from './MultiPlayer.mode';
 import MultiplayerLogin from './Multiplayer.login';
 import MultiPlayerCreate from './create/Multiplayer.create';
+// import useSlider from '../Componenet/range slider/RangeSlide';
 
 export default function MultiPlayer() {
  
   const [showCheckBox,setShowCheckBox] = useState(false);
   const name = useRef();
   const isJoinAsPlayer = useRef(false);
-  const [time,setTime] = useState(5);
-  const [size,setSize] = useState(5);
-  const rangeStart = useRef(1);
-  const rangeEnd = useRef(30);
-  const[selectedOperator,setSelectedOperator] = useState("+");
+  const time = useRef(5);
+  const size = useRef(5);
+  const selectedOperator = useRef("+");
+  const rowNumbers = useRef([]);
+  const coloumNumbers = useRef([]);
 
-  const HandleRangeStart = (val) => 
+
+  const setRowNumbers = (val) => 
   {
-    rangeStart.current = val;
+    rowNumbers.current = val;
   }
-
-  const HandleRangeEnd = (val) => 
+  const setColoumNumbers = (val) => 
   {
-    rangeEnd.current = val;
+    coloumNumbers.current = val;
   }
-
-
+  
   const HandleSetSize = (val)=>{
-    setSize(val);
+    size.current = val;
   }
 
   const HandleSetTime = (val)=>{
-        setTime(val);
+    size.current = val;
   }
 
   const HandleSelectedOperator = (val) => 
   {
-    setSelectedOperator(val);
+    selectedOperator.current = val;
   }
 
   const setName = (value) =>
@@ -59,7 +59,7 @@ export default function MultiPlayer() {
           <Switch>
             <Route  path="/Multiplay/Mode" component={()=> <MultiPlayerMode HandleShowCheckBox={HandleShowCheckBox} />}/>
             <Route  path="/Multiplay/Login" component={()=> <MultiplayerLogin HandleShowCheckBox={HandleShowCheckBox} name={name.current} setName={setName} showCheckBox={showCheckBox} setIsJoinAsPlayer ={setIsJoinAsPlayer} />}/>
-            <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate  rangeEnd={rangeEnd.current} HandleRangeEnd={HandleRangeEnd} rangeStart={rangeStart.current} HandleRangeStart={HandleRangeStart} size={size} HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime} time={time} HandleSelectedOperator={HandleSelectedOperator} selectedOperator={selectedOperator} />}/>
+            <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate setRowNumbers={setRowNumbers} setColoumNumbers={setColoumNumbers}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime}  HandleSelectedOperator={HandleSelectedOperator}  />}/>
             <Redirect to="/Multiplay/Mode" />  
           </Switch>
         </div>

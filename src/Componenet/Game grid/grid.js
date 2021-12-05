@@ -16,8 +16,6 @@ function Grid({ resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOpera
     useImperativeHandle(ref, () => ({setShow: (bool) => {return setShowref.current.setShow(bool) },showVals: () => {return setShowref.current.showVal() }}), []);
 
 
-
-
     useEffect(() => {
         
         window.dispatchEvent(new CustomEvent("navigationhandler"));

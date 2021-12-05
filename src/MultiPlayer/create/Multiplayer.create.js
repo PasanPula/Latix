@@ -1,9 +1,10 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import SelectionButton from '../../Componenet/select button/SelectionButton'
 import ValueButton from '../../Componenet/value button/ValueButton';
-import RangeSlide from '../../Componenet/range slider/RangeSlide';
+import useSlider from '../../Componenet/range slider/RangeSlide';
+import { randomUnique } from "../../Componenet/Game grid/components/getrandom";
 
-export default function MultiPlayerCreate({rangeStart,HandleRangeStart,rangeEnd,HandleRangeEnd,size,HandleSetSize,HandleSetTime,time,selectedOperator,HandleSelectedOperator}) {
+export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,HandleSetSize,HandleSetTime,HandleSelectedOperator}) {
 
     const [operators] = useState([
         "+",
@@ -12,15 +13,41 @@ export default function MultiPlayerCreate({rangeStart,HandleRangeStart,rangeEnd,
         "*"
       ]);
 
-    const setOperator = (val) =>
+      const[operator,setOperator] = useState("+");
+      const[time,setTime] = useState(5);
+      const[size,setSize] = useState(5);
+      const[rangeStarts,rangeStartComponent] = useSlider(1,0,30-size);
+      const[rangeEnd,rangeEndComponent] = useSlider(parseInt(rangeStarts)+size,parseInt(rangeStarts)+size,30);
+
+      useEffect(() => {
+
+         console.log(rangeStarts,":",rangeEnd)
+         console.log(randomUnique(rangeStarts,rangeEnd,size))
+        
+      }, [rangeStarts,rangeEnd,size]);
+
+    const HandlesetTime = (val) => 
+    {
+      setTime(val);
+      HandleSetTime(val);
+    }
+    const HandlesetSize = (val) => 
+    {
+      setSize(val);
+      HandleSetSize(val);
+    }
+
+    const HandleSetOperator = (val) =>
     {
         if(val==='X')
         {
           HandleSelectedOperator('*');
+          setOperator("*");
         }
         else
         {
           HandleSelectedOperator(val);
+          setOperator(val);
         }
     }
     
@@ -28,20 +55,19 @@ export default function MultiPlayerCreate({rangeStart,HandleRangeStart,rangeEnd,
         <div>
 
             <h2 style={{color:'white'}} >Select operator</h2>
-            <SelectionButton valueList={operators} pickedValue={selectedOperator} setPickvalue={setOperator} /> 
+            <SelectionButton valueList={operators} pickedValue={operator} setPickvalue={HandleSetOperator} /> 
             <h2 style={{color:'white'}} >Set time : minutes</h2>
-            <ValueButton rangeEnd={10} rangeStart={1} value={time} HandleValue={HandleSetTime}/>
+            <ValueButton rangeEnd={10} rangeStart={1} value={time} HandleValue={HandlesetTime}/>
             <h2 style={{color:'white'}} >Set Grid size</h2>
-            <ValueButton rangeEnd={10} rangeStart={5} value={size} HandleValue={HandleSetSize}/>
+            <ValueButton rangeEnd={10} rangeStart={5} value={size} HandleValue={HandlesetSize}/>
 
             <h2 style={{color:'white'}} >Set Number range</h2>
 
             <h4 style={{color:'white'}} >Start</h4>
-            <RangeSlide min={'1'} max={'30'} mark={rangeEnd} value={rangeStart} setValue={HandleRangeStart} />
+            {rangeStartComponent}
 
             <h4 style={{color:'white'}} >End</h4>
-            <RangeSlide min={'5'} max={'30'} mark={rangeStart} value={rangeEnd} setValue={HandleRangeEnd} />
-            
+            {rangeEndComponent}
 
 
         </div>

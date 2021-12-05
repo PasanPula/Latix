@@ -1,21 +1,29 @@
-import React, { useState } from 'react'
-import '../range slider/RangeSlide.css'
+import React, { useState,useEffect } from 'react'
+import '../range slider/RangeSlide.css';
 
-export default function RangeSlide({value,setValue,min,max,mark}) {
+
+const SliderComponent = ({state,setState,min,max}) => (
+    <div className="range-container">
+    <input type="range" onChange={e => setState(e.target.value)} value={state} name="range" id="range" min={min} max={max} />
+    <label htmlFor="range">{state}</label>
+  </div>
+);
+
+export default function useSlider(value,min,max) {
 
     const[localValue,setLocalValue] = useState(value);
 
-    const HandleSlideChange = (e) => 
-    {
-        setLocalValue(e.target.value);
-        setValue(e.target.value);
-        console.log(mark);
-    }
-
-    return (
-            <div className="range-container">
-      <input type="range" onChange={HandleSlideChange} value={localValue} name="range" id="range" min={min} max={max} />
-      <label htmlFor="range">{localValue}</label>
-    </div>
-    )
+    useEffect(() => {
+        setLocalValue(value);
+    }, [value])  
+    return [
+        localValue,
+        <SliderComponent state={localValue} setState={setLocalValue} min={min} max={max} />,
+        setLocalValue
+    ];
+            
+    
 }
+
+
+
