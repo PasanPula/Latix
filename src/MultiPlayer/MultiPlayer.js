@@ -45,10 +45,11 @@ export default function MultiPlayer() {
     (response) => {
       if(response.Game !== "")
       {
+        isCreator.current=true;
         console.log(response.GameId);
         GameId.current = response.GameId;
         history.push('/Multiplay/lobby');
-        isCreator.current=true;
+       
       }
       else
       {
