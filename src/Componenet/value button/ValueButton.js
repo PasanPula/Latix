@@ -1,4 +1,3 @@
-import { useState } from "react";
 import '../value button/ValueButton.css'
 
 export default function ValueButton({value,rangeEnd,rangeStart,HandleValue}) {
@@ -19,11 +18,6 @@ export default function ValueButton({value,rangeEnd,rangeStart,HandleValue}) {
    }
    
  }
-
-//  const HanleSli = (e) =>
-//  {
-//   HandleValue(e.target.value)
-//  }
 
 
   return (

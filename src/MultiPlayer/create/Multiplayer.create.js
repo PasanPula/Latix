@@ -1,10 +1,12 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect,useContext} from 'react';
 import SelectionButton from '../../Componenet/select button/SelectionButton'
 import ValueButton from '../../Componenet/value button/ValueButton';
 import useSlider from '../../Componenet/range slider/RangeSlide';
 import { randomUnique } from "../../Componenet/Game grid/components/getrandom";
 
-export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,HandleSetSize,HandleSetTime,HandleSelectedOperator}) {
+
+export default function MultiPlayerCreate({CreateGame,setRowNumbers,setColoumNumbers,HandleSetSize,HandleSetTime,HandleSelectedOperator}) {
+
 
     const [operators] = useState([
         "+",
@@ -19,17 +21,12 @@ export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,Handl
       const[rangeStarts,rangeStartComponent] = useSlider(1,0,30-size);
       const[rangeEnd,rangeEndComponent] = useSlider(parseInt(rangeStarts)+size,parseInt(rangeStarts)+size,30);
 
-      // useEffect(() => {
 
-      //   //  console.log(rangeStarts,":",rangeEnd)
-      //    console.log(randomUnique(rangeStarts,rangeEnd,size))
-      //   // randomUnique(rangeStarts,rangeEnd,size)
-        
-      // }, [rangeStarts,rangeEnd,size]);
-
-    const btClick = () => 
+    const HandleCreateGame = () => 
     {
-      console.log(randomUnique(parseInt(rangeStarts),parseInt(rangeEnd),parseInt(size)));
+      setRowNumbers(randomUnique(parseInt(rangeStarts),parseInt(rangeEnd),parseInt(size)));
+      setColoumNumbers(randomUnique(parseInt(rangeStarts),parseInt(rangeEnd),parseInt(size)));
+      CreateGame();
     }
 
     const HandlesetTime = (val) => 
@@ -75,7 +72,7 @@ export default function MultiPlayerCreate({ setRowNumbers,setColoumNumbers,Handl
             <h4 style={{color:'white'}} >End</h4>
             {rangeEndComponent}
 
-            <button onClick={btClick} >click</button>
+            <button onClick={HandleCreateGame} >Create game</button>
 
 
         </div>

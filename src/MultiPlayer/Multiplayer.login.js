@@ -11,6 +11,10 @@ export default function MultiplayerLogin({userName,setName,showCheckBox,setIsJoi
         {
             history.push('/Multiplay/create');
         }
+        else 
+        {
+            history.push('/Multiplay/join');
+        }
        
     }
 
