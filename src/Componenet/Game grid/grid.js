@@ -5,11 +5,11 @@ import { useHistory } from 'react-router';
 
 
 
-function Grid({ resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOperator ,numberRangeStart,numberRangeEnd,gridSize},ref) {
+function Grid({ columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOperator,gridSize},ref) {
 
     
-    const[rowNumbers,setRowNumbers] = useState([]);
-    const[coloumNumbers,setcoloumNumbers] = useState([]);
+    // const[rowNumbers,setRowNumbers] = useState([]);
+    // const[coloumNumbers,setcoloumNumbers] = useState([]);
     const history = useHistory();
     const setShowref = useRef();
 
@@ -21,16 +21,16 @@ function Grid({ resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOpera
         window.dispatchEvent(new CustomEvent("navigationhandler"));
 
           
-        if(MathOperator==="/")
-        {
-            setRowNumbers(randomUnique(numberRangeStart,numberRangeEnd-5,gridSize));
-            setcoloumNumbers(randomUnique(numberRangeStart+4,numberRangeEnd,gridSize));
-        }
-        else
-        {
-            setRowNumbers(randomUnique(numberRangeStart,numberRangeEnd,gridSize));
-            setcoloumNumbers(randomUnique(numberRangeStart,numberRangeEnd,gridSize));
-        }
+        // if(MathOperator==="/")
+        // {
+        //     setRowNumbers(randomUnique(numberRangeStart,numberRangeEnd-5,gridSize));
+        //     setcoloumNumbers(randomUnique(numberRangeStart+4,numberRangeEnd,gridSize));
+        // }
+        // else
+        // {
+        //     setRowNumbers(randomUnique(numberRangeStart,numberRangeEnd,gridSize));
+        //     setcoloumNumbers(randomUnique(numberRangeStart,numberRangeEnd,gridSize));
+        // }
 
         const unloadCallback = (event) => {
             event.preventDefault();
@@ -44,13 +44,13 @@ function Grid({ resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOpera
 
 
 
-    }, [history,MathOperator,numberRangeStart , numberRangeEnd , gridSize])
+    }, [history,MathOperator, gridSize])
 
    
 
     return (
         <div>
-            < Generate  ref={setShowref}  resultValueCountRef={ resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={coloumNumbers}/>
+            < Generate  ref={setShowref}  resultValueCountRef={ resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={columnNumbers}/>
         </div>
     )
 }

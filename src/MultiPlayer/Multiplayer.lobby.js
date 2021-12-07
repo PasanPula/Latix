@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import { Button } from 'react-bootstrap';
 import { useSocket } from '../Services/SocketProvider';
 
 export default function MultiplayerLobby({name,GameId,isCreator}) {
@@ -45,7 +46,17 @@ useEffect(() => {
         name="GameCode"
         value={GameId}
         disabled={true}
-      /> </div> : <span></span>}
+      /> 
+      <div>
+          <Button>
+              Start Game
+          </Button>
+      </div>
+      
+      </div> 
+
+      
+      : <span></span>}
         
         </div>
     )

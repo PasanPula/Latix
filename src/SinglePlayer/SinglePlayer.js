@@ -3,6 +3,7 @@ import {Switch, Route,Redirect} from 'react-router-dom';
 import SinglePlayerLogin from './SinglePlayer.Login';
 import SinglePlayerCreate from './SinglePlayer.Create';
 import SinglePlayerPlay from "./SinglePlayer.Play";
+import { randomUnique } from "../Componenet/Game grid/components/getrandom";
 
 export default function SinglePlayer()  {
 
@@ -19,6 +20,26 @@ const operator = useRef('+');
 const time = useRef(5);
 const numberRangeStart = useRef(1);
 const numberRangeEnd = useRef(10);
+
+const rowNumbers = useRef([]);
+const columnNumbers = useRef([]);
+
+const HandleNumberGenarate = async () =>
+{
+  if(operator.current==="/")
+  {
+    rowNumbers.current = randomUnique(parseInt(numberRangeStart.current),parseInt((numberRangeEnd.current)-5),parseInt(gridSize.current))
+    columnNumbers.current = randomUnique(parseInt((numberRangeStart.current)+4),parseInt(numberRangeEnd.current),parseInt(gridSize.current))
+  }
+  else
+  {
+    rowNumbers.current =  randomUnique(parseInt(numberRangeStart.current),parseInt(numberRangeEnd.current),parseInt(gridSize.current))
+    columnNumbers.current =  randomUnique(parseInt(numberRangeStart.current),parseInt(numberRangeEnd.current),parseInt(gridSize.current))
+  }
+
+  console.log("first:",rowNumbers,columnNumbers);
+  
+}
 
 
 const setCorrectCount =useCallback((value) =>
@@ -75,8 +96,8 @@ const SetnumberRangeEnd = (value) =>
             <div>
             <Switch>
             <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} />}/>
-            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate  name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
-            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} numberRangeStart={ numberRangeStart.current } numberRangeEnd={numberRangeEnd.current} />} />
+            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate HandleNumberGenarate={HandleNumberGenarate} name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
+            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay columnNumbers={columnNumbers.current} rowNumbers={rowNumbers.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} />} />
             <Redirect to="/SinglePlayer/Login" />  
           </Switch>
             </div>

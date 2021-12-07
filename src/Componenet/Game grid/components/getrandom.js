@@ -2,8 +2,9 @@
 
 export const randomUnique = (lower,upper,count)=>
 {
-
-
+  
+  console.log(lower,upper,count);
+   
     var pool=[];
    for(var i=lower;i<=upper;i++)
    {
@@ -17,6 +18,7 @@ export const randomUnique = (lower,upper,count)=>
         result.push(pool[random]);
         pool[random] = pool[pool.length - k];
     }
+
     return result;
 }
 

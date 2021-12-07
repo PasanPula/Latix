@@ -87,7 +87,10 @@ import SelectionButton from '../Componenet/select button/SelectionButton';
     }
 
     const startGame = () => {
-      history.push("/SinglePlayer/play");
+      props.HandleNumberGenarate().then(() => 
+      {
+         history.push("/SinglePlayer/play");
+      })
     }
 
 

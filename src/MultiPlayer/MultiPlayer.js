@@ -1,4 +1,4 @@
-import {useState,useRef, useEffect} from 'react';
+import {useState,useRef, useCallback} from 'react';
 import {Switch, Route,Redirect} from 'react-router-dom';
 import MultiPlayerMode from './MultiPlayer.mode';
 import MultiplayerLogin from './Multiplayer.login';
@@ -6,6 +6,7 @@ import MultiPlayerCreate from './create/Multiplayer.create';
 import { useSocket } from '../Services/SocketProvider';
 import MultiplayerJoin from './Multiplayer.join';
 import MultiplayerLobby from './Multiplayer.lobby';
+import MultiplayerPlay from './play/Multiplayer.play';
 
 
 export default function MultiPlayer() {
@@ -19,8 +20,11 @@ export default function MultiPlayer() {
   const rowNumbers = useRef([]);
   const coloumNumbers = useRef([]);
   const GameId = useRef("");
-
   const isCreator = useRef(false);
+
+  const timeSpent = useRef("00:00");
+  const Correct = useRef(0);
+  const incorrect = useRef(0);
 
   const socket = useSocket();
 
@@ -58,6 +62,21 @@ export default function MultiPlayer() {
     }
     )
   }
+
+  const setTimeSpent = (val)=>
+{
+   timeSpent.current = val;
+}
+
+const setCorrectCount =useCallback((value) =>
+{
+  Correct.current = value;
+},[]);
+
+const setinCorrectCount =useCallback((value) =>
+{
+  incorrect.current = value;
+},[]);
 
 
   const setRowNumbers = (val) => 
@@ -105,6 +124,7 @@ export default function MultiPlayer() {
             <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate CreateGame={CreateGame} setRowNumbers={setRowNumbers} setColoumNumbers={setColoumNumbers}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime}  HandleSelectedOperator={HandleSelectedOperator}  />}/>
             <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} />} />
             <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby isCreator={isCreator.current} name={name.current} GameId={GameId.current} />} />
+            <Route path="/Multiplay/play" component={()=> <MultiplayerPlay isCreator={isCreator.current} name={name.current} GameId={GameId.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={size.current} operator = {selectedOperator.current} rowNumbers={rowNumbers.current} coloumNumbers={coloumNumbers} />} />
 
             <Redirect to="/Multiplay/Mode" />  
           </Switch>
