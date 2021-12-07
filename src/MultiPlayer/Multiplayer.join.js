@@ -1,11 +1,13 @@
 import {useState} from 'react';
-import { Alert } from 'react-bootstrap';
 import { useSocket } from '../Services/SocketProvider';
+import { useHistory } from 'react-router-dom';
+
 
 export default function MultiplayerJoin({name}) {
 
     const [gameCode,setGameCode] = useState("");
     const socket = useSocket();
+    const history = useHistory();
 
     const handleGameCode = (val) =>
     {
@@ -28,6 +30,7 @@ export default function MultiplayerJoin({name}) {
             else if (res.Status === 1)
             {
                 console.log(res);
+                history.push('/Multiplay/lobby');
             }
         });
     }

@@ -5,6 +5,7 @@ import MultiplayerLogin from './Multiplayer.login';
 import MultiPlayerCreate from './create/Multiplayer.create';
 import { useSocket } from '../Services/SocketProvider';
 import MultiplayerJoin from './Multiplayer.join';
+import MultiplayerLobby from './Multiplayer.lobby';
 
 export default function MultiPlayer() {
  
@@ -94,6 +95,8 @@ export default function MultiPlayer() {
             <Route  path="/Multiplay/Login" component={()=> <MultiplayerLogin HandleShowCheckBox={HandleShowCheckBox} name={name.current} setName={setName} showCheckBox={showCheckBox} setIsJoinAsPlayer ={setIsJoinAsPlayer} />}/>
             <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate CreateGame={CreateGame} setRowNumbers={setRowNumbers} setColoumNumbers={setColoumNumbers}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime}  HandleSelectedOperator={HandleSelectedOperator}  />}/>
             <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} />} />
+            <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby name={name.current} GameId={GameId.current} />} />
+
             <Redirect to="/Multiplay/Mode" />  
           </Switch>
         </div>
