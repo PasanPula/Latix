@@ -7,6 +7,7 @@ import { useSocket } from '../Services/SocketProvider';
 import MultiplayerJoin from './Multiplayer.join';
 import MultiplayerLobby from './Multiplayer.lobby';
 
+
 export default function MultiPlayer() {
  
   const [showCheckBox,setShowCheckBox] = useState(false);
@@ -18,9 +19,14 @@ export default function MultiPlayer() {
   const rowNumbers = useRef([]);
   const coloumNumbers = useRef([]);
   const GameId = useRef("");
+
+  const isCreator = useRef(false);
+
   const socket = useSocket();
 
-  const CreateGame = () =>
+
+
+  const CreateGame = (history) =>
   {
     socket.emit("CreateGame",
     {
@@ -40,7 +46,9 @@ export default function MultiPlayer() {
       if(response.Game !== "")
       {
         console.log(response.GameId);
-        GameId.current = response.GameId
+        GameId.current = response.GameId;
+        history.push('/Multiplay/lobby');
+        isCreator.current=true;
       }
       else
       {
@@ -95,7 +103,7 @@ export default function MultiPlayer() {
             <Route  path="/Multiplay/Login" component={()=> <MultiplayerLogin HandleShowCheckBox={HandleShowCheckBox} name={name.current} setName={setName} showCheckBox={showCheckBox} setIsJoinAsPlayer ={setIsJoinAsPlayer} />}/>
             <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate CreateGame={CreateGame} setRowNumbers={setRowNumbers} setColoumNumbers={setColoumNumbers}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime}  HandleSelectedOperator={HandleSelectedOperator}  />}/>
             <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} />} />
-            <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby name={name.current} GameId={GameId.current} />} />
+            <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby isCreator={isCreator.current} name={name.current} GameId={GameId.current} />} />
 
             <Redirect to="/Multiplay/Mode" />  
           </Switch>

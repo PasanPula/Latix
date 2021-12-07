@@ -4,9 +4,12 @@ import ValueButton from '../../Componenet/value button/ValueButton';
 import useSlider from '../../Componenet/range slider/RangeSlide';
 import { randomUnique } from "../../Componenet/Game grid/components/getrandom";
 
+import { useHistory } from 'react-router-dom';
+
 
 export default function MultiPlayerCreate({CreateGame,setRowNumbers,setColoumNumbers,HandleSetSize,HandleSetTime,HandleSelectedOperator}) {
 
+    const history = useHistory();
 
     const [operators] = useState([
         "+",
@@ -26,7 +29,7 @@ export default function MultiPlayerCreate({CreateGame,setRowNumbers,setColoumNum
     {
       setRowNumbers(randomUnique(parseInt(rangeStarts),parseInt(rangeEnd),parseInt(size)));
       setColoumNumbers(randomUnique(parseInt(rangeStarts),parseInt(rangeEnd),parseInt(size)));
-      CreateGame();
+      CreateGame(history);
     }
 
     const HandlesetTime = (val) => 
