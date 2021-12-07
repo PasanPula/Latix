@@ -1,11 +1,13 @@
 import {useEffect, useState} from 'react'
 import { Button } from 'react-bootstrap';
 import { useSocket } from '../Services/SocketProvider';
+import { useHistory } from 'react-router-dom';
 
-export default function MultiplayerLobby({name,GameId,isCreator}) {
+export default function MultiplayerLobby({setColoumNumbers,setRowNumbers,HandleSelectedOperator,HandleSetSize,HandleSetTime,name,Gameid,isCreator}) {
 
 const [userList, setUserList] = useState([]);
 const socket = useSocket();
+const history = useHistory();
 
 useEffect(() => {
     
@@ -14,11 +16,21 @@ useEffect(() => {
        setUserList(res);
        console.log(res);
     });
+
+    socket.on('GetGame',(res) =>
+    {
+        setColoumNumbers(res.Column);
+        setRowNumbers(res.Row);
+        HandleSelectedOperator(res.Operator);
+        HandleSetSize(res.Size);
+        HandleSetTime(res.Time);
+        history.push('/Multiplay/play');
+    });
     
     return () => {
         socket.off("GetUser");
     }
-}, [socket, userList])
+}, [HandleSelectedOperator, HandleSetSize, HandleSetTime, history, setColoumNumbers, setRowNumbers, socket, userList])
 
     const users = userList.map((user,index) => 
     {
@@ -29,6 +41,16 @@ useEffect(() => {
            </li>
         );
     })
+
+    const testclick = () => 
+    {
+        socket.emit("GetGame",{
+            GameId:Gameid
+        },(res)=>
+        {
+            console.log(res);
+        })
+    }
 
 
     return (
@@ -44,11 +66,11 @@ useEffect(() => {
        placeholder="Game Code"
         type="text"
         name="GameCode"
-        value={GameId}
+        value={Gameid}
         disabled={true}
       /> 
       <div>
-          <Button>
+          <Button onClick={testclick} >
               Start Game
           </Button>
       </div>

@@ -123,8 +123,8 @@ const setinCorrectCount =useCallback((value) =>
             <Route  path="/Multiplay/Login" component={()=> <MultiplayerLogin HandleShowCheckBox={HandleShowCheckBox} name={name.current} setName={setName} showCheckBox={showCheckBox} setIsJoinAsPlayer ={setIsJoinAsPlayer} />}/>
             <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate CreateGame={CreateGame} setRowNumbers={setRowNumbers} setColoumNumbers={setColoumNumbers}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime}  HandleSelectedOperator={HandleSelectedOperator}  />}/>
             <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} />} />
-            <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby isCreator={isCreator.current} name={name.current} GameId={GameId.current} />} />
-            <Route path="/Multiplay/play" component={()=> <MultiplayerPlay isCreator={isCreator.current} name={name.current} GameId={GameId.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={size.current} operator = {selectedOperator.current} rowNumbers={rowNumbers.current} coloumNumbers={coloumNumbers} />} />
+            <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby setColoumNumbers={setColoumNumbers} setRowNumbers={setRowNumbers} HandleSelectedOperator={HandleSelectedOperator}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime} isCreator={isCreator.current} name={name.current} Gameid={GameId.current} />} />
+            <Route path="/Multiplay/play" component={()=> <MultiplayerPlay isCreator={isCreator.current} name={name.current} GameId={GameId.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={size.current} operator = {selectedOperator.current} rowNumbers={rowNumbers.current} columnNumbers={coloumNumbers.current} />} />
 
             <Redirect to="/Multiplay/Mode" />  
           </Switch>
