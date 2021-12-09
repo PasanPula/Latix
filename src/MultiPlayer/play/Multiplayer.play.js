@@ -29,11 +29,18 @@ export default function MultiplayerPlay({isJoinAsPlayer,isCreator,name,GameId,se
         <div className="Grid2">
             <div className="Fixed">
                 <div> <Timer setTimeSpent={setTimeSpent} showValRef={isJoinAsPlayer ? setShowRef : false} initMinute={time} /> </div>
+                
+                {isJoinAsPlayer ?
                 <div> <div className="bottom"><Button onshow={() =>{setShowRef.current.setShow(true)}}/> </div></div>
-                 
+                :
+                <span></span>
+                }
               </div>
         </div>
-        < CorrectIncorrectDisplay ref={resultValueCountRef}  />
+
+        {isJoinAsPlayer ?
+        < CorrectIncorrectDisplay ref={resultValueCountRef}  /> :
+        <span></span>}
     </div> 
 
         </div>
