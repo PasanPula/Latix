@@ -36,8 +36,6 @@ const HandleNumberGenarate = async () =>
     rowNumbers.current =  randomUnique(parseInt(numberRangeStart.current),parseInt(numberRangeEnd.current),parseInt(gridSize.current))
     columnNumbers.current =  randomUnique(parseInt(numberRangeStart.current),parseInt(numberRangeEnd.current),parseInt(gridSize.current))
   }
-
-  console.log("first:",rowNumbers,columnNumbers);
   
 }
 

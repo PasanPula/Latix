@@ -2,8 +2,6 @@
 
 export const randomUnique = (lower,upper,count)=>
 {
-  
-  console.log(lower,upper,count);
    
     var pool=[];
    for(var i=lower;i<=upper;i++)

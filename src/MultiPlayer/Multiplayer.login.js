@@ -28,7 +28,17 @@ export default function MultiplayerLogin({userName,setName,showCheckBox,setIsJoi
     const HandleCheckbox = () => 
     {
         setChecked(!checked);
-        setIsJoinAsPlayer();
+        if(!checked)
+        {
+           setIsJoinAsPlayer(true);
+        }
+        else
+        {
+           setIsJoinAsPlayer(false);
+        }
+    
+        
+        
     }
     
     

@@ -8,8 +8,6 @@ import { useHistory } from 'react-router';
 function Grid({ columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOperator,gridSize},ref) {
 
     
-    // const[rowNumbers,setRowNumbers] = useState([]);
-    // const[coloumNumbers,setcoloumNumbers] = useState([]);
     const history = useHistory();
     const setShowref = useRef();
 
@@ -20,17 +18,6 @@ function Grid({ columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,s
         
         window.dispatchEvent(new CustomEvent("navigationhandler"));
 
-          
-        // if(MathOperator==="/")
-        // {
-        //     setRowNumbers(randomUnique(numberRangeStart,numberRangeEnd-5,gridSize));
-        //     setcoloumNumbers(randomUnique(numberRangeStart+4,numberRangeEnd,gridSize));
-        // }
-        // else
-        // {
-        //     setRowNumbers(randomUnique(numberRangeStart,numberRangeEnd,gridSize));
-        //     setcoloumNumbers(randomUnique(numberRangeStart,numberRangeEnd,gridSize));
-        // }
 
         const unloadCallback = (event) => {
             event.preventDefault();

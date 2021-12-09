@@ -2,7 +2,7 @@ import { useState,useEffect,Fragment  } from 'react'
 
 
 export default function Timer({setTimeSpent,initMinute,showValRef}) {
-    const [minutes, setMinutes] = useState(initMinute)
+    const [minutes, setMinutes] = useState(initMinute-1)
     const [seconds, setSeconds] = useState(59);
 
     let showVal = showValRef.current===undefined ? false : showValRef.current.showVals();
@@ -17,7 +17,10 @@ export default function Timer({setTimeSpent,initMinute,showValRef}) {
         } if (seconds === 0) {
           if (minutes === 0) {
             clearInterval(myInterval)
-            showValRef.current.setShow(true);
+            if(!(showValRef.current===undefined))
+            {
+              showValRef.current.setShow(true);
+            }
           } else {
             setMinutes(minutes - 1)
             setSeconds(59)

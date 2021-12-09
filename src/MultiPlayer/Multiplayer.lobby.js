@@ -22,8 +22,8 @@ useEffect(() => {
         setColoumNumbers(res.Column);
         setRowNumbers(res.Row);
         HandleSelectedOperator(res.Operator);
-        HandleSetSize(res.Size);
-        HandleSetTime(res.Time);
+        HandleSetSize(parseInt(res.Size));
+        HandleSetTime(parseInt(res.Time));
         history.push('/Multiplay/play');
     });
     
