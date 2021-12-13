@@ -7,6 +7,7 @@ import { useSocket } from '../Services/SocketProvider';
 import MultiplayerJoin from './Multiplayer.join';
 import MultiplayerLobby from './Multiplayer.lobby';
 import MultiplayerPlay from './play/Multiplayer.play';
+import MultiplayerResult from './result/Multiplayer.result';
 
 
 export default function MultiPlayer() {
@@ -22,11 +23,31 @@ export default function MultiPlayer() {
   const GameId = useRef("");
   const isCreator = useRef(false);
 
-  const timeSpent = useRef("00:00");
+  const timeSpent = useRef(0);
   const Correct = useRef(0);
   const incorrect = useRef(0);
+  const isFinished = useRef(false);
 
   const socket = useSocket();
+
+  const SubmitAnswers = () => 
+  {
+
+    console.log("gid :",GameId.current);
+
+    socket.emit("SetResult",
+    {
+      GameId: GameId.current,
+   Results:{
+        Time : parseFloat(timeSpent.current),
+       Correct: Correct.current,
+       InCorrect:incorrect.current
+   }
+    },(res) =>
+    {
+       console.log(res);
+    });
+  }
 
 
 
@@ -62,6 +83,11 @@ export default function MultiPlayer() {
     )
   }
 
+  const setGameId = (val) => 
+  {
+    GameId.current = val;
+  }
+
   const setTimeSpent = (val)=>
 {
    timeSpent.current = val;
@@ -88,7 +114,6 @@ const setinCorrectCount =useCallback((value) =>
   }
   
   const HandleSetSize = (val)=>{
-    console.log(val)
     size.current = val;
   }
 
@@ -122,9 +147,10 @@ const setinCorrectCount =useCallback((value) =>
             <Route  path="/Multiplay/Mode" component={()=> <MultiPlayerMode HandleShowCheckBox={HandleShowCheckBox} />}/>
             <Route  path="/Multiplay/Login" component={()=> <MultiplayerLogin HandleShowCheckBox={HandleShowCheckBox} name={name.current} setName={setName} showCheckBox={showCheckBox} setIsJoinAsPlayer ={setIsJoinAsPlayer} />}/>
             <Route  path="/Multiplay/create" component={()=> <MultiPlayerCreate CreateGame={CreateGame} setRowNumbers={setRowNumbers} setColoumNumbers={setColoumNumbers}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime}  HandleSelectedOperator={HandleSelectedOperator}  />}/>
-            <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} />} />
+            <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} setGameId={setGameId} />} />
             <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby setColoumNumbers={setColoumNumbers} setRowNumbers={setRowNumbers} HandleSelectedOperator={HandleSelectedOperator}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime} isCreator={isCreator.current} name={name.current} Gameid={GameId.current} />} />
-            <Route path="/Multiplay/play" component={()=> <MultiplayerPlay isJoinAsPlayer={isJoinAsPlayer.current} isCreator={isCreator.current} name={name.current} GameId={GameId.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={size.current} operator = {selectedOperator.current} rowNumbers={rowNumbers.current} columnNumbers={coloumNumbers.current} />} />
+            <Route path="/Multiplay/play" component={()=> <MultiplayerPlay SubmitAnswers={SubmitAnswers} isJoinAsPlayer={isJoinAsPlayer.current} isCreator={isCreator.current} name={name.current} Gameid={GameId.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={size.current} operator = {selectedOperator.current} rowNumbers={rowNumbers.current} columnNumbers={coloumNumbers.current} />} />
+            <Route path="/Multiplay/result" component={()=> <MultiplayerResult />} />
 
             <Redirect to="/Multiplay/Mode" />  
           </Switch>

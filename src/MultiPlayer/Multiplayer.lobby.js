@@ -14,7 +14,7 @@ useEffect(() => {
     socket.on("GetUser",(res)=>
     {
        setUserList(res);
-       console.log(res);
+    //    console.log(res);
     });
 
     socket.on('GetGame',(res) =>
@@ -48,7 +48,7 @@ useEffect(() => {
             GameId:Gameid
         },(res)=>
         {
-            console.log(res);
+            // console.log(res);
         })
     }
 

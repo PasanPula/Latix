@@ -1,11 +1,23 @@
 import { useState,useEffect,Fragment  } from 'react'
 
 
-export default function Timer({setTimeSpent,initMinute,showValRef}) {
+export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,initMinute,showValRef}) {
     const [minutes, setMinutes] = useState(initMinute-1)
     const [seconds, setSeconds] = useState(59);
 
     let showVal = showValRef.current===undefined ? false : showValRef.current.showVals();
+
+
+    const MultitPlayerSubmit = () => 
+    {
+       if(isJoinAsPlayer !== undefined)
+       {
+         if(isJoinAsPlayer)
+         {
+          SubmitAnswers();
+         }
+       }
+    }
 
   
     useEffect(() => {
@@ -20,6 +32,7 @@ export default function Timer({setTimeSpent,initMinute,showValRef}) {
             if(!(showValRef.current===undefined))
             {
               showValRef.current.setShow(true);
+              MultitPlayerSubmit();
             }
           } else {
             setMinutes(minutes - 1)
@@ -30,7 +43,9 @@ export default function Timer({setTimeSpent,initMinute,showValRef}) {
     }
     else
     {
-      setTimeSpent(toString(initMinute - minutes)+":"+toString(60 - seconds));
+      // console.log("time original",String((initMinute-1) - minutes).concat("."+String(60 - seconds)));
+      setTimeSpent(String((initMinute-1) - minutes).concat("."+String(60 - seconds)));
+      MultitPlayerSubmit();
     }
       return () => {
         clearInterval(myInterval)

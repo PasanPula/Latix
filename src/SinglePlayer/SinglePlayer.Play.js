@@ -18,7 +18,7 @@ function SinglePlayerPlay({setTimeSpent,Correct,incorrect ,setinCorrectCount,set
         <div className="Grid2">
             <div className="Fixed">
                 <div> <Timer setTimeSpent={setTimeSpent} showValRef={setShowRef} initMinute={time} /> </div>
-                <div> <div className="bottom"><Button onshow={() =>{setShowRef.current.setShow(true)}}/> </div></div>
+                <div> <div className="bottom"><Button onshow={ () =>{setShowRef.current.setShow(true)}}/> </div></div>
                  
               </div>
         </div>

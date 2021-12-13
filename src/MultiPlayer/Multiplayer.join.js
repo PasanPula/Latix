@@ -3,7 +3,7 @@ import { useSocket } from '../Services/SocketProvider';
 import { useHistory } from 'react-router-dom';
 
 
-export default function MultiplayerJoin({name}) {
+export default function MultiplayerJoin({name,setGameId}) {
 
     const [gameCode,setGameCode] = useState("");
     const socket = useSocket();
@@ -29,6 +29,7 @@ export default function MultiplayerJoin({name}) {
             }
             else if (res.Status === 1)
             {
+                setGameId(gameCode);
                 console.log(res);
                 history.push('/Multiplay/lobby');
             }

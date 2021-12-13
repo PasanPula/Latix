@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 
 
 
-function Grid({ columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOperator,gridSize},ref) {
+function Grid({columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,setinCorrectCount,MathOperator,gridSize},ref) {
 
     
     const history = useHistory();
@@ -37,7 +37,7 @@ function Grid({ columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,s
 
     return (
         <div>
-            < Generate  ref={setShowref}  resultValueCountRef={ resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={columnNumbers}/>
+            < Generate ref={setShowref}  resultValueCountRef={ resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={columnNumbers}/>
         </div>
     )
 }

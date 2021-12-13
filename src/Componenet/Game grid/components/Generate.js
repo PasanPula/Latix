@@ -6,7 +6,7 @@ import CelTex from "./CelTex";
 import Operator from "./Operator";
 
 
-function Generate({ resultValueCountRef,setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers,gridSize,MathOperator},ref)
+function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers,gridSize,MathOperator},ref)
 { 
   // const[Correct_,setcorrect]=useState(0); // store the current number of correct
   // const[incorrect_,setincorrect] = useState(0); // store the current number of incorrect
@@ -21,11 +21,13 @@ function Generate({ resultValueCountRef,setCorrectCount , setinCorrectCount ,row
   
   const setShowbool  =useCallback((bool)=> // handdling the sumbit or not 
   {
+    if(!(resultValueCountRef.current === undefined)){
     console.log(resultValueCountRef);
     resultValueCountRef.current.setResultValueCount(Correct.length,wrong.length);
+    }
     setshow(bool);
      
-  },[Correct.length, resultValueCountRef, wrong.length]);
+  },[Correct.length,resultValueCountRef, wrong.length]);
   
 
   // useImperativeHandle(ref, () => ({}), [showBool]);
