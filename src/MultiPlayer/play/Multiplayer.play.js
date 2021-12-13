@@ -6,6 +6,7 @@ import CorrectIncorrectDisplay from "../../Componenet/crt.incrt.display/Correct.
 import Leaderboard from "./Leaderboard";
 import { useSocket } from "../../Services/SocketProvider";
 import { Button } from "react-bootstrap";
+import { useHistory } from 'react-router-dom';
 
 export default function MultiplayerPlay({
   SubmitAnswers,
@@ -23,10 +24,12 @@ export default function MultiplayerPlay({
   operator,
   columnNumbers,
   rowNumbers,
+  setUserResult,
 }) {
   const setShowRef = useRef();
   const resultValueCountRef = useRef();
   const socket = useSocket();
+  const history = useHistory();
 
   useEffect(() => {
     if (isCreator && !isJoinAsPlayer) {
@@ -35,10 +38,13 @@ export default function MultiplayerPlay({
 
     socket.on("GetResult",(res) => 
     {
+       setUserResult(res);
         console.log("result",res);
+        history.push('/Multiplay/result');
+
     })
   });
-//6lsJ4
+
    const endGame = () => 
    {
        socket.emit("GetResult",{
@@ -66,25 +72,23 @@ export default function MultiplayerPlay({
         <div className="Grid2">
           <div className="Fixed">
             <div>
-              {" "}
               <Timer
                 isJoinAsPlayer={isJoinAsPlayer}
                 SubmitAnswers={SubmitAnswers}
                 setTimeSpent={setTimeSpent}
                 showValRef={isJoinAsPlayer ? setShowRef : false}
                 initMinute={time}
-              />{" "}
+              />
             </div>
 
             {isJoinAsPlayer ? (
               <div>
-                {" "}
                 <div className="bottom">
                   <Submitbutton
                     onshow={() => {
                       setShowRef.current.setShow(true);
                     }}
-                  />{" "}
+                  />
                 </div>
               </div>
             ) : (
