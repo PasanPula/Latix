@@ -32,8 +32,13 @@ export default function MultiplayerPlay({
     if (isCreator && !isJoinAsPlayer) {
       setShowRef.current.setShow(true);
     }
-  });
 
+    socket.on("GetResult",(res) => 
+    {
+        console.log("result",res);
+    })
+  });
+//6lsJ4
    const endGame = () => 
    {
        socket.emit("GetResult",{
@@ -90,16 +95,17 @@ export default function MultiplayerPlay({
           </div>
         </div>
 
-        {isJoinAsPlayer ? (
+        {(isJoinAsPlayer && isJoinAsPlayer) ? (
           <CorrectIncorrectDisplay ref={resultValueCountRef} />
         ) : (
           <span></span>
         )}
       </div>
 
+     {isCreator ?
       <Button onClick={endGame} >
           Next
-      </Button>
+      </Button> : <span></span>}
 
     </div>
   );
