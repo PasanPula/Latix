@@ -154,7 +154,7 @@ const setinCorrectCount =useCallback((value) =>
             <Route path="/Multiplay/join" component={()=> <MultiplayerJoin name={name.current} setGameId={setGameId} />} />
             <Route path="/Multiplay/lobby" component={()=> <MultiplayerLobby setColoumNumbers={setColoumNumbers} setRowNumbers={setRowNumbers} HandleSelectedOperator={HandleSelectedOperator}  HandleSetSize={HandleSetSize} HandleSetTime={HandleSetTime} isCreator={isCreator.current} name={name.current} Gameid={GameId.current} />} />
             <Route path="/Multiplay/play" component={()=> <MultiplayerPlay setUserResult={setUserResult} SubmitAnswers={SubmitAnswers} isJoinAsPlayer={isJoinAsPlayer.current} isCreator={isCreator.current} name={name.current} Gameid={GameId.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={size.current} operator = {selectedOperator.current} rowNumbers={rowNumbers.current} columnNumbers={coloumNumbers.current} />} />
-            <Route path="/Multiplay/result" component={()=> <MultiplayerResult isCreator={isCreator} userResult={userResult.current} />} />
+            <Route path="/Multiplay/result" component={()=> <MultiplayerResult isCreator={isCreator.current} userResult={userResult.current} />} />
 
             <Redirect to="/Multiplay/Mode" />  
           </Switch>

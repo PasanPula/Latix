@@ -9,6 +9,8 @@ export default function MultiplayerResult({ isCreator, userResult }) {
   const socket = useSocket();
 
   useEffect(() => {
+
+    console.log("iscretaor ****",isCreator);
     
     if(!isCreator)
     {
@@ -47,11 +49,11 @@ export default function MultiplayerResult({ isCreator, userResult }) {
     <div>
       {Result}
       <div>
-        {isCreator ? (
+        {isCreator ? 
           <Button onClick={handelPlayAgain}>Play Again</Button>
-        ) : (
+         :
           <span></span>
-        )}
+        }
       </div>
     </div>
   );
