@@ -10,13 +10,13 @@ const socket = useSocket();
 const history = useHistory();
 
 useEffect(() => {
+
+    console.log("iscreator in lobby",isCreator);
     
     socket.on("GetUser",(res)=>
     {
        setUserList(res);
-    //    console.log(res);
     });
-
     socket.on('GetGame',(res) =>
     {
         setColoumNumbers(res.Column);
@@ -30,7 +30,7 @@ useEffect(() => {
     return () => {
         socket.off("GetUser");
     }
-}, [HandleSelectedOperator, HandleSetSize, HandleSetTime, history, setColoumNumbers, setRowNumbers, socket, userList])
+}, [HandleSelectedOperator, HandleSetSize, HandleSetTime, history, isCreator, setColoumNumbers, setRowNumbers, socket, userList])
 
     const users = userList.map((user,index) => 
     {

@@ -16,7 +16,6 @@ export default function MultiplayerResult({ isCreator, userResult }) {
     {
         socket.on("UpdateGame", (res) => {
             console.log("result", res);
-      
             if(res.IsUpdate)
             {
               history.push("/Multiplay/lobby");

@@ -7,7 +7,6 @@ export default function Leaderboard() {
 
   useEffect(() => {
     socket.on("GetFinished", (res) => {
-      console.log(res);
       setUserList(res);
     });
     return () => 
