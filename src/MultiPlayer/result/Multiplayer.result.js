@@ -1,7 +1,12 @@
-import {useState} from 'react'
-export default function MultiplayerResult({userResult}) {
+import {useState} from 'react';
+import { Button } from "react-bootstrap";
+import { useHistory } from 'react-router-dom';
+
+
+export default function MultiplayerResult({isCreator,userResult}) {
 
     const[result] = useState(userResult);
+    const history = useHistory();
 
     const Result = result.map((data,index) => {
         return (
@@ -15,9 +20,22 @@ export default function MultiplayerResult({userResult}) {
          );
     }); 
 
+    const handelPlayAgain = () =>
+    {
+        history.push('/Multiplay/create');
+    }
+
     return (
         <div>
             { Result }
+            <div>
+                {isCreator?
+                <Button onClick={handelPlayAgain} >
+                    Play Again
+                </Button>
+                :
+                <span></span>}
+            </div>
         </div>
     )
 }
