@@ -16,23 +16,14 @@ export default function MultiplayerLobby({
   const [tempCreator, setTempCreator] = useState(false);
   const socket = useSocket();
   const history = useHistory();
+  const [url,setURL] = useState("Empty");
 
   useEffect(() => {
-    //   useEffect(() => {
-    //     socket.on("GetUser", (res) => {
-
-    //       console.log("cont stream",res);
-    //       res.filter((user) => {
-    //         if (user.UserId === socket.id) {
-    //           isCreator.current = user.Owner;
-    //           // setTemp(user.Owner);
-    //         }
-    //         return user;
-    //       });
-    //     });
-
+    
     socket.on("GetUser", (res) => {
       setUserList(res);
+
+      console.log(res);
       res.filter((user) => {
         if (user.UserId === socket.id) {
           setTempCreator(user.Owner);
@@ -50,20 +41,14 @@ export default function MultiplayerLobby({
       history.push("/Multiplay/play");
     });
 
+
+    setURL(window.location.origin.concat("/Multiplay/join/"+Gameid)  );
+
     return () => {
       socket.off("GetUser");
       socket.off("GetGame");
     };
-  }, [
-    HandleSelectedOperator,
-    HandleSetSize,
-    HandleSetTime,
-    history,
-    setColoumNumbers,
-    setRowNumbers,
-    socket,
-    userList,
-  ]);
+  }, [Gameid, HandleSelectedOperator, HandleSetSize, HandleSetTime, history, setColoumNumbers, setRowNumbers, socket, userList]);
 
   const users = userList.map((user, index) => {
     return (
@@ -92,7 +77,7 @@ export default function MultiplayerLobby({
         <label style={{ color: "white" }}>Userlist</label>
         {users}
       </div>
-      {tempCreator ? (
+      {tempCreator ? 
         <div>
           <label style={{ color: "white" }}>Game Code:</label>
           <input
@@ -102,13 +87,21 @@ export default function MultiplayerLobby({
             value={Gameid}
             disabled={true}
           />
+          <label style={{ color: "white" }}>Game Link:</label>
+          <input
+            placeholder="Game Code"
+            type="text"
+            name="GameCode"
+            value={url}
+            disabled={true}
+          />
           <div>
             <Button onClick={handleStart}>Start Game</Button>
           </div>
         </div>
-      ) : (
+       : 
         <span></span>
-      )}
+      }
     </div>
   );
 }

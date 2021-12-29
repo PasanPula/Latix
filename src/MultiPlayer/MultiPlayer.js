@@ -8,6 +8,7 @@ import MultiplayerJoin from "./Multiplayer.join";
 import MultiplayerLobby from "./Multiplayer.lobby";
 import MultiplayerPlay from "./play/Multiplayer.play";
 import MultiplayerResult from "./result/Multiplayer.result";
+import MultiplayerLinkJoin from "./link join/Multiplayer.Link";
 
 export default function MultiPlayer() {
   const [showCheckBox, setShowCheckBox] = useState(false);
@@ -162,7 +163,7 @@ export default function MultiPlayer() {
             />
           )}
         />
-        <Route
+        <Route exact
           path="/Multiplay/join"
           component={() => (
             <MultiplayerJoin name={name.current} setGameId={setGameId} />
@@ -213,6 +214,12 @@ export default function MultiPlayer() {
               isCreator={isCreator.current}
               userResult={userResult.current}
             />
+          )}
+        />
+        <Route exact
+          path="/Multiplay/join/:code"
+          component={() => (
+            <MultiplayerLinkJoin  name={name.current} setGameId={setGameId} setName={setName}   />
           )}
         />
 
