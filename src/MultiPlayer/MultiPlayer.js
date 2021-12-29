@@ -216,7 +216,7 @@ export default function MultiPlayer() {
             />
           )}
         />
-        <Route exact
+        <Route 
           path="/Multiplay/join/:code"
           component={() => (
             <MultiplayerLinkJoin  name={name.current} setGameId={setGameId} setName={setName}   />
