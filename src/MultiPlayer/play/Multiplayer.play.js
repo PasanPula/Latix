@@ -5,8 +5,8 @@ import Submitbutton from "../../Componenet/Game grid/components/Button";
 import CorrectIncorrectDisplay from "../../Componenet/crt.incrt.display/Correct.Incorrect.Display";
 import Leaderboard from "./Leaderboard";
 import { useSocket } from "../../Services/SocketProvider";
-import { Button } from "react-bootstrap";
 import { useHistory } from 'react-router-dom';
+import CreatorControls from  './CreatorControls';
 
 export default function MultiplayerPlay({
   SubmitAnswers,
@@ -38,22 +38,13 @@ export default function MultiplayerPlay({
 
     socket.on("GetResult",(res) => 
     {
-       setUserResult(res);
-        console.log("result",res);
+        setUserResult(res);
+        setShowRef.current.setShow(true);
         history.push('/Multiplay/result');
-
     })
   });
 
-   const endGame = () => 
-   {
-       socket.emit("GetResult",{
-        GameId: Gameid
-       },(res) => 
-       {
-           console.log("get result",res);
-       })
-   }
+  
 
   return (
     <div>
@@ -106,10 +97,8 @@ export default function MultiplayerPlay({
         )}
       </div>
 
-     {isCreator ?
-      <Button onClick={endGame} >
-          Next
-      </Button> : <span></span>}
+      <CreatorControls isCreator={isCreator} Gameid = {Gameid}/>
+
 
     </div>
   );

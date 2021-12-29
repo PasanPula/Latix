@@ -28,25 +28,9 @@ export default function MultiPlayer() {
   const socket = useSocket();
   const userResult = useRef();
 
-  const [temp, setTemp] = useState(false);
+ 
 
-  useEffect(() => {
-    socket.on("GetUser", (res) => {
-
-      console.log("cont stream",res);
-      res.filter((user) => {
-        if (user.UserId === socket.id) {
-          isCreator.current = user.Owner;
-          setTemp(user.Owner);
-        }
-        return user;
-      });
-    });
-//zXxCb
-    //  return () => {
-    //    cleanup
-    //  }
-  });
+  
 
   const setUserResult = (val) => {
     userResult.current = val;
@@ -193,7 +177,6 @@ export default function MultiPlayer() {
               HandleSelectedOperator={HandleSelectedOperator}
               HandleSetSize={HandleSetSize}
               HandleSetTime={HandleSetTime}
-              isCreator={temp}
               // isCreator={isCreator.current}
               name={name.current}
               Gameid={GameId.current}

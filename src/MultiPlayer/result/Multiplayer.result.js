@@ -7,11 +7,21 @@ export default function MultiplayerResult({ isCreator, userResult }) {
   const [result] = useState(userResult);
   const history = useHistory();
   const socket = useSocket();
+  const [tempCreator, setTempCreator] = useState(isCreator);
 
   useEffect(() => {
 
-    console.log("iscretaor ****",isCreator);
-    
+
+    socket.on("GetUser", (res) => {
+      res.filter((user) => {
+        if (user.UserId === socket.id) {
+          setTempCreator(user.Owner);
+        }
+        return user;
+      });
+    });
+
+
     if(!isCreator)
     {
         socket.on("UpdateGame", (res) => {
@@ -25,6 +35,7 @@ export default function MultiplayerResult({ isCreator, userResult }) {
 
     return () => {
         socket.off("UpdateGame");
+        socket.off("GetUser");
     }
   });
 
@@ -48,7 +59,7 @@ export default function MultiplayerResult({ isCreator, userResult }) {
     <div>
       {Result}
       <div>
-        {isCreator ? 
+        {tempCreator ? 
           <Button onClick={handelPlayAgain}>Play Again</Button>
          :
           <span></span>
