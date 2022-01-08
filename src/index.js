@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter,BrowserRouter } from "react-router-dom";
 import App from "./App";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Componenet/misc css/buttonStyle.css'
+import './Componenet/misc css/inputStyle.css'
 
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";

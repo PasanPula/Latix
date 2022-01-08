@@ -41,8 +41,6 @@ export default function MultiplayerLinkJoin({name,setName,setGameId}) {
 
   return (
     <div>
-      <label style={{ color: "white" }}>{code} </label>
-
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           placeholder="Name"
