@@ -9,6 +9,7 @@ export default function SinglePlayer()  {
 
 
 const name = useRef();
+const avatar = useRef();
 
 const Correct = useRef(0);
 const incorrect = useRef(0);
@@ -89,11 +90,16 @@ const SetnumberRangeEnd = (value) =>
   numberRangeEnd.current =value;
 }
 
+const Setavatar = (value) => 
+{
+  avatar.current = value;
+}
+
 
         return (
             <div>
             <Switch>
-            <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} />}/>
+            <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} OnChangeAvatar = {Setavatar} />}/>
             <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate HandleNumberGenarate={HandleNumberGenarate} name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
             <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay columnNumbers={columnNumbers.current} rowNumbers={rowNumbers.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} />} />
             <Redirect to="/SinglePlayer/Login" />  

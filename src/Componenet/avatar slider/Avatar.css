@@ -1,27 +1,15 @@
-/* body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
-    font-family: "Montserrat", sans-serif;
-  }
+
   
-  * {
-    box-sizing: border-box;
-  } */
-  
-  .carousel {
+  .avatar-Carousel {
     position: relative;
     width: 23rem;
     height: 23rem;
-    perspective: 500px;
+    perspective: 800px;
     transform-style: preserve-3d;
   }
   
-  .card-container {
+  .avatar-card-container {
+    border-radius: 3rem;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -30,30 +18,30 @@
     transition: all 0.3s ease-out;
   }
   
-  .card {
+  .avatar-card {
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    padding: 0.7rem;
     background-color: hsl(280deg, 40%, calc(100% - var(--abs-offset) * 50%));
     border-radius: 1rem;
     color: #9CA3AF;
     text-align: justify;
     transition: all 0.3s ease-out;
   }
-  .card h2 {
+  .avatar-card h2 {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     margin: 0 0 0.7em;
     color: #1F2937;
   }
-  .card p, .card h2 {
+  .avatar-card p, .avatar-card h2 {
     transition: all 0.3s ease-out;
-    opacity: var(--active);
+    opacity: 0.5;
   }
   
-  .nav {
-    color: rgb(0, 0, 0);
+  .avatar-nav {
+    color: #fff0f0;
     font-size: 5rem;
     position: absolute;
     display: flex;
@@ -64,12 +52,55 @@
     cursor: pointer;
     user-select: none;
     background: unset;
+    /* background-color: rgba(236, 236, 236, 0.781);
+    border-radius: 1rem; */
     border: unset;
+    margin: -5px;;
+    opacity: 0.8;
   }
-  .nav.left {
+  .avatar-nav.left {
     transform: translateX(-100%) translatey(-50%);
   }
-  .nav.right {
+  .avatar-nav.right {
     right: 0;
     transform: translateX(100%) translatey(-50%);
   }
+
+  .avatar-nav:hover
+  {
+    opacity: 1;
+  }
+
+.left-icon
+{
+  stroke-width: 0.3px;
+  stroke: rgb(0, 0, 0);
+  stroke-opacity: 0.5;
+}
+
+.right-icon
+{
+  stroke-width: 0.2px;
+  stroke: rgb(0, 0, 0);
+  stroke-opacity: 0.5;
+}
+
+.Login-header-avatar-select
+{
+  text-decoration: none;
+  color: #f1eff0;
+  font-size: 1.8rem;
+  font-family: 'Short Stack', cursive;
+  margin-bottom: 9px;
+}
+
+
+
+
+
+
+
+
+
+
+

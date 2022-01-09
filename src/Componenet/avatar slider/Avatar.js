@@ -1,46 +1,60 @@
 import React, {useState} from "react";
-import {TiChevronLeftOutline, TiChevronRightOutline} from 'react-icons/ti';
+import {TiChevronLeft, TiChevronRight} from 'react-icons/ti';
 import '../avatar slider/Avatar.css';
+// import logo from '../../Assets/Avatar list/300.jfif';
 
 const CARDS = 10;
 const MAX_VISIBILITY = 3;
 
-const Card = ({title, content}) => (
-  <div className='card'>
-    <h2>{title}</h2>
-    <p>{content}</p>
-  </div>
+const Card = ({id}) => (
+  // <div className='avatar-card'>
+  //   <h2>{title}</h2>
+  //   <p>{content}</p>
+  //   <img src={logo} alt="BigCo Inc. logo"/>
+  // </div>
+  <img className='avatar-card' src={`/Assets/Avatar list/${id}.jfif`} alt="BigCo Inc. logo"/>
 );
 
-const Carousel = ({children}) => {
-  const [active, setActive] = useState(2);
+const Carousel = ({children,OnChangeAvatar}) => {
+  const [active, setActive] = useState(8);
   const count = React.Children.count(children);
+
+  const OnleftChange = () => 
+  {
+    setActive(i => i - 1)
+    OnChangeAvatar(active);
+  }
+  const OnRightChange = () => 
+  {
+    setActive(i => i + 1)
+    OnChangeAvatar(active);
+  }
   
   return (
-    <div className='carousel'>
-      {active > 0 && <button className='nav left' onClick={() => setActive(i => i - 1)}><TiChevronLeftOutline/></button>}
+    <div className='avatar-Carousel'>
+      {active > 0 && <button className='avatar-nav left' onClick={OnleftChange}><TiChevronLeft className="left-icon"/></button>}
       {React.Children.map(children, (child, i) => (
-        <div className='card-container' style={{
+        <div key={i} className='avatar-card-container' style={{
             '--active': i === active ? 1 : 0,
             '--offset': (active - i) / 3,
             '--abs-offset': Math.abs(active - i) / 3,
-            'pointer-events': active === i ? 'auto' : 'none',
+            'pointerEvents': active === i ? 'auto' : 'none',
             'opacity': Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1',
             'display': Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
           }}>
           {child}
         </div>
       ))}
-      {active < count - 1 && <button className='nav right' onClick={() => setActive(i => i + 1)}><TiChevronRightOutline/></button>}
+      {active < count - 1 && <button className='avatar-nav right' onClick={OnRightChange}><TiChevronRight className="right-icon"/></button>}
     </div>
   );
 };
 
-const Avatar = () => (
+const Avatar = ({OnChangeAvatar}) => (
   <div className='app'>
-    <Carousel>
+    <Carousel OnChangeAvatar = {OnChangeAvatar}>
       {[...new Array(CARDS)].map((_, i) => (
-        <Card title={'Card ' + (i + 1)} content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'/>
+        <Card key={i} id={i+1} />
       ))}
     </Carousel>
   </div>

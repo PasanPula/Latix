@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import Avatar from "../Componenet/avatar slider/Avatar";
 
-function SinglePlayerLogin({ name, OnChangeName }) {
+function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
   const history = useHistory();
 
   const onSubmit = (e) => {
@@ -23,14 +23,28 @@ function SinglePlayerLogin({ name, OnChangeName }) {
       <div className="row mt-5 ">
         <div className="col-md-2"></div>
         <div className="col-md-8 ">
-          <div className="row ">
+          <div className="row mb-2">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
-              <Avatar />
+            <div className="Login-header-avatar-select">Select Your Avatar</div>
             </div>
             <div className="col-md-2"></div>
           </div>
-          <div className="row  mt-5">
+          <div className="row ">
+            <div className="col-md-2"></div>
+            <div className="col-md-8 d-flex justify-content-center ">
+              <Avatar OnChangeAvatar = {OnChangeAvatar}/>
+            </div>
+            <div className="col-md-2"></div>
+          </div>
+          <div className="row mt-5 ">
+            <div className="col-md-2"></div>
+            <div className="col-md-8 d-flex justify-content-center ">
+            <div className="Login-header-avatar-select">Enter Your Name:</div>
+            </div>
+            <div className="col-md-2"></div>
+          </div>
+          <div className="row  ">
             <div className="col-md-2"></div>
             <div className="col-md-8 ">
               <form onSubmit={onSubmit}>

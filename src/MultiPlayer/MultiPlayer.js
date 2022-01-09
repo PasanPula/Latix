@@ -11,8 +11,10 @@ import MultiplayerResult from "./result/Multiplayer.result";
 import MultiplayerLinkJoin from "./link join/Multiplayer.Link";
 
 export default function MultiPlayer() {
-  const [showCheckBox, setShowCheckBox] = useState(false);
+  const [showCheckBox, setShowCheckBox] = useState(false); 
   const name = useRef();
+  const avatar = useRef();
+
   const isJoinAsPlayer = useRef(true);
   const time = useRef(5);
   const size = useRef(5);
@@ -32,7 +34,6 @@ export default function MultiPlayer() {
  
 
   
-
   const setUserResult = (val) => {
     userResult.current = val;
   };
@@ -129,6 +130,13 @@ export default function MultiPlayer() {
     setShowCheckBox(bool);
   };
 
+    
+const Setavatar = (value) => 
+{
+  avatar.current = value;
+}
+
+
   return (
     <div>
       <Switch>
@@ -147,6 +155,7 @@ export default function MultiPlayer() {
               setName={setName}
               showCheckBox={showCheckBox}
               setIsJoinAsPlayer={setIsJoinAsPlayer}
+              Setavatar={Setavatar}
             />
           )}
         />
