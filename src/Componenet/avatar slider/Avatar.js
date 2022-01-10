@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {TiChevronLeft, TiChevronRight} from 'react-icons/ti';
 import '../avatar slider/Avatar.css';
-// import logo from '../../Assets/Avatar list/300.jfif';
 
 const CARDS = 10;
 const MAX_VISIBILITY = 3;
