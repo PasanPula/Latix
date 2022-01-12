@@ -1,0 +1,56 @@
+
+.join-title-1
+{
+    font-size: 2.8rem;
+    color: white;
+    display: block;
+    text-align: center;
+    font-family: 'Short Stack', cursive;
+}
+
+.join-textbox-text
+{
+    font-size: 2rem;
+    color: white;
+    display: block;
+    text-align: center;
+    font-family: 'Short Stack', cursive;
+}
+
+.join-input-field
+{
+    height: 60px;
+    width: 400px;
+    display: block;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Short Stack', cursive;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: #382b22;
+    border: 2px solid #b18597;
+    background: #fff0f0;
+    transition: border 0.3s ease;
+}
+
+.join-btn
+{
+    width: 300px;
+height: 60px;
+}
+
+.join-avatar
+{
+    width: 17rem;
+    height: 17rem;
+    border-radius: 3rem;
+    border: 6px solid #b18597;
+}
+
+
+.h-40
+{
+    height: 40%;
+}

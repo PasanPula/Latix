@@ -40,38 +40,38 @@ const Home = () => {
         </div>
       </div>
       <div className="row h-60 align-items-center">
-        <div className="col-md-3"></div>
-        <div className="col-md-6 ">
+        <div className="col-md-2"></div>
+        <div className="col-md-8 ">
           <div className="row">
-            <div className="col-md-12 d-flex justify-content-center">
+            <div className="col-md-6 d-flex justify-content-center">
               <Link to="/Singleplayer">
                 <button
                   variant="primary"
                   size="lg"
-                  className="btnGame learn-more home-button"
+                  className="home-button"
                 >
                   <IoIosPerson className="play-icon" />
+                  <br></br>
                   <div className="btn-text"> Single Play </div>
                 </button>
               </Link>
             </div>
-          </div>
-          <div className="row pt-4 ">
-            <div className="col-md-12 d-flex justify-content-center">
+            <div className="col-md-6 d-flex justify-content-center">
               <Link to="/Multiplay">
                 <button
                   variant="primary"
                   size="lg"
-                  className="btnGame learn-more home-button"
+                  className="home-button"
                 >
                   <IoIosPeople className="play-icon" />
+                  <br></br>
                   <div className="btn-text"> Multi Play </div>
                 </button>
               </Link>
             </div>
           </div>
         </div>
-        <div className="col-md-3"></div>
+        <div className="col-md-2"></div>
       </div>
       <div className="row bottom-bar  h-10">
         <div className="col-md-12 ">

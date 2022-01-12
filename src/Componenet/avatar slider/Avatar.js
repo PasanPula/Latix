@@ -11,7 +11,7 @@ const Card = ({id}) => (
   //   <p>{content}</p>
   //   <img src={logo} alt="BigCo Inc. logo"/>
   // </div>
-  <img className='avatar-card' src={`/Assets/Avatar list/${id}.jfif`} alt="BigCo Inc. logo"/>
+  <img className='avatar-card' src={`/Assets/Avatar list/${id}.jfif`} alt="avatar"/>
 );
 
 const Carousel = ({children,OnChangeAvatar}) => {
