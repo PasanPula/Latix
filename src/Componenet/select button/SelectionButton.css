@@ -7,20 +7,24 @@
 
   .radioPad__wrapper {
     cursor: pointer;
-    background: #353434;
-    color: #fff;
+    background: #fff0f0;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 5px;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
+    border-radius: 0.75em;
+    border: 3px solid #b18597;
+    font-family: 'Short Stack', cursive;
   }
   .radioPad__wrapper:active,
   .radioPad__wrapper--selected {
-    background: #14b155 !important;
+    background: #f9c4d2 !important;
   }
   .radioPad__wrapper:hover {
-    background: #15af50;
+    background: #f9c4d2;
   }
   .radioPad__radio {
     height: 20px;
