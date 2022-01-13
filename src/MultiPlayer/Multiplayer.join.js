@@ -62,7 +62,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
             <div className="col-md-12 d-flex justify-content-center">
               <img
                 className="join-avatar"
-                src={`/Assets/Avatar list/${avatar}.jfif`}
+                src={`/Assets/Avatar list/${avatar}.svg`}
                 alt="avatar"
               />
             </div>

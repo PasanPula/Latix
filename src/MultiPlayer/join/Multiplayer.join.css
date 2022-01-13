@@ -47,6 +47,8 @@ height: 60px;
     height: 17rem;
     border-radius: 3rem;
     border: 6px solid #b18597;
+    background-color: rgba(238, 238, 238, 0.295);
+    padding: 8px;
 }
 
 
