@@ -5,9 +5,10 @@ import { IoIosPeople, IoIosPerson } from "react-icons/io";
 
 const Home = () => {
   return (
+    <>
     <div className="container-fluid vh-100 ">
       <div className="row  h-10">
-        <div style={{ backgroundColor: "red" }} className="col-md-12">
+        <div style={{ backgroundColor: "red" }} className="col-md-12 position-front">
           logo
         </div>
       </div>
@@ -36,7 +37,7 @@ const Home = () => {
                 <div className="beak-bottom"></div>
             </div>
           </div>
-          <div className="Welcome-text">Welcome to Latix </div>
+          <div className="Welcome-text position-front">Welcome to Latix </div>
         </div>
       </div>
       <div className="row h-60 align-items-center">
@@ -73,7 +74,7 @@ const Home = () => {
         </div>
         <div className="col-md-2"></div>
       </div>
-      <div className="row bottom-bar  h-10">
+      <div className="row bottom-bar position-front h-10">
         <div className="col-md-12 ">
           <div className="row justify-content-center mt-2">
             <div className="col-md-4 d-flex justify-content-center bottom-text">
@@ -94,6 +95,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

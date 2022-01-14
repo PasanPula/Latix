@@ -15,7 +15,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
 
   return (
     <div className="container-fluid">
-      <div style={{ backgroundColor: "red" }} className="row ">
+      <div style={{ backgroundColor: "red" }} className="row position-front">
         <div className="col-md-12">
           <h3>LOGO</h3>
         </div>
@@ -26,7 +26,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
           <div className="row mb-2">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
-            <div className="Login-header-avatar-select">Select Your Avatar</div>
+            <div className="Login-header-avatar-select position-front">Select Your Avatar</div>
             </div>
             <div className="col-md-2"></div>
           </div>
@@ -40,7 +40,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
           <div className="row mt-5 ">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
-            <div className="Login-header-avatar-select">Enter Your Name:</div>
+            <div className="Login-header-avatar-select position-front">Enter Your Name:</div>
             </div>
             <div className="col-md-2"></div>
           </div>
@@ -48,7 +48,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
             <div className="col-md-2"></div>
             <div className="col-md-8 ">
               <form onSubmit={onSubmit}>
-                <div className="row pt-2 justify-content-center">
+                <div className="row pt-2 justify-content-center position-front">
                   <input
                     className="input-field"
                     placeholder="Name"
@@ -60,7 +60,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
                   />
                 </div>
                 <div className="row pt-3 justify-content-center">
-                  <button className="btnGame learn-more">Login</button>
+                  <button className="btnGame learn-more position-front">Login</button>
                 </div>
               </form>
             </div>

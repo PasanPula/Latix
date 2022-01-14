@@ -1,17 +1,18 @@
 
-  .wrap {
-    width: 160px;
+  /* .wrap { */
+    /* width: 300px; */
     /* margin: auto; */
     /* position: absolute; */
     /* top: 50%;
     left: 50%; */
     /* transform: translate(-50%, -50%); */
-    border-radius: 4px;
-    background-color: #ffffff;
-    box-shadow: 0 1px 2px 0 #c9ced1;
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
+    /* border-radius: 8rem; */
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 1px 2px 0 #c9ced1; */
+    /* padding: 1.25rem; */
+    /* margin-bottom: 1.25rem;
+    text-align: center;
+  } */
   
   /* ------------------------------ COUNTER BEGIN ------------------------------ */
   .counter__increment, .counter__decrement {
@@ -20,12 +21,14 @@
   
   .counter {
     position: relative;
-    width: 7.5rem;
-    height: 1.875rem;
-    border: 1px solid #2f3640;
-    border-radius: 3px;
+    width: 14.5rem;
+    height: 4.875rem;
+    border: 2px solid #b18597;
+    border-radius: 8px;
     text-align: center;
     overflow: hidden;
+    margin-left: 24%;
+    
   }
   .counter__input {
     border: none;
@@ -33,27 +36,30 @@
     margin: 0 auto;
     text-align: center;
     color: #2f3640;
-    font-size: 0.875rem;
-    background-color: transparent;
+    font-size: 1.8rem;
+    /* background-color: transparent; */
+    background-color: #fff0f0;
+    font-family: 'Short Stack', cursive;
   }
   .counter__increment, .counter__decrement {
     position: absolute;
     top: 0;
-    font-size: 1rem;
+    font-size: 1.8rem;
+    font-family: 'Short Stack', cursive;
     line-height: 1.5625rem;
-    /* height: 1.875rem; */
-    width: 2.1875rem;
+    height: 4.675rem;
+    width: 3.79rem;
     font-weight: normal;
     color: #2f3640;
     text-decoration: none;
     border: none;
-    /* border: 0;
-    text-align: center; */
+    padding: 0;
+    background-color: #f8dcdc;
   }
   .counter__increment:hover, .counter__increment:active, .counter__decrement:hover, .counter__decrement:active {
     color: #2f3640;
     text-decoration: none;
-    background-color: #20bd2d;
+    background-color: #f9c4d2;
   }
   .counter__increment {
     right: 0;

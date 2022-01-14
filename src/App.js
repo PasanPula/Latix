@@ -2,11 +2,12 @@ import Home from "./Home/Home"
 import {Switch, Route} from 'react-router-dom';
 import MultiPlayer from "./MultiPlayer/MultiPlayer";
 import SinglePlayer from './SinglePlayer/SinglePlayer';
+import Background from "./Componenet/background/background";
 
 function App() {
   return (
-      <div className="background">
-        
+      <div>
+        <Background />
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/SinglePlayer" component={SinglePlayer}/>

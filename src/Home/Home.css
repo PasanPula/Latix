@@ -1,11 +1,16 @@
 
-.background{
+/* .background{
   width: 100vw;
   height: 100vh;
-  /* background-image: linear-gradient(to top right, rgba(0, 195, 255, 0.719), rgba(195, 0, 255, 0.637)); */
+  background-image: linear-gradient(to top right, rgba(0, 195, 255, 0.719), rgba(195, 0, 255, 0.637));
   background-image:url("./img/BG001.svg") ;
   background-repeat: no-repeat; 
     background-size:cover;  
+} */
+
+.position-front
+{
+  position: relative;
 }
 
 .h-10
@@ -342,3 +347,19 @@
     transform: rotateY(0deg);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -29,13 +29,13 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
 
     <div className="container-fluid vh-100">
       <div className="row  h-10">
-        <div className="col-md-12" style={{ backgroundColor: "red" }}>
+        <div className="col-md-12 position-front" style={{ backgroundColor: "red" }}>
           Logo
         </div>
       </div>
       <div className="row align-items-end h-20">
         <div className="col-md-12">
-          <label className="mode-title"> What Do You Want To Do? </label>
+          <label className="mode-title position-front"> What Do You Want To Do? </label>
         </div>
       </div>
       <div className="row h-60 align-items-center">

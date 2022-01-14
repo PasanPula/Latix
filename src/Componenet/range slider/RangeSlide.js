@@ -5,7 +5,7 @@ import '../range slider/RangeSlide.css';
 const SliderComponent = ({state,setState,min,max}) => (
     <div className="range-container">
     <input type="range" onChange={e => setState(e.target.value)} value={state} name="range" id="range" min={min} max={max} />
-    <label htmlFor="range">{state}</label>
+    <label className='range-label' htmlFor="range">{state}</label>
   </div>
 );
 

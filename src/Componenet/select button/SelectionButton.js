@@ -1,6 +1,6 @@
 import "../select button/SelectionButton.css";
 
-export default function SelectionButton({valueList,pickedValue,setPickvalue}) {
+export default function SelectionButton({valueList,pickedValue,setPickvalue,radioPadStyle,radioStyle,radioWrapper,radioSelected}) {
 
 
   const handleRadios = (e) => {
@@ -13,24 +13,25 @@ export default function SelectionButton({valueList,pickedValue,setPickvalue}) {
             return (
               <div
                 key={key}
-                className="radioPad"
+                className={radioPadStyle}
               >
                   <label
                     className={
                       isCurrent ?
-                        'radioPad__wrapper radioPad__wrapper--selected' :
-                        'radioPad__wrapper'
+                        radioSelected :
+                        radioWrapper
                       }
-                  >
+                  > 
                     <input
-                      className="radioPad__radio"
+                      className={radioStyle}
                       type="radio"
-                      name="coffeeTypes"
+                      name="Types"
                       id={loan}
                       value={loan}
                       onChange={handleRadios}
                     />
-                    {loan==="*"?"X":loan}
+                    {loan==="*"?"X":loan==="/"?"÷":loan}
+                    
                   </label>
               </div>
             )

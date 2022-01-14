@@ -84,19 +84,22 @@ export default function MultiPlayerCreate({
       <div className="row h-10" style={{ backgroundColor: "red" }}>
         <div className="col-md-12">Logo</div>
       </div>
-      <div className="row">
+      <div className="row h-90">
         <div className="col-md-12">
-          <div className="row">
-            <div className="col-md-6">
+          <div className="row align-items-center h-40">
+            <div className="col-md-6 text-center">
             <h2 style={{color:'white'}} >Select operator</h2>
               <SelectionButton
                 valueList={operators}
                 pickedValue={operator}
                 setPickvalue={HandleSetOperator}
-                className="create-operator"
+                radioPadStyle="multi-create-radioPad"
+                radioStyle="multi-create-radioPad__radio"
+                radioWrapper="multi-create-radioPad__wrapper" 
+                radioSelected="multi-create-radioPad__wrapper multi-create-radioPad__wrapper--selected"
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 text-center">
             <h2 style={{color:'white'}} >Set time : minutes</h2>
               <ValueButton
                 rangeEnd={10}
@@ -106,8 +109,8 @@ export default function MultiPlayerCreate({
               />
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6">
+          <div className="row align-items-center h-40">
+            <div className="col-md-6 text-center">
             <h2 style={{color:'white'}} >Set Grid size</h2>
               <ValueButton
                 rangeEnd={10}
@@ -116,7 +119,7 @@ export default function MultiPlayerCreate({
                 HandleValue={HandlesetSize}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6  text-center">
             <h2 style={{color:'white'}} >Set Number range</h2>
               <h4 style={{ color: "white" }}>Start</h4>
               {rangeStartComponent}
@@ -125,8 +128,8 @@ export default function MultiPlayerCreate({
             </div>
             
           </div>
-          <div className="row">
-            <div className="col-md-12 ">
+          <div className="row align-items-center h-10">
+            <div className="col-md-12  text-center">
             <button onClick={HandleCreateGame} >Create game</button>
             </div>
           </div>

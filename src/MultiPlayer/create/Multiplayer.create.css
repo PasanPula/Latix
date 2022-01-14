@@ -3,6 +3,19 @@
     height: 80%;
 }
 
+.h-90
+{
+  height: 90%;
+}
+.h-40
+{
+  height: 40%;
+}
+.h-10
+{
+  height: 10%;
+}
+
 .create-operator
 {
 font-size: 8rem !important;
@@ -10,3 +23,46 @@ font-family: 'Short Stack', cursive;
 font-weight: bold;
 
 }
+
+.multi-create-center
+{
+  text-align: center;
+}
+
+
+.multi-create-radioPad {
+    position: relative;
+    display: inline;
+    height: 10px;
+  }
+
+  .multi-create-radioPad__wrapper {
+    width: 95px;
+    cursor: pointer;
+    background: #fff0f0;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 5px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 0.75em;
+    border: 3px solid #b18597;
+    font-family: 'Short Stack', cursive;
+  }
+  .multi-create-radioPad__wrapper:active,
+  .multi-create-radioPad__wrapper--selected {
+    background: #f9c4d2 !important;
+  }
+  .multi-create-radioPad__wrapper:hover {
+    background: #f9c4d2;
+  }
+  .multi-create-radioPad__radio {
+    height: 20px;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+  

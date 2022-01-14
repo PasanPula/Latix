@@ -28,7 +28,7 @@ export default function ValueButton({value,rangeEnd,rangeStart,HandleValue}) {
 {/* <div className="value">{value}Minutes</div>
 <input type="range" onChange={HanleSli} min="0" max="10" step="1" value={value}/> */}
 
-    <div className="wrap">
+    {/* <div className="wrap"> */}
       <div className="counter">
         <input
           className="counter__input"
@@ -45,7 +45,7 @@ export default function ValueButton({value,rangeEnd,rangeStart,HandleValue}) {
           &ndash;
         </button>
       </div>
-    </div>
+    {/* </div> */}
 
     </>
   );

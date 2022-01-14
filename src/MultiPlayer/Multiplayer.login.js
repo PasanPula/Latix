@@ -71,7 +71,7 @@ export default function MultiplayerLogin({
     //     </div>
     // </div>
     <div className="container-fluid">
-      <div style={{ backgroundColor: "red" }} className="row ">
+      <div style={{ backgroundColor: "red" }} className="row position-front">
         <div className="col-md-12">
           <h3>LOGO</h3>
         </div>
@@ -82,7 +82,7 @@ export default function MultiplayerLogin({
           <div className="row mb-2">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
-              <div className="Login-header-avatar-select">
+              <div className="Login-header-avatar-select position-front">
                 Select Your Avatar
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function MultiplayerLogin({
           <div className="row mt-5 ">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
-              <div className="Login-header-avatar-select">Enter Your Name:</div>
+              <div className="Login-header-avatar-select position-front">Enter Your Name:</div>
             </div>
             <div className="col-md-2"></div>
           </div>
@@ -106,7 +106,7 @@ export default function MultiplayerLogin({
             <div className="col-md-2"></div>
             <div className="col-md-8 ">
               <form onSubmit={handleSubmit}>
-                <div className="row pt-2 justify-content-center">
+                <div className="row pt-2 justify-content-center position-front">
                   <input
                     className="input-field"
                     placeholder="Name"
@@ -119,9 +119,9 @@ export default function MultiplayerLogin({
                 </div>
                 <div className="row pt-3 justify-content-center">
                   {showCheckBox ? (
-                  <div className="col-md-12 d-flex justify-content-center">
-                    <input className="login-checkbox-multiplayer" type="checkbox" id="check" name="check" checked={checked} onChange={HandleCheckbox}/>
-                    <label className="login-checkbox-label-multiplayer" htmlFor="check">
+                  <div className="col-md-12 d-flex justify-content-center position-front">
+                    <input className="login-checkbox-multiplayer " type="checkbox" id="check" name="check" checked={checked} onChange={HandleCheckbox}/>
+                    <label className="login-checkbox-label-multiplayer position-front" htmlFor="check">
                       <span></span>Join As a player
                     </label>
                   </div>
