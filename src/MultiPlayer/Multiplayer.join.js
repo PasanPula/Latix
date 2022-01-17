@@ -18,7 +18,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
       {
         UserName: name,
         GameId: gameCode,
-        Avatar: 3,
+        Avatar: avatar,
       },
       (res) => {
         if (res.Status === 0) {

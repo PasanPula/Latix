@@ -6,8 +6,8 @@ import Background from "./Componenet/background/background";
 
 function App() {
   return (
-      <div>
-        <Background />
+      <div style={{backgroundColor:"black"}}>
+        {/* <Background /> */}
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/SinglePlayer" component={SinglePlayer}/>

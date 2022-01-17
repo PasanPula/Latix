@@ -27,7 +27,7 @@
     border-radius: 8px;
     text-align: center;
     overflow: hidden;
-    margin-left: 24%;
+    margin: auto;
     
   }
   .counter__input {
@@ -74,57 +74,3 @@
   }
   
   /* ------------------------------ COUNTER END ------------------------------ */
-
-
-  /* @font-face {
-    font-family: 'Dosis';
-    font-style: normal;
-    font-weight: 700;
-    src: url(https://fonts.gstatic.com/s/dosis/v22/HhyJU5sn9vOmLxNkIwRSjTVNWLEJ0LQl2xMB.ttf) format('truetype');
-  }
-  body {
-    font-family: "Dosis", Helvetica, Arial, sans-serif;
-    background: #ecf0f1;
-    color: #34495e;
-    padding-top: 40px;
-    text-shadow: white 1px 1px 1px;
-  } */
-  /* .value {
-    border-bottom: 4px dashed #bdc3c7;
-    text-align: center;
-    font-weight: bold;
-    font-size: 3em;
-    width: 150px;
-    height: 50px;
-    line-height: 60px;
-    margin: 40px auto;
-    letter-spacing: -0.07em;
-    text-shadow: white 2px 2px 2px;
-  }
-  input[type="range"] {
-    display: block;
-    -webkit-appearance: none;
-    background-color: #bdc3c7;
-    width: 150px;
-    height: 5px;
-    border-radius: 5px;
-    margin: 0 auto;
-    outline: 0;
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: #e74c3c;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid white;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-  }
-  ​ input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: white;
-    border: 2px solid #e74c3c;
-  }
-  input[type="range"]::-webkit-slider-thumb:active {
-    transform: scale(1.6);
-  } */

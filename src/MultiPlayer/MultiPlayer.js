@@ -61,7 +61,7 @@ export default function MultiPlayer() {
       "CreateGame",
       {
         UserName: name.current,
-        Avatar: 1,
+        Avatar: avatar.current,
         GameName: name.current.concat((Math.floor(Math.random() * 10000) + 10000).toString().substring(1)+"'s room"),
         GameDetails: {
           Column: coloumNumbers.current,
