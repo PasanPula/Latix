@@ -5,6 +5,7 @@ import "./lobby/Multiplayer.Lobby.css";
 import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import Leaderboard from "../Componenet/leaderboard/leaderboard";
 import CopyButton from "../Componenet/copy button/copy.button";
+import { ReactComponent as Countdown } from "./lobby/countdown/countdown.svg";
 
 export default function MultiplayerLobby({
   setColoumNumbers,
@@ -17,6 +18,7 @@ export default function MultiplayerLobby({
 }) {
   const [userList, setUserList] = useState([]);
   const [tempCreator, setTempCreator] = useState(false);
+  const [showCountdown, setshowCountdown] = useState("lobby-countdown");
   const socket = useSocket();
   const history = useHistory();
   const [url, setURL] = useState("Empty");
@@ -40,7 +42,13 @@ export default function MultiplayerLobby({
       HandleSelectedOperator(res.Operator);
       HandleSetSize(parseInt(res.Size));
       HandleSetTime(parseInt(res.Time));
-      history.push("/Multiplay/play");
+
+      setshowCountdown("lobby-countdown show-countdown");
+
+      setTimeout(function () {
+        setshowCountdown("lobby-countdown");
+        history.push("/Multiplay/play");
+      }, 4500);
     });
 
     setURL(window.location.origin.concat("/Multiplay/join/" + Gameid));
@@ -48,6 +56,7 @@ export default function MultiplayerLobby({
     return () => {
       socket.off("GetUser");
       socket.off("GetGame");
+      setshowCountdown("lobby-countdown");
     };
   }, [
     Gameid,
@@ -61,8 +70,6 @@ export default function MultiplayerLobby({
     userList,
   ]);
 
-
-
   const handleStart = () => {
     socket.emit(
       "GetGame",
@@ -73,6 +80,10 @@ export default function MultiplayerLobby({
         // console.log(res);
       }
     );
+  };
+
+  const randomKey = () => {
+    return Math.floor(Math.random() * 10000) + 10000;
   };
 
   return (
@@ -107,59 +118,68 @@ export default function MultiplayerLobby({
     //     <span></span>
     //   }
     // </div>
-    <div className="container-fluid vh-100">
-      <div className="row vh-10 " style={{ backgroundColor: "red" }}>
-        <div className="col-md-12">
-          <h3>LOGO</h3>
-        </div>
+    <>
+      <div key={randomKey()} className={showCountdown}>
+        <Countdown className="lobby-countdown-img" />
       </div>
-      <div className="row">
-        <div className="col-md-2 text-center ">
-          <button className="home-navigate-button">
-            <IoChevronBackCircleSharp />
-          </button>
+      <div className="container-fluid vh-100 ">
+        <div className="row vh-10 " style={{ backgroundColor: "red" }}>
+          <div className="col-md-12">
+            <h3>LOGO</h3>
+          </div>
         </div>
-        <div className="col-md-8 "></div>
-        <div className="col-md-2 "></div>
-      </div>
-
-
-      <div className="row vh-70 align-items-center">
-        <div className="col-md-6 text-center">
         <div className="row">
-        <div className="col-md-12 text-center ">
-        <label className="lobby-title">Share with friends</label>
-        </div>
-      </div>
-          <div className="row align-items-center">
-            <div className="col-md-12 text-center">
-              <label className="lobby-label">Game Link:</label>
-              <CopyButton value={url} />
-            </div>
+          <div className="col-md-2 text-center ">
+            <button className="home-navigate-button">
+              <IoChevronBackCircleSharp />
+            </button>
           </div>
+          <div className="col-md-8 "></div>
+          <div className="col-md-2 "></div>
+        </div>
+        <div className="row vh-70 align-items-center">
+          <div className="col-md-6 text-center">
+            <div className="row">
+              <div className="col-md-12 text-center ">
+                <label className="lobby-title">Share with friends</label>
+              </div>
+            </div>
+            <div className="row align-items-center">
+              <div className="col-md-12 text-center">
+                <label className="lobby-label">Game Link:</label>
+                <CopyButton value={url} />
+              </div>
+            </div>
 
-          <div className="row align-items-center">
-            <div className="col-md-12 text-center">
-              <label className="lobby-label">Game Code:</label>
-              <CopyButton value={Gameid} />
+            <div className="row align-items-center">
+              <div className="col-md-12 text-center">
+                <label className="lobby-label">Game Code:</label>
+                <CopyButton value={Gameid} />
+              </div>
             </div>
           </div>
+          <div className="col-md-6">
+            <Leaderboard userList={userList} />
+          </div>
         </div>
-        <div className="col-md-6">
-          <Leaderboard userList={userList} />
+        <div className="row justify-content-center">
+          <div className="col-md-2  text-center">
+            <button className="home-navigate-button">
+              <IoHome />
+            </button>
+          </div>
+          <div className="col-md-8 text-center">
+            {tempCreator ? (
+              <button className="lobby-start-game" onClick={handleStart}>
+                Start Game
+              </button>
+            ) : (
+              <label className="lobby-label">Waiting for Start</label>
+            )}
+          </div>
+          <div className="col-md-2  text-center"> </div>
         </div>
       </div>
-      <div className="row justify-content-center">
-        <div className="col-md-2  text-center">
-          <button className="home-navigate-button">
-            <IoHome />
-          </button>
-        </div>
-        <div className="col-md-8 text-center">
-        <button className="lobby-start-game"  onClick={handleStart}>Start Game</button>
-        </div>
-        <div className="col-md-2  text-center"> </div>
-      </div>
-    </div>
+    </>
   );
 }

@@ -39,7 +39,11 @@ export default function MultiplayerPlay({
     socket.on("GetResult",(res) => 
     {
         setUserResult(res);
-        setShowRef.current.setShow(true);
+
+        if(setShowRef.current!== null)
+        {
+          setShowRef.current.setShow(true);
+        }
         history.push('/Multiplay/result');
     })
   });

@@ -127,7 +127,7 @@ export default function MultiplayerLogin({
                   name="name"
                   value={userName}
                   onChange={setName}
-                  maxlength="15"
+                  maxLength="15"
                   required
                 />
               </div>

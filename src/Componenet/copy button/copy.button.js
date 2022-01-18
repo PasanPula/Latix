@@ -19,7 +19,7 @@ export default function CopyButton({value}) {
 
   return (
       <div className={activeClass}>
-        <input type="text" ref={inputRef} className="text copy-button-text" value={value}/>
+        <input type="text" readOnly ref={inputRef} className="text copy-button-text" value={value}/>
         <button onClick={handleClick}>
           <i> <FaClone /></i>
         </button>
