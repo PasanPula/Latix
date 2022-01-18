@@ -157,18 +157,8 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
         <div className="flex-box">
           <div className="flex-box">{operator}{row1}</div> 
            {rows}
-            {/* {button} */}
         </div>
       </div>
-      {/* <div className="Grid2">
-            <div className="Fixed">
-                <div>Timer</div>
-                <div>Start Button</div>
-                <div> <Button onshow={onshow}/></div>
-                <div>Correct {(show)?Correct_:0}</div>
-                <div>Wrong {(show)?incorrect_:0}</div>
-              </div>
-        </div> */}
     </>
     )
 }

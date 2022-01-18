@@ -36,9 +36,7 @@ function Grid({columnNumbers,rowNumbers, resultValueCountRef,setCorrectCount ,se
    
 
     return (
-        <div>
             < Generate ref={setShowref}  resultValueCountRef={ resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} MathOperator={MathOperator} gridSize ={gridSize} rowNumbers={rowNumbers} coloumNumbers={columnNumbers}/>
-        </div>
     )
 }
 

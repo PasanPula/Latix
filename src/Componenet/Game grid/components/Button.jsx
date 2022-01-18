@@ -10,7 +10,7 @@ function Button({onshow})
     }
 
     // className="button"
-  return  <button  type="submit" onClick={chnage}>Submit Answers</button>
+  return  <button className="Grid-submit-button" type="submit" onClick={chnage}>Submit Answers</button>
 }
 
 export default react.memo(Button);

@@ -3,10 +3,11 @@ import Timer from "../../Componenet/Timer/Timer";
 import Grid from "../../Componenet/Game grid/grid";
 import Submitbutton from "../../Componenet/Game grid/components/Button";
 import CorrectIncorrectDisplay from "../../Componenet/crt.incrt.display/Correct.Incorrect.Display";
-import Leaderboard from "./Leaderboard";
+import FinishList from "./Finish List/FinishList";
 import { useSocket } from "../../Services/SocketProvider";
-import { useHistory } from 'react-router-dom';
-import CreatorControls from  './CreatorControls';
+import { useHistory } from "react-router-dom";
+import CreatorControls from "./CreatorControls";
+import './Multiplayer.play.css';
 
 export default function MultiplayerPlay({
   SubmitAnswers,
@@ -37,24 +38,78 @@ export default function MultiplayerPlay({
       setShowRef.current.setShow(true);
     }
 
-    socket.on("GetResult",(res) => 
-    {
-        setUserResult(res);
+    socket.on("GetResult", (res) => {
+      setUserResult(res);
 
-        if(setShowRef.current!== null)
-        {
-          setShowRef.current.setShow(true);
-        }
-        history.push('/Multiplay/result');
-    })
+      if (setShowRef.current !== null) {
+        setShowRef.current.setShow(true);
+      }
+      history.push("/Multiplay/result");
+    });
   });
 
-  
-
   return (
-    <div>
-      <div className="Container">
-        <Grid
+    // <div>
+    //   <div className="Container">
+    //     <Grid
+    //       ref={setShowRef}
+    //       resultValueCountRef={resultValueCountRef}
+    //       setCorrectCount={setCorrectCount}
+    //       setinCorrectCount={setinCorrectCount}
+    //       gridSize={gridSize}
+    //       columnNumbers={columnNumbers}
+    //       rowNumbers={rowNumbers}
+    //       MathOperator={operator}
+    //     />
+
+    //     <div className="Grid2">
+    //       <div className="Fixed">
+    //         <div>
+    //           <Timer
+    //             isJoinAsPlayer={isJoinAsPlayer}
+    //             SubmitAnswers={SubmitAnswers}
+    //             setTimeSpent={setTimeSpent}
+    //             showValRef={isJoinAsPlayer ? setShowRef : false}
+    //             initMinute={time}
+    //           />
+    //         </div>
+
+    //         {isJoinAsPlayer ? (
+    //           <div>
+    //             <div className="bottom">
+    //               <Submitbutton
+    //                 onshow={() => {
+    //                   setShowRef.current.setShow(true);
+    //                 }}
+    //               />
+    //             </div>
+    //           </div>
+    //         ) : (
+    //           <span></span>
+    //         )}
+
+    //         <Leaderboard />
+    //       </div>
+    //     </div>
+
+    //     {(isJoinAsPlayer && isJoinAsPlayer) ? (
+    //       <CorrectIncorrectDisplay ref={resultValueCountRef} />
+    //     ) : (
+    //       <span></span>
+    //     )}
+    //   </div>
+
+    //   <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
+
+    // </div>
+
+    <div className="container-fluid vh-100">
+      <div className="row vh-5 " style={{ backgroundColor: "red" }}>
+        <div className="col-md-12">Logo</div>
+      </div>
+      <div className="row vh-80 align-items-center">
+        <div className="col-md-9 ">
+          <Grid
           ref={setShowRef}
           resultValueCountRef={resultValueCountRef}
           setCorrectCount={setCorrectCount}
@@ -64,11 +119,11 @@ export default function MultiplayerPlay({
           rowNumbers={rowNumbers}
           MathOperator={operator}
         />
-
-        <div className="Grid2">
-          <div className="Fixed">
-            <div>
-              <Timer
+        </div>
+        <div className=" pe-3 col-md-3  text-center ">
+          <div className="row align-items-center">
+            <div className="col-md-12 multi-play-timer">
+            <Timer
                 isJoinAsPlayer={isJoinAsPlayer}
                 SubmitAnswers={SubmitAnswers}
                 setTimeSpent={setTimeSpent}
@@ -76,7 +131,14 @@ export default function MultiplayerPlay({
                 initMinute={time}
               />
             </div>
-
+          </div>
+          <div className="row ">
+            <div className=" col-md-12 gx-0">
+            <FinishList />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 mt-5">
             {isJoinAsPlayer ? (
               <div>
                 <div className="bottom">
@@ -90,21 +152,13 @@ export default function MultiplayerPlay({
             ) : (
               <span></span>
             )}
-
-            <Leaderboard />
+            </div>
           </div>
         </div>
-
-        {(isJoinAsPlayer && isJoinAsPlayer) ? (
-          <CorrectIncorrectDisplay ref={resultValueCountRef} />
-        ) : (
-          <span></span>
-        )}
       </div>
-
-      <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
-
-
+      <div className="row">
+        <div className="col-md-12"></div>
+      </div>
     </div>
   );
 }

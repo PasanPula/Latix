@@ -3,7 +3,7 @@ import "./leaderboard.css";
 import { IoCreate } from "react-icons/io5";
 
 
-export default function Leaderboard({ userList }) {
+export default function Leaderboard({ userList,title }) {
   const users = userList.map((user, index) => {
     return (
       <li key={index}>

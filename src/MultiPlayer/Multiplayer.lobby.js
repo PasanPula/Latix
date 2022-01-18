@@ -153,7 +153,6 @@ export default function MultiplayerLobby({
                 <CopyButton value={url} />
               </div>
             </div>
-
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
                 <label className="lobby-label">Game Code:</label>
