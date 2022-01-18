@@ -15,6 +15,7 @@ export default function MultiplayerLobby({
   HandleSetTime,
   name,
   Gameid,
+  setisCreator,
 }) {
   const [userList, setUserList] = useState([]);
   const [tempCreator, setTempCreator] = useState(false);
@@ -26,11 +27,13 @@ export default function MultiplayerLobby({
   useEffect(() => {
     socket.on("GetUser", (res) => {
       setUserList(res);
-
-      console.log(res);
+      console.log("lobby", res);
       res.filter((user) => {
         if (user.UserId === socket.id) {
-          setTempCreator(user.Owner);
+          if (user.Owner) {
+            setisCreator(true);
+            setTempCreator(user.Owner);
+          }
         }
         return user;
       });
@@ -48,7 +51,7 @@ export default function MultiplayerLobby({
       setTimeout(function () {
         setshowCountdown("lobby-countdown");
         history.push("/Multiplay/play");
-      }, 4500);
+      }, 4400);
     });
 
     setURL(window.location.origin.concat("/Multiplay/join/" + Gameid));

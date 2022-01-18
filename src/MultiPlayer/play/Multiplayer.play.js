@@ -12,6 +12,7 @@ export default function MultiplayerPlay({
   SubmitAnswers,
   isJoinAsPlayer,
   isCreator,
+  setisCreator,
   name,
   Gameid,
   setTimeSpent,
@@ -101,7 +102,7 @@ export default function MultiplayerPlay({
         )}
       </div>
 
-      <CreatorControls isCreator={isCreator} Gameid = {Gameid}/>
+      <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
 
 
     </div>

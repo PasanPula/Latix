@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 import { useSocket } from "../../Services/SocketProvider";
 import { Button } from "react-bootstrap";
 
-export default function CreatorControls({ isCreator,Gameid }) {
+export default function CreatorControls({ isCreator,setisCreator,Gameid }) {
   const socket = useSocket();
   const [tempCreator, setTempCreator] = useState(isCreator);
 
   useEffect(() => {
+
+    console.log("isCreator",isCreator);
+
     socket.on("GetUser", (res) => {
-      console.log("cont stream", res);
       res.filter((user) => {
         if (user.UserId === socket.id) {
+          if (user.Owner) {
+          setisCreator(true);
           setTempCreator(user.Owner);
+          }
         }
         return user;
       });

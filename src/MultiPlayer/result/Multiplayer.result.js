@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useSocket } from "../../Services/SocketProvider";
 
-export default function MultiplayerResult({ isCreator, userResult }) {
+export default function MultiplayerResult({ isCreator,setisCreator, userResult }) {
   const [result] = useState(userResult);
   const history = useHistory();
   const socket = useSocket();
@@ -15,7 +15,10 @@ export default function MultiplayerResult({ isCreator, userResult }) {
     socket.on("GetUser", (res) => {
       res.filter((user) => {
         if (user.UserId === socket.id) {
+          if (user.Owner) {
+          setisCreator(true);
           setTempCreator(user.Owner);
+          }
         }
         return user;
       });

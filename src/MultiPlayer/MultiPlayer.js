@@ -56,7 +56,6 @@ export default function MultiPlayer() {
   };
 
   const CreateGame = (history) => {
-    console.log(name.current.concat((Math.floor(Math.random() * 10000) + 10000).toString().substring(1)+"'s room"))
     socket.emit(
       "CreateGame",
       {
@@ -137,6 +136,10 @@ const Setavatar = (value) =>
   avatar.current = value;
 }
 
+const setisCreator = (value) => 
+{
+  isCreator.current = value;
+}
 
   return (
     <div>
@@ -191,6 +194,7 @@ const Setavatar = (value) =>
               // isCreator={isCreator.current}
               name={name.current}
               Gameid={GameId.current}
+              setisCreator={setisCreator}
             />
           )}
         />
@@ -202,6 +206,7 @@ const Setavatar = (value) =>
               SubmitAnswers={SubmitAnswers}
               isJoinAsPlayer={isJoinAsPlayer.current}
               isCreator={isCreator.current}
+              setisCreator={setisCreator}
               name={name.current}
               Gameid={GameId.current}
               setTimeSpent={setTimeSpent}
@@ -222,6 +227,7 @@ const Setavatar = (value) =>
           component={() => (
             <MultiplayerResult
               isCreator={isCreator.current}
+              setisCreator={setisCreator}
               userResult={userResult.current}
             />
           )}
