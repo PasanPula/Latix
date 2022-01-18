@@ -50,7 +50,7 @@ export default function MultiplayerPlay({
 
   return (
     // <div>
-    //   <div className="Container">
+    //   <div className="grid-Container">
     //     <Grid
     //       ref={setShowRef}
     //       resultValueCountRef={resultValueCountRef}
@@ -88,7 +88,6 @@ export default function MultiplayerPlay({
     //           <span></span>
     //         )}
 
-    //         <Leaderboard />
     //       </div>
     //     </div>
 
@@ -108,7 +107,7 @@ export default function MultiplayerPlay({
         <div className="col-md-12">Logo</div>
       </div>
       <div className="row vh-80 align-items-center">
-        <div className="col-md-9 ">
+        <div className="col-md-8 ">
           <Grid
           ref={setShowRef}
           resultValueCountRef={resultValueCountRef}
@@ -120,7 +119,7 @@ export default function MultiplayerPlay({
           MathOperator={operator}
         />
         </div>
-        <div className=" pe-3 col-md-3  text-center ">
+        <div className=" pe-3 col-md-3 text-center ">
           <div className="row align-items-center">
             <div className="col-md-12 multi-play-timer">
             <Timer
@@ -155,10 +154,15 @@ export default function MultiplayerPlay({
             </div>
           </div>
         </div>
+        <div className="col-md-1"></div>
       </div>
       <div className="row">
         <div className="col-md-12"></div>
       </div>
     </div>
+
+
+
+
   );
 }

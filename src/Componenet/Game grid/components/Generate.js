@@ -152,12 +152,13 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
           // )
     return( 
       <>
- 
+       <div className="grid-Container ">
       <div className="Grid1">
         <div className="flex-box">
           <div className="flex-box">{operator}{row1}</div> 
            {rows}
         </div>
+      </div>
       </div>
     </>
     )

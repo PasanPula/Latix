@@ -1,4 +1,4 @@
-.Container {
+.grid-Container {
   display: grid;
   grid-gap: 3px;
   grid-auto-rows: minmax(100px, auto);
