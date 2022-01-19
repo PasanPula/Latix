@@ -179,7 +179,7 @@ const setisCreator = (value) =>
         <Route exact
           path="/Multiplay/join"
           component={() => (
-            <MultiplayerJoin name={name.current} setGameId={setGameId} avatar={avatar.current}/>
+            <MultiplayerJoin name={name.current} setGameId={setGameId} avatar={avatar.current} />
           )}
         />
         <Route
@@ -235,7 +235,7 @@ const setisCreator = (value) =>
         <Route exact
           path="/Multiplay/join/:code"
           component={() => (
-            <MultiplayerLinkJoin  name={name.current} setGameId={setGameId} setName={setName}   />
+            <MultiplayerLinkJoin  name={name.current} setGameId={setGameId} setName={setName}  Setavatar={Setavatar} />
           )}
         />
 
