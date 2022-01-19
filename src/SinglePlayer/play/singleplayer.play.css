@@ -7,3 +7,36 @@
 {
     height: 80vh;
 }
+
+.single-play-subtitle-1
+{
+    font-family: 'Short Stack', cursive;;
+    color: white;
+    font-size: 1.8rem;
+    padding-bottom: 2vh;
+    margin-bottom: 5vh;
+}
+.single-play-subtitle-2
+{
+    font-family: 'Short Stack', cursive;;
+    color: white;
+    font-size: 1.8rem;
+    padding-bottom: 2vh;
+}
+
+.single-play-submit-wrapper
+{
+    margin-top: 4vh;
+}
+
+.single-play-avatar
+{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 3rem;
+    border: 6px solid #b18597;
+    background-color: rgba(255, 255, 255, 0.932);
+    padding: 20px;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+}

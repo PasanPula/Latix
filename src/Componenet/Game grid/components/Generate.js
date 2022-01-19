@@ -120,7 +120,7 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
      let operator =  <Operator key="Operator" gridSize={gridSize} Operator={MathOperator} color="blue" />    //<Cel key="Operator" id="Operator" No="+" />
     const row1 = rowNumbers.map((item,index)=>
       { 
-       return <Cel key={"col-"+index} id={"col-"+index} No={item} iden={column} />
+       return <Cel  gridSize={gridSize} key={"col-"+index} id={"col-"+index} No={item} iden={column} />
        } );
          const rows = coloumNumbers.map((item,index)=>
          {

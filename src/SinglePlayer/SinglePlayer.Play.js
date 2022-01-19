@@ -4,10 +4,11 @@ import Grid from '../Componenet/Game grid/grid';
 import Button from '../Componenet/Game grid/components/Button';
 import CorrectIncorrectDisplay from '../Componenet/crt.incrt.display/Correct.Incorrect.Display';
 import { IoHome} from "react-icons/io5";
+import './play/singleplayer.play.css';
 
 
 
-function SinglePlayerPlay({setTimeSpent,Correct,incorrect ,setinCorrectCount,setCorrectCount,time,operator,gridSize,columnNumbers,rowNumbers}) {
+function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorrectCount,setCorrectCount,time,operator,gridSize,columnNumbers,rowNumbers}) {
 
     const setShowRef = useRef(); 
     const resultValueCountRef = useRef();
@@ -44,14 +45,25 @@ function SinglePlayerPlay({setTimeSpent,Correct,incorrect ,setinCorrectCount,set
           </div>
         </div>
       </div>
-      <div className=" pe-3 col-md-4 text-center ">
+      <div className=" pe-3 col-md-4 text-center vh-80 ">
+
+      <div className="row align-items-center ">
+          <div className="col-md-12">
+          <img
+                className="single-play-avatar"
+                src={`/Assets/Avatar list/${avatar}.svg`}
+                alt="avatar"
+              />
+          <label className="single-play-subtitle-1">{name}</label>
+          </div>
+        </div>
         <div className="row align-items-center">
           <div className="col-md-12">
-          <label className="no">Time Remaining</label>
+          <label className="single-play-subtitle-2">Time Remaining</label>
             <Timer setTimeSpent={setTimeSpent} showValRef={setShowRef} initMinute={time} />
           </div>
         </div>
-        <div className="row ">
+        <div className="row single-play-submit-wrapper">
           <div className="col-md-12 ">
               <div className="bottom">
               <Button onshow={ () =>{setShowRef.current.setShow(true)}}/>

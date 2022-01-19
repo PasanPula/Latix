@@ -6,7 +6,22 @@ function Cel(parms)
 {
     const[gridsizeClass,setGridsizeClass] = useState("CelDiv CelDiv-size-default");
 
-
+    useEffect(() => {
+        if(parms.gridSize === 4 || parms.gridSize === 6)
+        {
+            setGridsizeClass("CelDiv CelDiv-size-5");
+        }
+        else if(parms.gridSize === 8)
+        {
+            setGridsizeClass("CelDiv CelDiv-size-8");
+        }
+        else if(parms.gridSize === 10)
+        {
+            setGridsizeClass("CelDiv CelDiv-size-10");
+        }
+    
+    }, [parms.gridSize]);
+    
 
      let color = 'norml' // hold the color
 
@@ -19,7 +34,7 @@ function Cel(parms)
     }
 
     return(
-        <div className="CelDiv">
+        <div className={gridsizeClass}>
             {chnagecolor() }
            <input type="text" key={parms.id} className={color} id={parms.id} value={parms.No} pattern="\d*$" maxLength="3" readOnly={true} />
        </div>
