@@ -1,5 +1,5 @@
 import { useState, forwardRef,useImperativeHandle } from "react";
-import '../crt.incrt.display/TextStyle.css';
+import '../crt.incrt.display/Correct.incorrect.display.css';
 
 function CorrectIncorrectDisplay(props,ref) {
 
@@ -16,22 +16,22 @@ function CorrectIncorrectDisplay(props,ref) {
 
   return (
     <>
-      <div className="top">
-        <label className="lable"> Correct</label>
+      <div className="CorrectIncorrect-top">
+        <label className="CorrectIncorrect-lable"> Correct: </label>
         <input
           type="text"
-          className="text"
+          className="Correct-text"
           name="text"
           id="text"
           value={correctCount}
           readOnly={true}
         />
       </div>
-      <div className="top">
-        <label className="lable"> Incorrect</label>
+      <div className="CorrectIncorrect-top">
+        <label className="CorrectIncorrect-lable"> Incorrect: </label>
         <input
           type="text"
-          className="text"
+          className="InCorrect-text"
           name="text"
           id="text"
           value={incorrectCount}

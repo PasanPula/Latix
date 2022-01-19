@@ -8,6 +8,7 @@ import { useSocket } from "../../Services/SocketProvider";
 import { useHistory } from "react-router-dom";
 import CreatorControls from "./CreatorControls";
 import './Multiplayer.play.css';
+import { IoHome} from "react-icons/io5";
 
 export default function MultiplayerPlay({
   SubmitAnswers,
@@ -106,9 +107,11 @@ export default function MultiplayerPlay({
       <div className="row vh-5 " style={{ backgroundColor: "red" }}>
         <div className="col-md-12">Logo</div>
       </div>
-      <div className="row vh-80 align-items-center">
+      <div className="row  align-items-center">
         <div className="col-md-8 ">
-          <Grid
+          <div className="row">
+            <div className="col-md-12">
+            <Grid
           ref={setShowRef}
           resultValueCountRef={resultValueCountRef}
           setCorrectCount={setCorrectCount}
@@ -118,10 +121,22 @@ export default function MultiplayerPlay({
           rowNumbers={rowNumbers}
           MathOperator={operator}
         />
-        </div>
-        <div className=" pe-3 col-md-3 text-center ">
+            </div>
+          </div>
           <div className="row align-items-center">
-            <div className="col-md-12 multi-play-timer">
+            <div className="col-md-12 d-flex justify-content-between">
+            {(isJoinAsPlayer && isJoinAsPlayer) ? (
+          <CorrectIncorrectDisplay ref={resultValueCountRef} />
+        ) : (
+          <span></span>
+        )}
+            </div>
+          </div>
+        </div>
+        <div className=" pe-3 col-md-4 text-center ">
+          <div className="row align-items-center">
+            <div className="col-md-12">
+            <label className="multi-play-time-label">Time Remaining</label>
             <Timer
                 isJoinAsPlayer={isJoinAsPlayer}
                 SubmitAnswers={SubmitAnswers}
@@ -136,8 +151,8 @@ export default function MultiplayerPlay({
             <FinishList />
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-12 mt-5">
+          <div className="row multi-submit-row">
+            <div className="col-md-12 ">
             {isJoinAsPlayer ? (
               <div>
                 <div className="bottom">
@@ -154,11 +169,28 @@ export default function MultiplayerPlay({
             </div>
           </div>
         </div>
-        <div className="col-md-1"></div>
       </div>
-      <div className="row">
-        <div className="col-md-12"></div>
-      </div>
+      {/* <div className="row vh-5 text-center">
+        <div className="col-md-12">
+        {(isJoinAsPlayer && isJoinAsPlayer) ? (
+          <CorrectIncorrectDisplay ref={resultValueCountRef} />
+        ) : (
+          <span></span>
+        )}
+        </div>
+      </div> */}
+      <div className="row mt-5 vh-5 align-items-center">
+            <div  className="col-md-2 ">
+            <button className="home-navigate-button">
+              <IoHome />
+            </button>
+            </div>
+            <div className="col-md-6 ">
+            </div>
+            <div  className="col-md-4 text-center">
+            <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
+            </div>
+          </div>
     </div>
 
 

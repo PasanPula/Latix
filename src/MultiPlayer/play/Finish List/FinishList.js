@@ -41,7 +41,7 @@ export default function FinishList() {
     (
       <>
         <div className="FinishList">
-          <h1>Finish Users-{userList.length}</h1>
+          <h1>Finished Users-{userList.length}</h1>
           {/* <span className="leaderboard-breakline"></span>
            */}
           <hr className="leaderboard-breakline"></hr>

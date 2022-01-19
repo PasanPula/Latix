@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSocket } from "../../Services/SocketProvider";
-import { Button } from "react-bootstrap";
+import './creator.controls.css';
 
 export default function CreatorControls({ isCreator,setisCreator,Gameid }) {
   const socket = useSocket();
@@ -41,7 +41,7 @@ export default function CreatorControls({ isCreator,setisCreator,Gameid }) {
 
   return (
     <div>
-      {tempCreator ? <Button onClick={endGame}>Next</Button> : <span></span>}
+      {tempCreator ? <button className="multi-play-admin-btn" onClick={endGame}>END Game For ALL</button> : <span></span>}
     </div>
   );
 }

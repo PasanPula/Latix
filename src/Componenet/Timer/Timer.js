@@ -1,4 +1,5 @@
 import { useState,useEffect,Fragment  } from 'react'
+import './Timer.css'
 
 
 export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,initMinute,showValRef}) {
@@ -54,7 +55,17 @@ export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,init
   
     return (
      <Fragment>
-            <h1>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+            {/* <h1>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1> */}
+            <div class="clock">
+          <div>
+            <p class="minutes">{minutes < 10 ? `0${minutes}` : minutes}</p>
+            <p>Minutes</p>
+          </div>
+          <div>
+            <p class="seconds">{seconds < 10 ? `0${seconds}` : seconds}</p>
+            <p>Seconds</p>
+          </div>
+        </div>
      </Fragment>
      )
   }

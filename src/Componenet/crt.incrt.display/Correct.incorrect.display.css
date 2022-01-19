@@ -1,0 +1,42 @@
+.CorrectIncorrect-lable {
+  font-size: 20px;
+  font-family: 'Short Stack', cursive;
+  font-weight: 500;
+  color: white;
+}
+
+.Correct-text {
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  /* box-shadow: 1px 1px 2px black; */
+  pointer-events: none;
+  background-color: #fff0f0;
+  border: 2px solid #b18597;
+  border-radius: 1rem;
+  font-family: 'Short Stack', cursive;
+  color: green;
+}
+
+.InCorrect-text {
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  /* box-shadow: 1px 1px 2px black; */
+  pointer-events: none;
+  background-color: #fff0f0;
+  border: 2px solid #b18597;
+  border-radius: 1rem;
+  font-family: 'Short Stack', cursive;
+  color: red;
+}
+
+.CorrectIncorrect-top {
+  display: inline;
+  column-gap: 20px;
+  position: relative;
+  top: 10px;
+  align-items: center;
+}
