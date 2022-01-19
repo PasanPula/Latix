@@ -3,10 +3,12 @@ import {Switch, Route} from 'react-router-dom';
 import MultiPlayer from "./MultiPlayer/MultiPlayer";
 import SinglePlayer from './SinglePlayer/SinglePlayer';
 import Background from "./Componenet/background/background";
+import NoMobile from "./Componenet/not available mobile/no.mobile";
 
 function App() {
   return (
       <div style={{backgroundColor:"black"}}>
+         <NoMobile/>
         {/* <Background /> */}
         <Switch>
           <Route path="/" exact component={Home}/>

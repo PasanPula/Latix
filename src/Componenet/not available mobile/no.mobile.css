@@ -1,0 +1,31 @@
+.mobile-container {
+  position: absolute;
+  z-index: 4;
+  background-color: #b18597;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
+
+.mobile-first-row {
+  height: 50%;
+}
+
+.mobile-text {
+  font-size: 4rem;
+  font-family: "Short Stack", cursive;
+  color: ivory;
+  font-weight: bolder;
+}
+
+.mobile-image {
+  width: 80%;
+  height: 80%;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 778px) {
+  .mobile-container {
+    display: block;
+  }
+}
