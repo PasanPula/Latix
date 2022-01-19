@@ -152,7 +152,7 @@
 
         <style>
             #rightEye, #leftEye {
-                animation:Blink 1.9s infinite ease-in-out;
+                animation:Blink 8s infinite ease-in-out;
             }
 
             @keyframes Blink{

@@ -7,9 +7,9 @@ import NoMobile from "./Componenet/not available mobile/no.mobile";
 
 function App() {
   return (
-      <div style={{backgroundColor:"black"}}>
+      <div>
          <NoMobile/>
-        {/* <Background /> */}
+        <Background />
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/SinglePlayer" component={SinglePlayer}/>
