@@ -72,7 +72,7 @@ export default function MultiplayerLogin({
     //     </div>
     // </div>
     <div className="container-fluid vh-100">
-    <form>
+    // <form>
       <div style={{ backgroundColor: "red" }} className="row position-front">
         <div className="col-md-12">
           <h3>LOGO</h3>
@@ -88,7 +88,7 @@ export default function MultiplayerLogin({
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
       </div>
-      <div className="row mt-5 ">
+      <div className="row">
         <div className="col-md-2"></div>
         <div className="col-md-8 ">
           <div className="row mb-2">
@@ -107,7 +107,7 @@ export default function MultiplayerLogin({
             </div>
             <div className="col-md-2"></div>
           </div>
-          <div className="row mt-5 ">
+          <div className="row ">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
               <div className="Login-header-avatar-select position-front">
@@ -119,7 +119,7 @@ export default function MultiplayerLogin({
           <div className="row  ">
             <div className="col-md-2"></div>
             <div className="col-md-8 ">
-              <div className="row pt-2 justify-content-center position-front">
+              <div className="row justify-content-center position-front">
                 <input
                   className="input-field"
                   placeholder="Name"
@@ -174,7 +174,7 @@ export default function MultiplayerLogin({
       <div className="row">
         <div className="col-md-12"></div>
       </div>
-      </form>
+      // </form>
     </div>
   );
 }

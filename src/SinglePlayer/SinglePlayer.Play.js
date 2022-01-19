@@ -35,7 +35,7 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
     <div className="row vh-80  align-items-center">
       <div className="col-md-8 ">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-12 position-front">
           <Grid ref={setShowRef} resultValueCountRef={resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} gridSize ={gridSize} columnNumbers={columnNumbers} rowNumbers={rowNumbers} MathOperator={operator}/>
           </div>
         </div>

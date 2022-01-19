@@ -47,7 +47,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
       </div>
-      <div className="row align-items-end mt-5">
+      <div className="row align-items-end">
         <div className="col-md-12">
           <label className="mode-title position-front">
             What Do You Want To Do?

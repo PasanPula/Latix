@@ -108,14 +108,14 @@ function SinglePlayerCreate(props) {
         <Countdown className="lobby-countdown-img" />
       </div>
     <div className="container-fluid vh-100">
-      <div style={{ backgroundColor: "red" }} className="row vh-5">
+      <div style={{ backgroundColor: "red" }} className="row vh-5 position-front">
         <div className="col-md-12">
          Logo
         </div>
       </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-          <button className="home-navigate-button">
+          <button className="home-navigate-button position-front">
             {" "}
             <IoChevronBackCircleSharp />{" "}
           </button>
@@ -127,14 +127,14 @@ function SinglePlayerCreate(props) {
         <div className="col-md-12">
           <div className="row justify-content-center">
             <div className="col-md-12">
-              <label className="single-create-title pt-2"> Hi {props.name} <br></br>Select your game Settings</label>
+              <label className="single-create-title pt-2 position-front"> Hi {props.name} <br></br>Select your game Settings</label>
             </div>
           </div>
         </div>
       </div>
       <div className="row justify-content-center vh-20">
-        <div className="col-md-12 text-center">
-        <label className="single-create-subtitle">Game Mode</label>
+        <div className="col-md-12 text-center position-front">
+        <label className="single-create-subtitle position-front">Game Mode</label>
          <SelectionButton valueList={modes} pickedValue={selectedMode} setPickvalue={setMode}
           radioPadStyle="single-mode-create-radioPad"
           radioStyle="single-mode-create-radioPad__radio"

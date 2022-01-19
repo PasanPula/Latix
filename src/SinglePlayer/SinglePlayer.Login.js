@@ -16,8 +16,8 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
   };
 
   return (
-    <div className="container-fluid">
-      <div style={{ backgroundColor: "red" }} className="row position-front">
+    <div className="container-fluid vh-100">
+      <div style={{ backgroundColor: "red" }} className="row position-front vh-5">
         <div className="col-md-12">
           <h3>LOGO</h3>
         </div>
@@ -32,10 +32,10 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
       </div>
-      <div className="row mt-5 ">
+      <div className="row">
         <div className="col-md-2"></div>
         <div className="col-md-8 ">
-          <div className="row mb-2">
+          <div className="row">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
             <div className="Login-header-avatar-select position-front">Select Your Avatar</div>
@@ -49,7 +49,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
             </div>
             <div className="col-md-2"></div>
           </div>
-          <div className="row mt-5 ">
+          <div className="row ">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
             <div className="Login-header-avatar-select position-front">Enter Your Name:</div>
