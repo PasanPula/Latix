@@ -16,7 +16,7 @@ export default function NoMobile() {
         </div>
         <div className="row align-items-center text-center">
           <div className="col-md-12">
-           <label className="mobile-text">   Oops! We are not available yet for mobile. <br></br> Try us using desktop.</label>
+           <label className="mobile-text">   Oops!<br></br> We are not available yet for mobile. <br></br> Try us using desktop.</label>
           </div>
         </div>
       </div>
