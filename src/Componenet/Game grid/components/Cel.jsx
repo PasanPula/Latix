@@ -1,11 +1,14 @@
 //  import "./style.css"
 import "./Styles/CelStyle.css";
-import react from "react";
+import react,{useState,useEffect} from "react";
 
 function Cel(parms)
 {
+    const[gridsizeClass,setGridsizeClass] = useState("CelDiv CelDiv-size-default");
 
-    let color = 'norml' // hold the color
+
+
+     let color = 'norml' // hold the color
 
     function chnagecolor() // chnage color while rendering where column ID or row ID is match
     {

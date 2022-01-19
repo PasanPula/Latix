@@ -1,5 +1,7 @@
 import { useHistory } from "react-router-dom";
 import Avatar from "../Componenet/avatar slider/Avatar";
+import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
+
 
 function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
   const history = useHistory();
@@ -19,6 +21,16 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
         <div className="col-md-12">
           <h3>LOGO</h3>
         </div>
+      </div>
+      <div className="row">
+        <div className="col-md-2 text-center ">
+          <button className="home-navigate-button">
+            {" "}
+            <IoChevronBackCircleSharp />{" "}
+          </button>
+        </div>
+        <div className="col-md-8 "></div>
+        <div className="col-md-2 "></div>
       </div>
       <div className="row mt-5 ">
         <div className="col-md-2"></div>
@@ -57,6 +69,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
                     value={name}
                     onChange={onChange}
                     required
+                    maxLength={15}
                   />
                 </div>
                 <div className="row pt-3 justify-content-center">
@@ -69,8 +82,15 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
         </div>
         <div className="col-md-2"></div>
       </div>
-      <div className="row">
-        <div className="col-md-12"></div>
+      <div className="row align-items-center">
+        <div className="col-md-2  mt-5 text-center">
+          <button className="home-navigate-button">
+            {" "}
+            <IoHome />{" "}
+          </button>
+        </div>
+        <div className="col-md-8 mt-5 text-center"></div>
+        <div className="col-md-2  text-center"> </div>
       </div>
     </div>
   );

@@ -56,13 +56,13 @@ export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,init
     return (
      <Fragment>
             {/* <h1>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1> */}
-            <div class="clock">
+            <div className="clock">
           <div>
-            <p class="minutes">{minutes < 10 ? `0${minutes}` : minutes}</p>
+            <p className="minutes">{minutes < 10 ? `0${minutes}` : minutes}</p>
             <p>Minutes</p>
           </div>
           <div>
-            <p class="seconds">{seconds < 10 ? `0${seconds}` : seconds}</p>
+            <p className="seconds">{seconds < 10 ? `0${seconds}` : seconds}</p>
             <p>Seconds</p>
           </div>
         </div>

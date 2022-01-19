@@ -7,10 +7,27 @@ function CelTex(parms)
     const[corlor,setcorlor] = useState('correct');
     const[correct,setcorrect] = useState(true);
     const[previous,setprivious] = useState(0);
+    const[gridsizeClass,setGridsizeClass] = useState("celtex celtex-size-default")
 
     const sum = useRef('0');
 
    useEffect(() => {
+
+    if(parms.gridSize === 4 || parms.gridSize === 6)
+    {
+        console.log("parms.gridSize",parms.gridSize);
+        setGridsizeClass("celtex celtex-size-5");
+    }
+    else if(parms.gridSize === 8)
+    {
+        console.log("parms.gridSize",parms.gridSize);
+        setGridsizeClass("celtex celtex-size-8");
+    }
+    else if(parms.gridSize === 10)
+    {
+        console.log("parms.gridSize",parms.gridSize);
+        setGridsizeClass("celtex celtex-size-10");
+    }
 
     if(parms.MathOperator==='X')
     {
@@ -21,13 +38,13 @@ function CelTex(parms)
         let result = eval(parms.item1.toString().concat(parms.MathOperator,parms.item2.toString())).toString();
         sum.current = parseInt(result).toString();
     }
-   }, [parms.item1 , parms.item2,parms.MathOperator]);
+   }, [parms.item1, parms.item2, parms.MathOperator, parms.gridSize]);
    
   
   
     function valuechnage(e)
     {
-    if(e.target.value.match("^-?[0-9]{0,3}\d*(.\d+)?$"))
+    if(e.target.value.match("^-?[0-9]{0,3}d*(.d+)?$"))
      {
       setvalue(e.target.value); 
       if(e.target.value === sum.current ||e.target.value==="" ) //  change the color accoring to the correct or wrong
@@ -69,7 +86,7 @@ function CelTex(parms)
     },[Value, correct, parms.show])
 
    return(
-       <div className="celtex">
+       <div className={gridsizeClass}>
            <input autoComplete="off" type="text" key={parms.id}  className={(parms.show)?corlor:'correct'} id={parms.id} value={Value} pattern="^-?[0-9]\d*(\.\d+)?$" maxLength="3" onChange={valuechnage} onMouseEnter={loseFocus } onFocus={()=>parms.RowColChnage(parms.id)}  onMouseLeave={answerValidate } readOnly={(parms.show)?true:false}/>
        </div>
    );

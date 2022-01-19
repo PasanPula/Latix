@@ -117,7 +117,7 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
     
      
      
-     let operator =  <Operator key="Operator" Operator={MathOperator} color="blue" />    //<Cel key="Operator" id="Operator" No="+" />
+     let operator =  <Operator key="Operator" gridSize={gridSize} Operator={MathOperator} color="blue" />    //<Cel key="Operator" id="Operator" No="+" />
     const row1 = rowNumbers.map((item,index)=>
       { 
        return <Cel key={"col-"+index} id={"col-"+index} No={item} iden={column} />
@@ -125,14 +125,14 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
          const rows = coloumNumbers.map((item,index)=>
          {
              let row =[];
-             let cell = <Cel key={"row-"+index} id={"row-"+index} No={item} iden={rowstat} />;
+             let cell = <Cel gridSize={gridSize} key={"row-"+index} id={"row-"+index} No={item} iden={rowstat} />;
              
             row.push(cell);
             
              for(let i=0;i<gridSize;i++)
              {
                 row.push(
-                 <CelTex MathOperator={MathOperator} key={index.toString()+i.toString()} item1={item} item2={rowNumbers[i]} id={index.toString()+i.toString()} RowColChnage={RowColChnage} answer={answercheck} show={showBool}  />
+                 <CelTex gridSize={gridSize} MathOperator={MathOperator} key={index.toString()+i.toString()} item1={item} item2={rowNumbers[i]} id={index.toString()+i.toString()} RowColChnage={RowColChnage} answer={answercheck} show={showBool}  />
                 )
              }
              return(

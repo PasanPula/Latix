@@ -2,13 +2,35 @@
   box-shadow: rgba(128, 181, 243, 0.966) 0px 3px 8px;
   border-radius: 10px;
   font-size: 30px;
-  height: 6vh;
-  width: 5vw;
+  /* height: 6vh;
+  width: 5vw; */
   text-align: center;
   border-style: none;
   pointer-events: none;
- 
 }
+
+.CelDiv-size-default > input[type="text"] {
+  height: 6vh;
+  width: 5vw;
+}
+.CelDiv-size-5  > input[type="text"]
+{
+    height: 10vh;
+    width: 9vw; 
+}
+
+.CelDiv-size-8  > input[type="text"]
+{
+    height: 7vh;
+    width: 6vw; 
+}
+
+.CelDiv-size-10  > input[type="text"]
+{
+    height: 6vh;
+    width: 5vw; 
+}
+
 .norml {
   /* background: white; */
   background: rgba(255, 255, 255, 0.6);

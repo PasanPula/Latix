@@ -9,14 +9,14 @@ export default function SinglePlayer()  {
 
 
 const name = useRef();
-const avatar = useRef();
+const avatar = useRef(5);
 
 const Correct = useRef(0);
 const incorrect = useRef(0);
 const timeSpent = useRef("00:00");
 
 
-const gridSize = useRef(5);
+const gridSize = useRef(4);
 const operator = useRef('+');
 const time = useRef(5);
 const numberRangeStart = useRef(1);
@@ -100,8 +100,8 @@ const Setavatar = (value) =>
             <div>
             <Switch>
             <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} OnChangeAvatar = {Setavatar} />}/>
-            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate HandleNumberGenarate={HandleNumberGenarate} name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
-            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay columnNumbers={columnNumbers.current} rowNumbers={rowNumbers.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} />} />
+            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate avatar={avatar.current} HandleNumberGenarate={HandleNumberGenarate} name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
+            <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay avatar={avatar.current} columnNumbers={columnNumbers.current} rowNumbers={rowNumbers.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} />} />
             <Redirect to="/SinglePlayer/Login" />  
           </Switch>
             </div>

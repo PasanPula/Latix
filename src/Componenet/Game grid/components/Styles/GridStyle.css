@@ -8,7 +8,7 @@
 .Grid1 {
   grid-column: 1/2;
   grid-row: 1;
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
 }
 
 .Grid2 {

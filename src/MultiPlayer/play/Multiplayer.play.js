@@ -170,15 +170,6 @@ export default function MultiplayerPlay({
           </div>
         </div>
       </div>
-      {/* <div className="row vh-5 text-center">
-        <div className="col-md-12">
-        {(isJoinAsPlayer && isJoinAsPlayer) ? (
-          <CorrectIncorrectDisplay ref={resultValueCountRef} />
-        ) : (
-          <span></span>
-        )}
-        </div>
-      </div> */}
       <div className="row mt-5 vh-5 align-items-center">
             <div  className="col-md-2 ">
             <button className="home-navigate-button">

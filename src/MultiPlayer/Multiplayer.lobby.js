@@ -61,17 +61,7 @@ export default function MultiplayerLobby({
       socket.off("GetGame");
       setshowCountdown("lobby-countdown");
     };
-  }, [
-    Gameid,
-    HandleSelectedOperator,
-    HandleSetSize,
-    HandleSetTime,
-    history,
-    setColoumNumbers,
-    setRowNumbers,
-    socket,
-    userList,
-  ]);
+  }, [Gameid, HandleSelectedOperator, HandleSetSize, HandleSetTime, history, setColoumNumbers, setRowNumbers, setisCreator, socket, userList]);
 
   const handleStart = () => {
     socket.emit(
