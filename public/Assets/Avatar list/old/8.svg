@@ -1,0 +1,125 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 280 284.51">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: #e78f00;
+            }
+
+            .cls-2 {
+                fill: url(#radial-gradient);
+            }
+
+            .cls-3 {
+                fill: #3c3c3c;
+            }
+
+            .cls-4 {
+                fill: #f2f2f2;
+            }
+
+            .cls-5 {
+                fill: url(#radial-gradient-2);
+            }
+
+            .cls-6 {
+                fill: url(#radial-gradient-3);
+            }
+
+            .cls-7 {
+                fill: #1a1a1a;
+            }
+
+            .cls-8 {
+                fill: #fff;
+            }
+        </style>
+        <radialGradient id="radial-gradient" cx="-813.29" cy="691.19" r="1"
+            gradientTransform="matrix(111.5, 234.5, 234.5, -111.5, -71317.58, 267826.83)"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#95e632" />
+            <stop offset="0.43" stop-color="#82c826" />
+            <stop offset="0.75" stop-color="#00ad26" />
+            <stop offset="1" stop-color="#00881e" />
+        </radialGradient>
+        <radialGradient id="radial-gradient-2" cx="-801.52" cy="719.22" r="1"
+            gradientTransform="matrix(0, 27, 27, 0, -19232, 21792.32)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff" />
+            <stop offset="1" stop-color="#e4e7ec" />
+        </radialGradient>
+        <radialGradient id="radial-gradient-3" cx="-801.52" cy="719.22" r="1"
+            gradientTransform="matrix(0, 27, 27, 0, -19326, 21792.32)" xlink:href="#radial-gradient-2" />
+    </defs>
+    <title>pilli2</title>
+    <path class="cls-1"
+        d="M195.68,84.55c9.13-18-5.76-43.94-33.26-57.87s-57.2-10.62-66.33,7.41S101.85,78,129.35,92,186.54,102.57,195.68,84.55Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-1"
+        d="M268.65,130.54c9.61-19,.77-42.74-19.73-53.13S204,74,194.42,92.92s-.77,42.74,19.73,53.13S259.05,149.49,268.65,130.54Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-1" d="M248.91,95.38a29.74,29.74,0,1,0-42.34.29A29.95,29.95,0,0,0,248.91,95.38Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-1"
+        d="M198.76,60.74c7.69-17.57-.86-38.29-19.1-46.27s-39.27-.23-47,17.34.85,38.29,19.1,46.28S191.07,78.31,198.76,60.74Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-1"
+        d="M226.63,73.08c11.78-11.77,11-31.63-1.71-44.34S192.35,15.25,180.57,27s-11,31.63,1.71,44.35S214.86,84.86,226.63,73.08Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-2"
+        d="M280,155.87A140,140,0,1,1,96.9,22.63c5.55,16.83,23.82,35.89,44.15,43.13,23,8.2,34.59-3.78,57.75,7.14,18.73,8.83,17.36,19.59,36.33,32.44a105.85,105.85,0,0,0,40.56,16A140.15,140.15,0,0,1,280,155.87Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-3"
+        d="M166.38,214.32H113.62a15.81,15.81,0,0,0-15.62,16h0a15.81,15.81,0,0,0,15.62,16h52.76a15.81,15.81,0,0,0,15.62-16h0A15.81,15.81,0,0,0,166.38,214.32Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-4"
+        d="M148,214.32h12v5.8a3.25,3.25,0,0,1-.91,2.26,3,3,0,0,1-2.2.94h-5.78a3,3,0,0,1-2.2-.94,3.25,3.25,0,0,1-.91-2.26Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-4"
+        d="M166,246.32H154v-5.79a3.28,3.28,0,0,1,.91-2.27,3.06,3.06,0,0,1,2.2-.94h5.78a3.06,3.06,0,0,1,2.2.94,3.28,3.28,0,0,1,.91,2.27Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-4"
+        d="M126,246.32H114v-5.79a3.28,3.28,0,0,1,.91-2.27,3.06,3.06,0,0,1,2.2-.94h5.78a3.06,3.06,0,0,1,2.2.94,3.28,3.28,0,0,1,.91,2.27Z"
+        transform="translate(0 -11.32)" />
+    <path class="cls-4"
+        d="M120,214.32h12v5.8a3.25,3.25,0,0,1-.91,2.26,3,3,0,0,1-2.2.94h-5.78a3,3,0,0,1-2.2-.94,3.25,3.25,0,0,1-.91-2.26Z"
+        transform="translate(0 -11.32)" />
+    <path id="rightEyeW" class="cls-5" d="M187,178.32a27,27,0,1,0-27-27A27,27,0,0,0,187,178.32Z"
+        transform="translate(0 -11.32)" />
+    <path id="leftEyeW" class="cls-6" d="M93,178.32a27,27,0,1,0-27-27A27,27,0,0,0,93,178.32Z"
+        transform="translate(0 -11.32)" />
+    <path id="rightEyeB" class="cls-7" d="M187,159.32a8,8,0,1,0-8-8A8,8,0,0,0,187,159.32Z"
+        transform="translate(0 -11.32)" />
+    <path id="rightEye" class="cls-8" d="M189.7,149.36a1.5,1.5,0,1,0-1.5-1.5A1.5,1.5,0,0,0,189.7,149.36Z"
+        transform="translate(0 -11.32)" />
+    <path id="leftEyeB" class="cls-7" d="M93,159.32a8,8,0,1,0-8-8A8,8,0,0,0,93,159.32Z"
+        transform="translate(0 -11.32)" />
+    <path id="leftEye" class="cls-8" d="M95.7,149.36a1.5,1.5,0,1,0-1.5-1.5A1.5,1.5,0,0,0,95.7,149.36Z"
+        transform="translate(0 -11.32)" />
+
+
+    <style>
+        @keyframes bink {
+            0% {
+                transform: scale(1,1);
+                transform-origin: center;
+                transform-box: fill-box;
+            }
+
+            50% {
+                transform: scale(2, 2);
+                transform-origin: center;
+                transform-box: fill-box;
+            }
+
+            100% {
+                transform: scale(1,1);
+                transform-origin: center;
+                transform-box: fill-box;
+            }
+        }
+
+        #leftEye,#rightEye,#leftEyeB,#rightEyeB {
+            animation: bink 4s infinite ease-in-out;
+        }
+    </style>
+</svg>

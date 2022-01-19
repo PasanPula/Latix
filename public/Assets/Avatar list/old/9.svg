@@ -1,0 +1,76 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 301 300.99">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: url(#radial-gradient);
+            }
+
+            .cls-2 {
+                fill: url(#radial-gradient-2);
+            }
+
+            .cls-3 {
+                fill: #1a1a1a;
+            }
+
+            .cls-4 {
+                fill: #fff;
+            }
+        </style>
+        <radialGradient id="radial-gradient" cx="-806.13" cy="693.23" r="1.07"
+            gradientTransform="matrix(111.5, 222.48, 222.5, -111.5, -64261.56, 256671.7)"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ffeca5" />
+            <stop offset="0.37" stop-color="#ffd048" />
+            <stop offset="0.64" stop-color="#ffbe18" />
+            <stop offset="0.99" stop-color="#ff9d0f" />
+        </radialGradient>
+        <radialGradient id="radial-gradient-2" cx="30.46" cy="150.5" r="242.78" gradientTransform="translate(0 0.01)"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff" />
+            <stop offset="0.49" stop-color="#eaeaea" />
+            <stop offset="0.74" stop-color="#e6e6e6" />
+            <stop offset="0.99" stop-color="#ccc" />
+        </radialGradient>
+    </defs>
+    <title>scull</title>
+    <path id="faceOutline" class="cls-1"
+        d="M301,150.52A150.5,150.5,0,1,1,62.62,28.35q3.56-2.57,7.27-4.91a150.49,150.49,0,0,1,225.26,85.43q.81,2.79,1.5,5.62c.71,2.85,1.32,5.72,1.86,8.6A152,152,0,0,1,301,150.52Z"
+        transform="translate(0 -0.01)" />
+    <g id="face">
+        <path class="cls-2"
+            d="M150.52,16.14A134.36,134.36,0,0,0,16.12,150.51c0,72.54,37.78,74.78,57.59,90.88,22.57,18.36,6.15,43.49,76.79,43.49s54.22-25.13,76.79-43.49c19.84-16.1,57.58-18.34,57.58-90.88A134.35,134.35,0,0,0,150.52,16.14Zm-44.8,171.3c-19.56,4.18-39.29-10.8-44.1-33.4s7.15-44.24,26.69-48.41,39.29,10.8,44.09,33.4S125.26,183.29,105.72,187.44ZM239.44,154c-4.8,22.61-24.54,37.58-44.08,33.4s-31.5-25.85-26.68-48.41,24.54-37.58,44.08-33.4,31.49,25.81,26.68,48.4Z"
+            transform="translate(0 -0.01)" />
+    </g>
+    <g id="rightEyeB">
+        <path class="cls-3" d="M201,172a21.5,21.5,0,1,0-21.5-21.5A21.5,21.5,0,0,0,201,172Z"
+            transform="translate(0 -0.01)" />
+    </g>
+    <path id="rightEyeW" class="cls-4" d="M195.65,149.43a5.38,5.38,0,1,0-5.38-5.37A5.37,5.37,0,0,0,195.65,149.43Z"
+        transform="translate(0 -0.01)" />
+    <path id="leftEyeB" class="cls-3" d="M100,172a21.5,21.5,0,1,0-21.5-21.5A21.5,21.5,0,0,0,100,172Z"
+        transform="translate(0 -0.01)" />
+    <path id="leftEyeW" class="cls-4" d="M94.6,149.43a5.38,5.38,0,1,0-5.38-5.37A5.37,5.37,0,0,0,94.6,149.43Z"
+        transform="translate(0 -0.01)" />
+    <path id="nose"
+        d="M156.77,209.32l-1.94-.49a19,19,0,0,0-9.18,0l-1.92.49a5.24,5.24,0,0,1-2.91-.14,5.1,5.1,0,0,1-3.39-4.44,5,5,0,0,1,.62-2.84l8.36-15a4.52,4.52,0,0,1,1.61-1.64,4.39,4.39,0,0,1,6,1.64l8.36,15a5,5,0,0,1,.64,2.84,5.09,5.09,0,0,1-6.3,4.58Z"
+        transform="translate(0 -0.01)" />
+    <path id="mouth"
+        d="M119.19,230.76S130.14,242,150.26,242s31-11.27,31-11.27-4.8,19.59-31,19.59S119.19,230.76,119.19,230.76Z"
+        transform="translate(0 -0.01)" />
+    
+    <style>
+ 
+        @keyframes bink{
+            0%{opacity: 100%;}
+            25%{opacity: 50%}
+            50%{opacity: 0%}
+            75%{opacity: 50%}
+            100%{opacity: 100%}
+        }
+        #leftEyeW,#rightEyeW{
+            animation: bink 3s infinite ease-in-out;
+        }
+    </style>
+</svg>
