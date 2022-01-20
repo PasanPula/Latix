@@ -108,11 +108,25 @@ function SinglePlayerCreate(props) {
         <Countdown className="lobby-countdown-img" />
       </div>
     <div className="container-fluid vh-100">
-      <div style={{ backgroundColor: "red" }} className="row vh-5 position-front">
-        <div className="col-md-12">
-         Logo
+    <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+          </div>
         </div>
-      </div>
       <div className="row">
         <div className="col-md-2 text-center ">
           <button className="home-navigate-button position-front">
@@ -123,11 +137,11 @@ function SinglePlayerCreate(props) {
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
       </div>
-      <div className="row vh-20">
+      <div className="row h-10">
         <div className="col-md-12">
           <div className="row justify-content-center">
             <div className="col-md-12">
-              <label className="single-create-title pt-2 position-front"> Hi {props.name} <br></br>Select your game Settings</label>
+              <label className="single-create-title pt-2 position-front">Select your game Settings</label>
             </div>
           </div>
         </div>
@@ -143,7 +157,8 @@ function SinglePlayerCreate(props) {
          />
         </div>
       </div>
-      <div className="row justify-content-center vh-30">
+      <div className="row justify-content-center vh-30 mt-4
+      ">
         <div className="col-md-6 text-center">
         <label className="single-create-subtitle">Mathamatical Operator</label>
         <SelectionButton valueList={operators} pickedValue={selectedOperator} setPickvalue={HandlesetOperator}
