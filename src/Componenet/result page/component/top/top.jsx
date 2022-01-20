@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 export function Top({ place, No, Image, Name, time, correct, incorrect }) {
   return (
     <div className={"item " + place}>
-      <div className="pos">{No}</div>
+     <div className="pos"> <img
+                className="pos-avatar"
+                src={`/Assets/result medles/${No}.svg`}
+                alt="avatar"
+              /></div>
       <div
       >
         <img  className="pic" src={Image} alt="avatar" />
