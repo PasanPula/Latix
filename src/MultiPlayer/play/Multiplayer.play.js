@@ -40,11 +40,13 @@ export default function MultiplayerPlay({
     }
 
     socket.on("GetResult", (res) => {
-      setUserResult(res);
 
       if (setShowRef.current !== null) {
         setShowRef.current.setShow(true);
       }
+
+      setUserResult(res);
+
       history.push("/Multiplay/result");
     });
   });
