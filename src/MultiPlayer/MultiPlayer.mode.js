@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "./mode/Multiplayer.mode.css";
-import { FaEdit } from "react-icons/fa";
+// import { FaEdit } from "react-icons/fa";
 // import { AiFillPlusSquare } from "react-icons/ai";
-import { faSignInAlt,faUserCog} from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt,faUserCog,faHome,faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import {Card3D} from '../Componenet/3Dcard/3DCard' 
+import { Button } from "../Componenet/Button/Button";
 
 export default function MultiPlayerMode({ HandleShowCheckBox }) {
   const createButtonClick = () => {
@@ -31,9 +32,9 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
     // </div>
 
     <div className="container-fluid vh-100">
-      <div className="row">
+      <div className="row h-10">
         <div
-          className="col-md-12 position-front"
+          className="col-md-12  position-front"
           style={{ backgroundColor: "red" }}
         >
           Logo
@@ -41,10 +42,11 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
       </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-          <button className="home-navigate-button">
-            {" "}
-            <IoChevronBackCircleSharp />{" "}
-          </button>
+          {/* <button className="home-navigate-button">
+            
+            <IoChevronBackCircleSharp />
+          </button> */}
+           <Button icon={faArrowLeft} height={'80px'} width={'100px'} fontSize={'35px'} />
         </div>
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
@@ -56,7 +58,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
           </label>
         </div>
       </div>
-      <div className="row h-60 align-items-center">
+      <div className="row h-40 align-items-center">
         <div className="col-md-1"></div>
         <div className="col-md-5 d-flex justify-content-end">
           <Link to="/Multiplay/Login" className="cardstyle">
@@ -68,7 +70,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
                   />
           </Link>
         </div>
-        <div className="col-md-5 d-flex justify-content-start">
+        <div className="col-md-5  justify-content-start">
           <Link to="/Multiplay/login" className="cardstyle" onClick={createButtonClick}>
              <Card3D 
                     Title="Create Game"
@@ -82,16 +84,17 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
       </div>
       <div className="row align-items-center">
         <div className="col-md-2  mt-5 text-center">
-          <button className="home-navigate-button">
-            {" "}
-            <IoHome />{" "}
-          </button>
+          {/* <button className="home-navigate-button">
+            
+            <IoHome />
+          </button> */}
+          <Button icon={faHome} height={'80px'} width={'100px'} fontSize={'35px'} />
         </div>
         <div className="col-md-8 mt-5 text-center"></div>
         <div className="col-md-2  text-center"> </div>
       </div>
 
-      <div className="row h-10">
+      <div className="row">
         <div className="col-md-12"></div>
       </div>
     </div>
