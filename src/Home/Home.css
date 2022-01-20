@@ -1,9 +1,10 @@
 
 .logo-style
 {
-  position: absolute;
+  /* position: absolute;
   top:10px;
-  left:12px;
+  left:12px; */
+  padding-top: 2vh;
   width:18vw;
 }
 

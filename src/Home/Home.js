@@ -15,9 +15,13 @@ const Home = () => {
   return (
     <>
       <div className="container-fluid vh-100 ">
-        <div className="row  h-10">
+        <div className="row align-items-center text-center   h-10">
           <div
-            className="col-md-4 position-front"
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
           >
              <img
                 className="logo-style"
@@ -26,7 +30,7 @@ const Home = () => {
               />
           </div>
           <div
-            className="col-md-8 position-front"
+            className="col-md-4 position-front"
           >
           </div>
         </div>
