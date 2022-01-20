@@ -9,7 +9,7 @@ function App() {
   return (
       <div style={{backgroundColor:"#8a2be2"}}>
          <NoMobile/>
-        {/* <Background /> */}
+        <Background />
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/SinglePlayer" component={SinglePlayer}/>
