@@ -5,7 +5,7 @@
   top:10px;
   left:12px; */
   padding-top: 2vh;
-  width:18vw;
+  width:22vw;
 }
 
 .position-front {
@@ -48,7 +48,7 @@
 }
 
 .Welcome-text {
-  font-size: 8rem;
+  font-size: 6.5rem;
   color: white;
   display: block;
   text-align: center;
