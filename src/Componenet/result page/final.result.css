@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:400,900&display=swap");
 
-/* body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
-  background: #f0f0f0;
-  color: #333;
-} */
-
 .center {
   position: absolute;
   top: 50%;
@@ -24,7 +13,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  color: #4b4168;
+  color: #684241;
   position: relative;
 
   animation: mover 3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 forwards,
@@ -82,9 +71,10 @@ html {
   }
 }
 .scroll {
-  width: 50vw;
+  /* width: 50vw; */
   height: 37vh;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

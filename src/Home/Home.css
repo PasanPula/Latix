@@ -1,70 +1,53 @@
 
-/* .background{
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(to top right, rgba(0, 195, 255, 0.719), rgba(195, 0, 255, 0.637));
-  background-image:url("./img/BG001.svg") ;
-  background-repeat: no-repeat; 
-    background-size:cover;  
-} */
 
-.position-front
-{
+.position-front {
   position: relative;
 }
 
-.h-10
-{
+.h-10 {
   height: 10%;
 }
-.h-20
-{
+.h-20 {
   height: 20%;
 }
 
-.h-60 
-{
+.h-60 {
   height: 60%;
 }
 
-.bottom-bar
-{
+.bottom-bar {
   background-color: white;
   border-radius: 1.5rem 1.5rem 0 0;
-  border: solid #b18597;
-  border-width: 5px 0 0 0
+  border-width: 5px 0 0 0;
+  box-shadow: 0 1px 24px -1px rgba(0 0 0 / 30%);
 }
 
-.play-icon
-{
+.play-icon {
   font-size: 4rem;
 }
 
-.btn-text
-{
+.btn-text {
   position: relative;
   top: 4px;
   display: inline;
 }
 
-.bottom-text
-{
-  font-size: 1rem;
-  font-family: 'Short Stack', cursive;
+.bottom-text {
+  font-size: 1.5rem;
+  font-family: "Dongle", sans-serif;
   font-weight: 700;
+  cursor: pointer;
 }
 
-.Welcome-text
-{
-  font-size: 5rem;
+.Welcome-text {
+  font-size: 8rem;
   color: white;
   display: block;
   text-align: center;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: "Dongle", sans-serif;
 }
 
-.home-button
-{
+.home-button {
   height: 22vh;
   width: 28vw;
   position: relative;
@@ -77,8 +60,7 @@
   font-size: 2rem;
   font-family: "Short Stack", cursive;
 }
-.home-button
-{
+.home-button {
   font-weight: 800;
   color: #382b22;
   text-transform: uppercase;
@@ -124,11 +106,7 @@
   transform: translate3d(0, 0, -1em);
 }
 
-
-
-
-.home-navigate-button
-{
+.home-navigate-button {
   height: 60px;
   width: 100px;
   position: relative;
@@ -141,8 +119,7 @@
   font-size: 2rem;
   font-family: "Short Stack", cursive;
 }
-.home-navigate-button
-{
+.home-navigate-button {
   font-weight: 800;
   color: #382b22;
   text-transform: uppercase;
@@ -151,7 +128,8 @@
   border: 2px solid #b18597;
   border-radius: 0.75em;
   transform-style: preserve-3d;
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 
 .home-navigate-button::before {
@@ -167,7 +145,8 @@
   border-radius: inherit;
   box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffffff00;
   transform: translate3d(0, 0.75em, -1em);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 
 .home-navigate-button:hover {
@@ -186,3 +165,6 @@
   transform: translate3d(0, 0, -1em);
 }
 
+.cardstyle {
+  text-decoration: none;
+}
