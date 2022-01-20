@@ -45,6 +45,7 @@
   display: block;
   text-align: center;
   font-family: "Dongle", sans-serif;
+  cursor: default;
 }
 
 .home-button {
