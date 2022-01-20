@@ -28,7 +28,7 @@ export default function Leaderboard({ userList,title }) {
         {/* <span className="leaderboard-breakline"></span>
          */}
          <hr className="leaderboard-breakline"></hr>
-        <div className="list">
+        <div className="leaderboard-list">
           <ol>
           {users}
           </ol>
