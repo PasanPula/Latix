@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Avatar from "../Componenet/avatar slider/Avatar";
 import "./login/Multiplayer.creator.login.css";
-import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
-
+// import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+import {TextButton} from '../Componenet/Button/TextButton/Button'
+import {faHome,faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 export default function MultiplayerLogin({
   userName,
   setName,
@@ -72,17 +74,18 @@ export default function MultiplayerLogin({
     //     </div>
     // </div>
     <div className="container-fluid vh-100">
-      <div style={{ backgroundColor: "red" }} className="row position-front">
+      <div style={{ backgroundColor: "red" }} className="row h-10 position-front">
         <div className="col-md-12">
           <h3>LOGO</h3>
         </div>
       </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-          <button className="home-navigate-button">
-            {" "}
-            <IoChevronBackCircleSharp />{" "}
-          </button>
+          {/* <button className="home-navigate-button">
+            
+            <IoChevronBackCircleSharp />
+          </button> */}
+          <IconButton icon={faArrowLeft} height={'80px'} width={'100px'} fontSize={'40px'} />
         </div>
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
@@ -154,7 +157,8 @@ export default function MultiplayerLogin({
                 )}
               </div>
               <div className="row justify-content-center position-front">
-              <button  className="btnGame learn-more">Login</button>
+              {/* <button  className="btnGame learn-more">Login</button> */}
+              <TextButton content={"Login"} height={'60px'} width={'130px'} fontSize={'35px'} />
               </div>
               </form>
             </div>
@@ -165,9 +169,10 @@ export default function MultiplayerLogin({
       </div>
       <div className="row pt-3 justify-content-center">
         <div className="col-md-2  text-center">
-          <button className="home-navigate-button">
+          {/* <button className="home-navigate-button">
             <IoHome />
-          </button>
+          </button> */}
+           <IconButton icon={faHome} height={'80px'} width={'100px'} fontSize={'40px'} />
         </div>
         <div className="col-md-8 text-center">
         </div>
