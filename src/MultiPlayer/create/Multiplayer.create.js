@@ -83,9 +83,25 @@ export default function MultiPlayerCreate({
     // </div>
 
     <div className="container-fluid vh-100">
-      <div className="row h-10" style={{ backgroundColor: "red" }}>
-        <div className="col-md-12">Logo</div>
-      </div>
+      <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+          </div>
+        </div>
       <div className="row">
         <div className="col-md-2 text-center "> 
                 <button className="home-navigate-button" onClick={HandleCreateGame}> <IoChevronBackCircleSharp/> </button>
@@ -97,7 +113,7 @@ export default function MultiPlayerCreate({
       </div>
       <div className="row h-60">
         <div className="col-md-12">
-          <div className="row align-items-center mt-5">
+          <div className="row align-items-center">
             <div className="col-md-6 text-center">
               <h2 className="multi-create-option-title">Select operator</h2>
             </div>
@@ -107,7 +123,7 @@ export default function MultiPlayerCreate({
               </h2>
             </div>
           </div>
-          <div className="row h-30 align-items-center h-20 mt-3">
+          <div className="row h-30 align-items-center h-20 ">
             <div className="col-md-6 text-center">
               {/* <h2 style={{ color: "white" }}>Select operator</h2> */}
               <SelectionButton
@@ -130,7 +146,7 @@ export default function MultiPlayerCreate({
               />
             </div>
           </div>
-          <div className="row align-items-center mt-5">
+          <div className="row align-items-center mt-4">
             <div className="col-md-6 text-center">
               <h2 className="multi-create-option-title">Set Grid size</h2>
             </div>
