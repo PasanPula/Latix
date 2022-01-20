@@ -5,11 +5,6 @@ export function Top({ place, No, Image, Name, Score }) {
     <div className={"item " + place}>
       <div className="pos">{No}</div>
       <div
-
-// className="pic"
-        // style={{
-        //   backgroundImage: `url(${Image})`,
-        // }}
       >
         <img  className="pic" src={Image} alt="avatar" />
       </div>
