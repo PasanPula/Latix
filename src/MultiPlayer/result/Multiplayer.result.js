@@ -2,44 +2,44 @@ import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useSocket } from "../../Services/SocketProvider";
+import FinalResult from "../../Componenet/result page/final.result";
 
-export default function MultiplayerResult({ isCreator,setisCreator, userResult }) {
+export default function MultiplayerResult({
+  isCreator,
+  setisCreator,
+  userResult,
+}) {
   const [result] = useState(userResult);
   const history = useHistory();
   const socket = useSocket();
   const [tempCreator, setTempCreator] = useState(isCreator);
 
   useEffect(() => {
-
-
     socket.on("GetUser", (res) => {
       res.filter((user) => {
         if (user.UserId === socket.id) {
           if (user.Owner) {
-          setisCreator(true);
-          setTempCreator(user.Owner);
+            setisCreator(true);
+            setTempCreator(user.Owner);
           }
         }
         return user;
       });
     });
 
-
-    if(!isCreator)
-    {
-        socket.on("UpdateGame", (res) => {
-            console.log("result", res);
-            if(res.IsUpdate)
-            {
-              history.push("/Multiplay/lobby");
-            }
-          });
+    if (!isCreator) {
+      socket.on("UpdateGame", (res) => {
+        console.log("result", res);
+        if (res.IsUpdate) {
+          history.push("/Multiplay/lobby");
+        }
+      });
     }
 
     return () => {
-        socket.off("UpdateGame");
-        socket.off("GetUser");
-    }
+      socket.off("UpdateGame");
+      socket.off("GetUser");
+    };
   });
 
   const Result = result.map((data, index) => {
@@ -60,14 +60,15 @@ export default function MultiplayerResult({ isCreator,setisCreator, userResult }
 
   return (
     <div>
-      {Result}
+      <FinalResult resultList={result} />
+      {/* {Result}
       <div>
         {tempCreator ? 
           <Button onClick={handelPlayAgain}>Play Again</Button>
          :
           <span></span>
         }
-      </div>
+      </div> */}
     </div>
   );
 }
