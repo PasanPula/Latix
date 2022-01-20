@@ -100,7 +100,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="row justify-content-center mt-2">
+            <div className="row justify-content-center mt-1">
               <div className="col-md-12 d-flex justify-content-center">
                 Made With ❤️ by USJ
               </div>
