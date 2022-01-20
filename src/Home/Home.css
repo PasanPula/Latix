@@ -23,6 +23,11 @@
   height: 60%;
 }
 
+.h-5
+{
+  height: 5%;
+}
+
 .bottom-bar {
   background-color: white;
   border-radius: 1.5rem 1.5rem 0 0;
