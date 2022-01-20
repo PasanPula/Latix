@@ -15,16 +15,27 @@ const Home = () => {
   return (
     <>
       <div className="container-fluid vh-100 ">
-        <div className="row  h-10">
+        <div className="row align-items-center text-center   h-10">
           <div
-            style={{ backgroundColor: "red" }}
-            className="col-md-12 position-front"
+            className="col-md-4 "
           >
-            logo
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
           </div>
         </div>
         <div className="row h-20 align-items-center ">
-          <div className="col-md-12  justify-content-center">
+          <div className="col-md-12 mt-5  justify-content-center">
             <div className="Welcome-text position-front">Welcome to Latix </div>
           </div>
         </div>
@@ -89,7 +100,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="row justify-content-center mt-2">
+            <div className="row justify-content-center mt-1">
               <div className="col-md-12 d-flex justify-content-center">
                 Made With ❤️ by USJ
               </div>
