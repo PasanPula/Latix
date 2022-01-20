@@ -69,8 +69,8 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
           </Link>
         </div>
         <div className="col-md-5 d-flex justify-content-start">
-          <Link to="/Multiplay/login" className="cardstyle" >
-             <Card3D
+          <Link to="/Multiplay/login" className="cardstyle" onClick={createButtonClick}>
+             <Card3D 
                     Title="Create Game"
                     Cardtex="Create Game"
                     CardContent="Start Here &gt; &gt;"
