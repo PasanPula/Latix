@@ -45,7 +45,7 @@ export default function FinalResult({ resultList }) {
   const SecondaryResult = resultList.map((data, index) => {
     return (
       <List
-        No={index}
+        No={index+1}
         name={data.ClientName}
         score={67.0}
         image={`/Assets/Avatar list/${data.Avatar}.svg`}

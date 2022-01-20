@@ -1,6 +1,6 @@
 import "./list.css";
 
-export function List({ No, image, name, score }) {
+export function List({ No, Image, name, score }) {
   return (
     <div className="item">
       <div className="pos">{No}</div>
