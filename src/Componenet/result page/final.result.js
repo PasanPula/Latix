@@ -21,7 +21,7 @@ export default function FinalResult({ resultList }) {
         correct={data.Result.Correct} 
         incorrect={data.Result.InCorrect}
       />
-    ) : index === 1 ? (+
+    ) : index === 1 ? (
       <Top
         key={index}
         place="two"
@@ -56,7 +56,7 @@ export default function FinalResult({ resultList }) {
         time={data.Result.Time}
         correct={data.Result.Correct} 
         incorrect={data.Result.InCorrect}
-        image={`/Assets/Avatar list/${data.Avatar}.svg`}
+        Image={`/Assets/Avatar list/${data.Avatar}.svg`}
       />
     );
   });
