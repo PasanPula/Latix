@@ -9,7 +9,7 @@ export default function SinglePlayer()  {
 
 
 const name = useRef();
-const avatar = useRef(5);
+const avatar = useRef(Math.floor(Math.random() * 10) + 1);
 
 const Correct = useRef(0);
 const incorrect = useRef(0);

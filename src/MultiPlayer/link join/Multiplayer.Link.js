@@ -5,7 +5,7 @@ import Avatar from "../../Componenet/avatar slider/Avatar";
 import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 
 
-export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar}) {
+export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, avatar}) {
   const { code } = useParams();
   const history = useHistory();
   const socket = useSocket();
@@ -21,7 +21,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar})
         {
             UserName:username,
             GameId:code,
-            Avatar:3
+            Avatar:avatar
         },(res)=>
         {
             if(res.Status === 0)

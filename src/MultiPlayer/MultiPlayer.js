@@ -13,7 +13,7 @@ import MultiplayerLinkJoin from "./link join/Multiplayer.Link";
 export default function MultiPlayer() {
   const [showCheckBox, setShowCheckBox] = useState(false); 
   const name = useRef();
-  const avatar = useRef(1);
+  const avatar = useRef(Math.floor(Math.random() * 10) + 1);
 
   const isJoinAsPlayer = useRef(true);
   const time = useRef(5);
@@ -235,7 +235,7 @@ const setisCreator = (value) =>
         <Route exact
           path="/Multiplay/join/:code"
           component={() => (
-            <MultiplayerLinkJoin  name={name.current} setGameId={setGameId} setName={setName}  Setavatar={Setavatar} />
+            <MultiplayerLinkJoin  avatar={avatar.current} name={name.current} setGameId={setGameId} setName={setName}  Setavatar={Setavatar} />
           )}
         />
 
