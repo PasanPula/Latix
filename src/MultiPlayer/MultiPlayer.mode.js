@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import "./mode/Multiplayer.mode.css";
 import { FaEdit } from "react-icons/fa";
-import { AiFillPlusSquare } from "react-icons/ai";
+// import { AiFillPlusSquare } from "react-icons/ai";
+import { faSignInAlt,faUserCog} from "@fortawesome/free-solid-svg-icons";
 import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
+import {Card3D} from '../Componenet/3Dcard/3DCard' 
 
 export default function MultiPlayerMode({ HandleShowCheckBox }) {
   const createButtonClick = () => {
@@ -57,21 +59,23 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
       <div className="row h-60 align-items-center">
         <div className="col-md-1"></div>
         <div className="col-md-5 d-flex justify-content-end">
-          <Link to="/Multiplay/Login">
-            <button className="mode-button">
-              <AiFillPlusSquare className="mode-icon" />
-              <br></br>
-              Join Game
-            </button>
+          <Link to="/Multiplay/Login" className="cardstyle">
+            <Card3D
+                    Title="Join Game"
+                    Cardtex="Join Game"
+                    CardContent="Start Here &gt; &gt;"
+                    Icon={faSignInAlt}
+                  />
           </Link>
         </div>
         <div className="col-md-5 d-flex justify-content-start">
-          <Link to="/Multiplay/login">
-            <button onClick={createButtonClick} className="mode-button">
-              <FaEdit className="mode-icon" />
-              <br></br>
-              Create Game
-            </button>
+          <Link to="/Multiplay/login" className="cardstyle">
+             <Card3D
+                    Title="Create Game"
+                    Cardtex="Create Game"
+                    CardContent="Start Here &gt; &gt;"
+                    Icon={faUserCog}
+                  />
           </Link>
         </div>
         <div className="col-md-1"></div>
