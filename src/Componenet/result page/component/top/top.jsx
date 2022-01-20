@@ -1,5 +1,4 @@
 import "./top.css";
-import { useEffect, useState } from "react";
 export function Top({ place, No, Image, Name, time, correct, incorrect }) {
   return (
     <div className={"item " + place}>

@@ -31,10 +31,12 @@ function CelTex(parms)
 
     if(parms.MathOperator==='X')
     {
+        // eslint-disable-next-line
         let result = eval(parms.item1.toString().concat('*',parms.item2.toString())).toString();
         sum.current = parseInt(result).toString();
     }else
     {
+        // eslint-disable-next-line
         let result = eval(parms.item1.toString().concat(parms.MathOperator,parms.item2.toString())).toString();
         sum.current = parseInt(result).toString();
     }

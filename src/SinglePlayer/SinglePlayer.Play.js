@@ -1,4 +1,4 @@
-import {memo, useRef,useEffect} from 'react';
+import {memo, useRef} from 'react';
 import Timer from '../Componenet/Timer/Timer';
 import Grid from '../Componenet/Game grid/grid';
 import Button from '../Componenet/Game grid/components/Button';

@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import MultiPlayerMode from "./MultiPlayer.mode";
 import MultiplayerLogin from "./Multiplayer.login";
@@ -27,6 +27,7 @@ export default function MultiPlayer() {
   const timeSpent = useRef(0);
   const Correct = useRef(0);
   const incorrect = useRef(0);
+  // eslint-disable-next-line
   const isFinished = useRef(false);
   const socket = useSocket();
   const userResult = useRef();

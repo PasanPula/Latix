@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState} from "react";
 import SelectionButton from "../../Componenet/select button/SelectionButton";
 import ValueButton from "../../Componenet/value button/ValueButton";
 import useSlider from "../../Componenet/range slider/RangeSlide";

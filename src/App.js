@@ -2,6 +2,7 @@ import Home from "./Home/Home"
 import {Switch, Route} from 'react-router-dom';
 import MultiPlayer from "./MultiPlayer/MultiPlayer";
 import SinglePlayer from './SinglePlayer/SinglePlayer';
+// eslint-disable-next-line
 import Background from "./Componenet/background/background";
 import NoMobile from "./Componenet/not available mobile/no.mobile";
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams, useHistory } from "react-router";
 import { useSocket } from "../../Services/SocketProvider";
 import Avatar from "../../Componenet/avatar slider/Avatar";

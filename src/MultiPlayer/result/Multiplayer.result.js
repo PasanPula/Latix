@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useSocket } from "../../Services/SocketProvider";
 import FinalResult from "../../Componenet/result page/final.result";
@@ -13,6 +12,7 @@ export default function MultiplayerResult({
   const [result] = useState(userResult);
   const history = useHistory();
   const socket = useSocket();
+  // eslint-disable-next-line
   const [tempCreator, setTempCreator] = useState(isCreator);
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default function MultiplayerResult({
     };
   });
 
+  // eslint-disable-next-line
   const Result = result.map((data, index) => {
     return (
       <li key={index}>
@@ -55,6 +56,7 @@ export default function MultiplayerResult({
     );
   });
 
+  // eslint-disable-next-line
   const handelPlayAgain = () => {
     history.push("/Multiplay/create");
   };

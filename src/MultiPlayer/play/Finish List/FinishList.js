@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSocket } from "../../../Services/SocketProvider";
+// eslint-disable-next-line
 import Leaderboard from "../../../Componenet/leaderboard/leaderboard";
 import { IoCreate } from "react-icons/io5";
 import "./FinishList.css";

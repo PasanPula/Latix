@@ -1,6 +1,6 @@
-import { useState,useEffect, memo, useRef, forwardRef,useImperativeHandle } from 'react';
+import {useEffect, memo, useRef, forwardRef,useImperativeHandle } from 'react';
 import Generate from './components/Generate';
-import { randomUnique } from "./components/getrandom";
+// import { randomUnique } from "./components/getrandom";
 import { useHistory } from 'react-router';
 
 
