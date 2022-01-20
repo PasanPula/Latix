@@ -1,6 +1,6 @@
 import "./list.css";
 
-export function List({ No, Image, name, score }) {
+export function List({ No, Image, name, time, correct, incorrect }) {
   return (
     <div className="item">
       <div className="pos">{No}</div>
@@ -14,7 +14,9 @@ export function List({ No, Image, name, score }) {
         <img  className="pic" src={Image} alt="avatar" />
       </div>
       <div className="name">{name}</div>
-      <div className="score">{score}</div>
+      <div className="score">Time{time}</div>
+      <div className="score">Correct{correct}</div>
+      <div className="score">Incorrect{incorrect}</div>
     </div>
   );
 }

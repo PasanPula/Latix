@@ -35,7 +35,10 @@ export default function FinalResult({ resultList }) {
         No={3}
         Image={`/Assets/Avatar list/${data.Avatar}.svg`}
         Name={data.ClientName}
-        Score={24.9}
+        name={data.ClientName}
+        time={data.Result.Time}
+        correct={data.Result.Correct} 
+        incorrect={data.Result.InCorrect}
       />
     ) : (
       <span key={index}></span>
@@ -47,7 +50,9 @@ export default function FinalResult({ resultList }) {
       <List
         No={index+1}
         name={data.ClientName}
-        score={67.0}
+        time={data.Result.Time}
+        correct={data.Result.Correct} 
+        incorrect={data.Result.InCorrect}
         image={`/Assets/Avatar list/${data.Avatar}.svg`}
       />
     );
