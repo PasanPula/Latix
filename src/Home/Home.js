@@ -17,10 +17,17 @@ const Home = () => {
       <div className="container-fluid vh-100 ">
         <div className="row  h-10">
           <div
-            style={{ backgroundColor: "red" }}
-            className="col-md-12 position-front"
+            className="col-md-4 position-front"
           >
-            logo
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-8 position-front"
+          >
           </div>
         </div>
         <div className="row h-20 align-items-center ">

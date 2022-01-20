@@ -1,4 +1,11 @@
 
+.logo-style
+{
+  position: absolute;
+  top:10px;
+  left:12px;
+  width:18vw;
+}
 
 .position-front {
   position: relative;
