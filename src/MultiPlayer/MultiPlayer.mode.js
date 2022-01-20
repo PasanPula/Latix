@@ -32,14 +32,25 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
     // </div>
 
     <div className="container-fluid vh-100">
-      <div className="row h-10">
-        <div
-          className="col-md-12  position-front"
-          style={{ backgroundColor: "red" }}
-        >
-          Logo
+      <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+          </div>
         </div>
-      </div>
       <div className="row">
         <div className="col-md-2 text-center ">
           {/* <button className="home-navigate-button">
