@@ -72,7 +72,6 @@ export default function MultiplayerLogin({
     //     </div>
     // </div>
     <div className="container-fluid vh-100">
-    // <form>
       <div style={{ backgroundColor: "red" }} className="row position-front">
         <div className="col-md-12">
           <h3>LOGO</h3>
@@ -119,6 +118,7 @@ export default function MultiplayerLogin({
           <div className="row  ">
             <div className="col-md-2"></div>
             <div className="col-md-8 ">
+              <form onSubmit={handleSubmit}>
               <div className="row justify-content-center position-front">
                 <input
                   className="input-field"
@@ -153,6 +153,10 @@ export default function MultiplayerLogin({
                   <span> </span>
                 )}
               </div>
+              <div className="row justify-content-center position-front">
+              <button  className="btnGame learn-more">Login</button>
+              </div>
+              </form>
             </div>
             <div className="col-md-2"></div>
           </div>
@@ -166,15 +170,13 @@ export default function MultiplayerLogin({
           </button>
         </div>
         <div className="col-md-8 text-center">
-          <button onClick={handleSubmit} className="btnGame learn-more">Login</button>
         </div>
         <div className="col-md-2  text-center"> </div>
       </div>
-      {/* </form> */}
       <div className="row">
         <div className="col-md-12"></div>
       </div>
-      // </form>
+      {/* // </form> */}
     </div>
   );
 }
