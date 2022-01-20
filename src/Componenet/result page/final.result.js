@@ -21,7 +21,7 @@ export default function FinalResult({ resultList }) {
         correct={data.Result.Correct} 
         incorrect={data.Result.InCorrect}
       />
-    ) : index === 1 ? (
+    ) : index === 1 ? (+
       <Top
         key={index}
         place="two"
