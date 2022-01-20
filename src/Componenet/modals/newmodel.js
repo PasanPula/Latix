@@ -265,11 +265,15 @@ export function ContactUs(props) {
       </Modal.Header>
       <Modal.Body>
         <div className="contact-body">
-          <h2>Develope by O3 production</h2>
-          <h2>Copyright</h2>
-          <h2>Develope by O3 production</h2>
-          <h2>Develope by O3 production</h2>
-          <h2>Email Address</h2>
+        <h4>LATIX approach to fun game-based learning means kids no longer have to choose between homework and playtime.</h4>
+          <h4>General Information</h4>
+          <h2>Write us at</h2>
+          <h2><a href="HELLO@LATIX.ZYX">HELLO@LATIX.ZYX</a></h2>
+          <h5>Back-end By Dasun Sennath, Iresh Madushan</h5>
+          <h5>Front-end By Pasan pulathisi, Kavindu Jayamal</h5>
+          <h5>Animations & UI by Krishan Kanishka</h5>
+          <h4>Copyright (©) 2022</h4>
+          <h4>All Rights Reserved.</h4>
         </div>
       </Modal.Body>
       <Modal.Footer>
