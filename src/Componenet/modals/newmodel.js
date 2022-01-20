@@ -111,7 +111,7 @@ export function ModelTerm(props) {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          <h3 className="heading">TERM & CONDITION</h3>
+          <h3 className="heading">TERMS OF SERVICE</h3>
         </Modal.Title>
         <div className="close clickbtn" onClick={props.onHide}> <MdOutlineClose /></div>
       </Modal.Header>
@@ -160,7 +160,7 @@ export function ModelTerm(props) {
             </TabPanel>
             <TabPanel>
               <div className="panel-content">
-                <h2>LICENSE </h2>
+                <h2>LICENSES </h2>
                 <p>
                   Permission is granted to temporarily download a copy of the
                   materials from LATIX for personal non-commercial transient

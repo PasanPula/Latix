@@ -61,7 +61,7 @@ const Home = () => {
             <div className="row justify-content-center mt-2">
               <div className="col-md-4 d-flex justify-content-center">
                 <div className="model-link" onClick={() => setModalterm(true)}>
-                <div className="bottom-text">Terms & conditions</div> 
+                <div className="bottom-text">Terms of Service</div> 
                 </div>
                 <ModelTerm
                   show={modalterm}
@@ -70,7 +70,7 @@ const Home = () => {
               </div>
               <div className="col-md-4 d-flex justify-content-center">
                 <div className="model-link" onClick={() => setModalpry(true)}>
-                <div className="bottom-text">  Privacy policy </div>
+                <div className="bottom-text">  Privacy </div>
                 </div>
 
                 <ModelPRIVACY
