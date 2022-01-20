@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:400,900&display=swap");
 
 .top3 .item {
+
+  /* background-image: url("./image/image.svg"); */
   box-sizing: content-box;
   position: relative;
-  width: 15rem;
-  height: 13rem;
+  width: 16rem;
+  height: 15rem;
   text-align: center;
   padding: 2.8rem 0 0;
   margin: 1rem 1rem 2rem;
@@ -25,6 +27,12 @@
   background-size: 600px 100px;
 } */
 
+.pos-avatar
+{
+  width: 6rem;
+  height: 6rem;
+}
+
 
 .top3 .item .pic {
   position: absolute;
@@ -32,27 +40,25 @@
   left: 2.5rem;
   width: 4rem;
   height: 4rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   background-size: cover;
   background-position: center;
   margin-right: 1rem;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2),
     0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
   opacity: 0;
-  background-color: white;
-  padding: 5px;
 }
-
 
 .top3 .item .pos {
   font-weight: 900;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.9rem;
+  /* margin-bottom: 0.5rem; */
+  height: 7rem;
   opacity: 1;
 }
 
 .top3 .item .name {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   opacity: 0;
 }
@@ -66,8 +72,8 @@
 }
 
 .top3 .item.one {
-  width: 10rem;
-  height: 11rem;
+  width: 14rem;
+  height: 16rem;
   padding-top: 3.5rem;
 }
 
@@ -76,74 +82,158 @@
   height: 5rem;
   left: 2.5rem;
 }
+
+.top3 .item.one .pos-avatar {
+  width: 9rem;
+  height: 9rem;
+}
+.top3 .item.two .pos-avatar {
+  width: 8rem;
+  height: 8rem;
+}
+.top3 .item.three .pos-avatar {
+  width: 7rem;
+  height: 7rem;
+}
+
 .top3 .item:hover {
   transform: scale(1.05);
 }
 
 .item.two {
   border-radius: 20px;
-  width: 150px;
-  height: 170px;
+  width: 12rem;
+  height: 15rem;
   background: #f0f0f0;
   box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
     -10px -10px 10px #ffffff inset;
 
-  animation: anime 6s cubic-bezier(0.16, 1, 0.3, 1) 15s 2 alternate;
+  animation: animetwo 6s cubic-bezier(0.16, 1, 0.3, 1) 15s 2 alternate;
   order: 1;
   /* z-index: 3; */
 }
 
 .item.three {
   border-radius: 20px;
-  width: 150px;
-  height: 170px;
+  width: 11rem;
+  height: 14rem;
   background: #f0f0f0;
   box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
     -10px -10px 10px #ffffff inset;
-  animation: anime 6s cubic-bezier(0.16, 1, 0.3, 1) 3s 2 alternate;
+  animation: animethree 6s cubic-bezier(0.16, 1, 0.3, 1) 3s 2 alternate;
   order: 3;
   /* z-index: 3; */
 }
 
 .item.one {
   border-radius: 20px;
-  width: 150px;
-  height: 170px;
+  width: 14rem;
+  height: 16rem;
   background: #f0f0f0;
   box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
     -10px -10px 10px #ffffff inset;
-  animation: anime 6s cubic-bezier(0.16, 1, 0.3, 1) 27s 2 alternate;
+  animation: animeone 6s cubic-bezier(0.16, 1, 0.3, 1) 27s 2 alternate;
   order: 2;
   /* z-index: 3; */
 }
 
-@keyframes anime {
+@keyframes animeone {
   0% {
-    width: 150px;
-    height: 170px;
+    width: 14rem;
+  height: 16rem;
     background: #f0f0f0;
     box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
       -10px -10px 10px #ffffff inset;
   }
   25% {
-    width: 150px;
-    height: 170px;
+    width: 14rem;
+  height: 16rem;
     background: #f8f8f8;
     box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
       0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
 
   }
   50% {
-    width: 150px;
-    height: 240px;
+    width: 14rem;
+  height: 23rem;
     background: #f8f8f8;
     box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
       0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
   }
 
   100% {
-    width: 340px;
-    height: 240px;
+    width: 20rem;
+    height: 23rem;
+    background: #fafafa;
+    box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
+      2px 2px 2px #ffffff inset;
+  }
+}
+
+
+@keyframes animethree {
+  0% {
+    width: 11rem;
+   height: 14rem;
+    background: #f0f0f0;
+    box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
+      -10px -10px 10px #ffffff inset;
+    
+  }
+  25% {
+    width: 11rem;
+   height: 14rem;
+    background: #f8f8f8;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+      
+  }
+  50% {
+    width: 11rem;
+   height: 23rem;
+    background: #f8f8f8;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+      
+  }
+
+  100% {
+    width: 20rem;
+    height: 23rem;
+    background: #fafafa;
+    box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
+      2px 2px 2px #ffffff inset;
+      
+  }
+}
+
+@keyframes animetwo {
+  0% {
+    width: 12rem;
+    height: 15rem;
+    background: #f0f0f0;
+    box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
+      -10px -10px 10px #ffffff inset;
+  }
+  25% {
+    width: 12rem;
+    height: 15rem;
+    background: #f8f8f8;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+
+  }
+  50% {
+    width: 12rem;
+    height: 23rem;
+    background: #f8f8f8;
+    box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
+      0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
+  }
+
+  100% {
+    width: 20rem;
+    height: 23rem;
     background: #fafafa;
     box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
       2px 2px 2px #ffffff inset;
@@ -186,34 +276,7 @@
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 8s 1 forwards;
 }
 
-.item.three .pos
-{
-  animation: num 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 4.5s 2 alternate;
-}
 
-.item.two .pos
-{
-  animation: num 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 16.5s 2 alternate;
-}
-
-.item.one .pos
-{
-  animation: num 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 28.5s 2 alternate;
-}
-
-@keyframes num {
-  0%
-  {
-    font-weight: 900;
-    color: #4b4168;
-    font-size: 1.5rem;
-  }
-  100%{
-    font-weight: 900;
-    color: #4b18e2;
-    font-size: 2.5rem;
-  }
-}
 
 @keyframes twopa {
   0% {
@@ -233,19 +296,14 @@
   }
 }
 
-@keyframes animeout {
+/* @keyframes animeout {
   100% {
     width: 150px;
     height: 170px;
     background: #f0f0f0;
     box-shadow: 0 0 0 #cccccc, 0 0 0 #ffffff, 10px 10px 10px #cccccc inset,
       -10px -10px 10px #ffffff inset;
-    /* position: fixed;
-    top: -50%;
-    right: -50%;
-    left: -50%;
-    bottom: -50%;
-    margin: auto; */
+    
   }
   50% {
     width: 150px;
@@ -253,12 +311,7 @@
     background: #f8f8f8;
     box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
       0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
-    /* position: fixed;
-    top: -100%;
-    right: -100%;
-    left: -100%;
-    bottom: -100%;
-    margin: auto; */
+   
   }
   25% {
     width: 150px;
@@ -266,12 +319,7 @@
     background: #f8f8f8;
     box-shadow: 10px 10px 10px #cccccc, 10px 10px 10px #ffffff,
       0 0 0 #cccccc inset, 0 0 0 #ffffff inset;
-    /* position: fixed;
-    top: -100%;
-    right: -100%;
-    left: -100%;
-    bottom: -100%;
-    margin: auto; */
+    
   }
   0% {
     width: 480px;
@@ -279,11 +327,25 @@
     background: #fafafa;
     box-shadow: 40px 40px 40px #cccccc, 0 0 0 #ffffff, 0 0 0 #cccccc inset,
       2px 2px 2px #ffffff inset;
-    /* position: fixed;
-    top: -100%;
-    right: -100%;
-    left: -100%;
-    bottom: -100%;
-    margin: auto; */
+   
   }
+} */
+
+.one .top-body
+{
+  padding: 1.2rem;
+  line-height: 1.5;
+}
+
+.two .top-body
+{
+ padding: 0.3rem;
+ line-height: 1.5;
+}
+
+.three .top-body
+{
+  position: relative;
+  bottom: 0.7rem;
+  line-height: 1.5;
 }
