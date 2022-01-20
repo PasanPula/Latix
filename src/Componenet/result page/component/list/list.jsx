@@ -14,9 +14,9 @@ export function List({ No, Image, name, time, correct, incorrect }) {
         <img  className="pic" src={Image} alt="avatar" />
       </div>
       <div className="name">{name}</div>
-      <div className="score">Time{time}</div>
-      <div className="score">Correct{correct}</div>
-      <div className="score">Incorrect{incorrect}</div>
+      <div className="score">Time : {time}</div>
+      <div className="score">Correct : {correct}</div>
+      <div className="score">Incorrect : {incorrect}</div>
     </div>
   );
 }

@@ -62,7 +62,6 @@
 
 .top3 .item .score:after {
   display: block;
-  content: "points";
   opacity: 0.5;
 }
 

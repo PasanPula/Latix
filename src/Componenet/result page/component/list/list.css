@@ -49,7 +49,6 @@
 }
 .list .item .score:after {
   margin-right: 1rem;
-  content: "points";
   opacity: 0.5;
 }
 .list .item:hover {

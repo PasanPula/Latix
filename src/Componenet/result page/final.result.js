@@ -17,7 +17,9 @@ export default function FinalResult({ resultList }) {
         No={1}
         Image={`/Assets/Avatar list/${data.Avatar}.svg`}
         Name={data.ClientName}
-        Score={24.9}
+        time={data.Result.Time}
+        correct={data.Result.Correct} 
+        incorrect={data.Result.InCorrect}
       />
     ) : index === 1 ? (
       <Top
@@ -26,7 +28,9 @@ export default function FinalResult({ resultList }) {
         No={2}
         Image={`/Assets/Avatar list/${data.Avatar}.svg`}
         Name={data.ClientName}
-        Score={24.9}
+        time={data.Result.Time}
+        correct={data.Result.Correct} 
+        incorrect={data.Result.InCorrect}
       />
     ) : index === 2 ? (
       <Top
@@ -35,7 +39,6 @@ export default function FinalResult({ resultList }) {
         No={3}
         Image={`/Assets/Avatar list/${data.Avatar}.svg`}
         Name={data.ClientName}
-        name={data.ClientName}
         time={data.Result.Time}
         correct={data.Result.Correct} 
         incorrect={data.Result.InCorrect}
