@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./mode/Multiplayer.mode.css";
-import { FaEdit } from "react-icons/fa";
+// import { FaEdit } from "react-icons/fa";
 // import { AiFillPlusSquare } from "react-icons/ai";
 import { faSignInAlt,faUserCog} from "@fortawesome/free-solid-svg-icons";
 import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
@@ -69,7 +69,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
           </Link>
         </div>
         <div className="col-md-5 d-flex justify-content-start">
-          <Link to="/Multiplay/login" className="cardstyle">
+          <Link to="/Multiplay/login" className="cardstyle" >
              <Card3D
                     Title="Create Game"
                     Cardtex="Create Game"
