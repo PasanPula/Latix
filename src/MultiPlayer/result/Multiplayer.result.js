@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useSocket } from "../../Services/SocketProvider";
 import FinalResult from "../../Componenet/result page/final.result";
+import "./celebration.style.css"
 
 export default function MultiplayerResult({
   isCreator,
@@ -60,6 +61,12 @@ export default function MultiplayerResult({
 
   return (
     <div>
+
+      
+<div class="pyro">
+  <div class="before"></div>
+  <div class="after"></div>
+</div>
       <FinalResult resultList={result} />
       {/* {Result}
       <div>
