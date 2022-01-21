@@ -5,7 +5,7 @@ import "./mode/Multiplayer.mode.css";
 import { faSignInAlt,faUserCog,faHome,faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import {Card3D} from '../Componenet/3Dcard/3DCard' 
-import { Button } from "../Componenet/Button/Button";
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
 
 export default function MultiPlayerMode({ HandleShowCheckBox }) {
   const createButtonClick = () => {
@@ -57,7 +57,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
             
             <IoChevronBackCircleSharp />
           </button> */}
-           <Button icon={faArrowLeft} height={'80px'} width={'100px'} fontSize={'35px'} />
+           <IconButton icon={faArrowLeft} height={'80px'} width={'100px'} fontSize={'40px'} />
         </div>
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
@@ -99,7 +99,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
             
             <IoHome />
           </button> */}
-          <Button icon={faHome} height={'80px'} width={'100px'} fontSize={'35px'} />
+          <IconButton icon={faHome} height={'80px'} width={'100px'} fontSize={'40px'} />
         </div>
         <div className="col-md-8 mt-5 text-center"></div>
         <div className="col-md-2  text-center"> </div>
