@@ -10,6 +10,13 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
   const history = useHistory();
   const socket = useSocket();
   const [username,SetUsername] = useState("");
+  const [avatarLocal,SetavatarLocal] = useState(avatar);
+
+  const handleavavatarChnage = (val) => 
+  {
+    Setavatar(val);
+    SetavatarLocal(val)
+  }
 
   const handleSubmit = (e) => {
 
@@ -21,7 +28,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
         {
             UserName:username,
             GameId:code,
-            Avatar:avatar
+            Avatar:avatarLocal
         },(res)=>
         {
             if(res.Status === 0)
@@ -106,7 +113,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
           <div className="row ">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
-              <Avatar OnChangeAvatar = {Setavatar}/>
+              <Avatar OnChangeAvatar = {handleavavatarChnage}/>
             </div>
             <div className="col-md-2"></div>
           </div>
