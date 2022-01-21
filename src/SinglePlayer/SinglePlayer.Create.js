@@ -160,7 +160,7 @@ function SinglePlayerCreate(props) {
       <div className="row justify-content-center vh-30 mt-4
       ">
         <div className="col-md-6 text-center">
-        <label className="single-create-subtitle">Mathamatical Operator</label>
+        <label className="single-create-subtitle  position-front">Mathamatical Operator</label>
         <SelectionButton valueList={operators} pickedValue={selectedOperator} setPickvalue={HandlesetOperator}
         radioPadStyle="single-mode-create-radioPad"
         radioStyle="single-mode-create-radioPad__radio"
@@ -169,7 +169,7 @@ function SinglePlayerCreate(props) {
         />
         </div>
         <div className="col-md-6 text-center">
-        <label className="single-create-subtitle">Worksheet Size</label>
+        <label className="single-create-subtitle  position-front">Worksheet Size</label>
          <SelectionButton valueList={size} pickedValue={selectedSize} setPickvalue={HandleSetSize}
          radioPadStyle="single-mode-create-radioPad"
          radioStyle="single-mode-create-radioPad__radio"

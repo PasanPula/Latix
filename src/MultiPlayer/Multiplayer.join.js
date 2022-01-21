@@ -51,17 +51,31 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
 
     // </div>
     <div className="container-fluid vh-100">
-      <div className="row  h-10">
-        <div className="col-md-12" style={{ backgroundColor: "red" }}>
-          Logo
+      <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+          </div>
         </div>
-      </div>
       <div className="row align-items-end h-40">
         <div className="col-md-12">
           <div className="row pt-5 justify-content-center">
             <div className="col-md-12 d-flex justify-content-center">
               <img
-                className="join-avatar"
+                className="join-avatar position-front"
                 src={`/Assets/Avatar list/${avatar}.svg`}
                 alt="avatar"
               />
@@ -69,7 +83,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
           </div>
           <div className="row pt-2 justify-content-center">
             <div className="col-md-12">
-              <label className="join-title-1 pt-2"> Hi {name} </label>
+              <label className="join-title-1 pt-2  position-front"> Hi {name} </label>
             </div>
           </div>
         </div>
@@ -78,10 +92,10 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
         <div className="col-md-2"></div>
         <div className="col-md-8  d-flex justify-content-center">
           <div>
-          <label className="join-textbox-text pt-4"> Enter Your Game code Here </label>
+          <label className="join-textbox-text pt-4  position-front"> Enter Your Game code Here </label>
           <div className="row pt-2 justify-content-center">
             <input
-              className="join-input-field"
+              className="join-input-field  position-front"
               placeholder="Code"
               type="text"
               name="Code"
@@ -91,7 +105,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
             />
           </div>
           <div className="row pt-3 justify-content-center">
-            <button onClick={onSubmit} className="btnGame learn-more join-btn ">
+            <button onClick={onSubmit} className="btnGame learn-more join-btn  position-front">
               Join
             </button>
           </div>

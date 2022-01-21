@@ -30,7 +30,7 @@ const Home = () => {
               />
           </div>
           <div
-            className="col-md-4 position-front"
+            className="col-md-4 "
           >
           </div>
         </div>
@@ -56,8 +56,8 @@ const Home = () => {
               <div className="col-md-6 d-flex justify-content-start">
                 <Link to="/Multiplay" className="cardstyle">
                   <Card3D
-                    Title="Multy User"
-                    Cardtex="Multy User"
+                    Title="Multi User"
+                    Cardtex="Multi User"
                     CardContent="Start Here &gt; &gt;"
                     Icon={faUsers}
                   />
@@ -102,7 +102,9 @@ const Home = () => {
             </div>
             <div className="row justify-content-center mt-1">
               <div className="col-md-12 d-flex justify-content-center">
-                Made With ❤️ by USJ
+                {/* Made With ❤️ by USJ */}
+                Copyright (©) 2022
+All Rights Reserved.
               </div>
             </div>
           </div>

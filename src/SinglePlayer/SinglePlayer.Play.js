@@ -29,9 +29,25 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
     // </div> 
 
     <div className="container-fluid vh-100">
-    <div className="row vh-5" style={{ backgroundColor: "red" }}>
-      <div className="col-md-12">Logo</div>
-    </div>
+     <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+             <img
+                className="logo-style "
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 "
+          >
+          </div>
+        </div>
     <div className="row vh-80  align-items-center">
       <div className="col-md-8 ">
         <div className="row">
@@ -50,16 +66,17 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
       <div className="row align-items-center ">
           <div className="col-md-12">
           <img
-                className="single-play-avatar"
+                className="single-play-avatar  position-front"
                 src={`/Assets/Avatar list/${avatar}.svg`}
                 alt="avatar"
               />
-          <label className="single-play-subtitle-1">{name}</label>
+            <br></br>
+          <label className="single-play-subtitle-1  position-front">{name}</label>
           </div>
         </div>
         <div className="row align-items-center">
           <div className="col-md-12">
-          <label className="single-play-subtitle-2">Time Remaining</label>
+          <label className="single-play-subtitle-2 position-front">Time Remaining</label>
             <Timer setTimeSpent={setTimeSpent} showValRef={setShowRef} initMinute={time} />
           </div>
         </div>
@@ -72,7 +89,7 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
         </div>
       </div>
     </div>
-    <div className="row mt-5 vh-5 align-items-center">
+    <div className="row mt-2 align-items-center">
           <div  className="col-md-2 ">
           <button className="home-navigate-button">
             <IoHome />

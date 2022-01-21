@@ -74,11 +74,25 @@ export default function MultiplayerLogin({
     //     </div>
     // </div>
     <div className="container-fluid vh-100">
-      <div style={{ backgroundColor: "red" }} className="row h-10 position-front">
-        <div className="col-md-12">
-          <h3>LOGO</h3>
+      <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+             <img
+                className="logo-style"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 position-front"
+          >
+          </div>
         </div>
-      </div>
       <div className="row">
         <div className="col-md-2 text-center ">
           {/* <button className="home-navigate-button">

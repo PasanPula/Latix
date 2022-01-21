@@ -41,7 +41,7 @@ export default function MultiPlayerMode({ HandleShowCheckBox }) {
             className="col-md-4"
           >
              <img
-                className="logo-style"
+                className="logo-style position-front"
                 src={`/Assets/logo.svg`}
                 alt="Latix"
               />
