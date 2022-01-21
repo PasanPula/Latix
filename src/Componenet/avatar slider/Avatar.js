@@ -20,13 +20,13 @@ const Carousel = ({children,OnChangeAvatar}) => {
 
   const OnleftChange = () => 
   {
-    setActive(i => i - 1)
+    setActive(i => i - 1);
     OnChangeAvatar(active);
   }
   const OnRightChange = () => 
   {
     setActive(i => i + 1)
-    OnChangeAvatar(active);
+    OnChangeAvatar(active+2);
   }
   
   return (
@@ -53,7 +53,7 @@ const Avatar = ({OnChangeAvatar}) => (
   <div className='app'>
     <Carousel OnChangeAvatar = {OnChangeAvatar}>
       {[...new Array(CARDS)].map((_, i) => (
-        <Card key={i} id={i+1} />
+        <Card key={i+1} id={i+1} />
       ))}
     </Carousel>
   </div>
