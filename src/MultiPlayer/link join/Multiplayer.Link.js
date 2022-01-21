@@ -87,12 +87,15 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
             <IoChevronBackCircleSharp />{" "}
           </button>
         </div>
-        <div className="col-md-8 "></div>
+        <div className="col-md-8 text-center ">
+        <div className="Login-header-avatar-select position-front">Welcome to Latix</div>
+        </div>
         <div className="col-md-2 "></div>
       </div>
       <div className="row mt-5 ">
         <div className="col-md-2"></div>
         <div className="col-md-8 ">
+          
           <div className="row mb-2">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">

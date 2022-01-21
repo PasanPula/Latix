@@ -106,13 +106,29 @@ export default function MultiplayerPlay({
     // </div>
 
     <div className="container-fluid vh-100">
-      <div className="row vh-5 " style={{ backgroundColor: "red" }}>
-        <div className="col-md-12">Logo</div>
-      </div>
+     <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style position-front"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 "
+          >
+          </div>
+        </div>
       <div className="row  align-items-center">
         <div className="col-md-8 ">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 position-front">
             <Grid
           ref={setShowRef}
           resultValueCountRef={resultValueCountRef}
@@ -138,7 +154,7 @@ export default function MultiplayerPlay({
         <div className=" pe-3 col-md-4 text-center ">
           <div className="row align-items-center">
             <div className="col-md-12">
-            <label className="multi-play-time-label">Time Remaining</label>
+            <label className="multi-play-time-label position-front">Time Remaining</label>
             <Timer
                 isJoinAsPlayer={isJoinAsPlayer}
                 SubmitAnswers={SubmitAnswers}
