@@ -192,9 +192,9 @@ export default function MultiplayerLogin({
         </div>
         <div className="col-md-2  text-center"> </div>
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className="col-md-12"></div>
-      </div>
+      </div> */}
       {/* // </form> */}
     </div>
   );
