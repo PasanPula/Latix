@@ -171,8 +171,8 @@ export default function MultiplayerLogin({
                 )}
               </div>
               <div className="row justify-content-center position-front">
-              {/* <button  className="btnGame learn-more">Login</button> */}
-              <TextButton content={"Login"} height={'60px'} width={'130px'} fontSize={'35px'} />
+              <button  className="btnGame learn-more">Login</button>
+              {/* <TextButton content={"Login"} height={'60px'} width={'130px'} fontSize={'35px'} /> */}
               </div>
               </form>
             </div>
@@ -192,9 +192,9 @@ export default function MultiplayerLogin({
         </div>
         <div className="col-md-2  text-center"> </div>
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className="col-md-12"></div>
-      </div>
+      </div> */}
       {/* // </form> */}
     </div>
   );
