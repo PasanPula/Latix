@@ -13,7 +13,7 @@ import MultiplayerLinkJoin from "./link join/Multiplayer.Link";
 export default function MultiPlayer() {
   const [showCheckBox, setShowCheckBox] = useState(false); 
   const name = useRef();
-  const avatar = useRef(Math.floor(Math.random() * 10) + 1);
+  const avatar = useRef(5);
 
   const isJoinAsPlayer = useRef(true);
   const time = useRef(5);
@@ -135,6 +135,7 @@ export default function MultiPlayer() {
 const Setavatar = (value) => 
 {
   avatar.current = value;
+  console.log("avatar.current",avatar.current);
 }
 
 const setisCreator = (value) => 
