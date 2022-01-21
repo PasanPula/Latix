@@ -154,7 +154,7 @@ export default function MultiplayerLogin({
                   {showCheckBox ? (
                     <div className="col-md-12 d-flex justify-content-center position-front">
                       <input
-                        className="login-checkbox-multiplayer "
+                        className="login-checkbox-multiplayer"
                         type="checkbox"
                         id="check"
                         name="check"
@@ -162,7 +162,7 @@ export default function MultiplayerLogin({
                         onChange={HandleCheckbox}
                       />
                       <label
-                        className="login-checkbox-label-multiplayer p-2 position-front"
+                        className="login-checkbox-label-multiplayer p-1 position-front"
                         htmlFor="check"
                       >
                         <span></span>Join As a player

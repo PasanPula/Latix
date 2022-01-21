@@ -24,8 +24,8 @@
   color: #fff;
   cursor: pointer;
   position: relative;
-  font-size: 1rem;
-  font-family: "Short Stack", cursive;
+  font-size: 1.7rem;
+  font-family: "Dongle", sans-serif;
 }
 .login-checkbox-label-multiplayer span {
   display: inline-block;
@@ -82,21 +82,26 @@
 .login-checkbox-multiplayer[type="checkbox"]:checked
   + .login-checkbox-label-multiplayer
   span {
-  background-color: #fff0f0;
-  transform: scale(1.25);
+  /* background-color: #fff0f0; */
+  background-color: #e4ebf5;
+    /* box-shadow: inset 0.15em 0.15em 0.15em white,
+      inset -0.15em -0.15em 0.15em #c8d0e7,
+      0.3rem 0.3rem 0.6rem #c8d0e7,
+      -0.3rem -0rem 0.6rem white;
+  transform: scale(1.25); */
 }
 .login-checkbox-multiplayer[type="checkbox"]:checked
   + .login-checkbox-label-multiplayer
   span:after {
   width: 10px;
-  background: #b18597;
+  background: #8693b3;
   transition: width 150ms ease 100ms;
 }
 .login-checkbox-multiplayer[type="checkbox"]:checked
   + .login-checkbox-label-multiplayer
   span:before {
   width: 5px;
-  background: #b18597;
+  background: #8693b3;
   transition: width 150ms ease 100ms;
 }
 .login-checkbox-multiplayer[type="checkbox"]:checked
@@ -109,14 +114,14 @@
   + .login-checkbox-label-multiplayer:hover
   span:after {
   width: 10px;
-  background: #b18597;
+  background: #8693b3;
   transition: width 150ms ease 100ms;
 }
 .login-checkbox-multiplayer[type="checkbox"]:checked
   + .login-checkbox-label-multiplayer:hover
   span:before {
   width: 5px;
-  background: #b18597;
+  background: #8693b3;
   transition: width 150ms ease 100ms;
 }
 
