@@ -21,10 +21,10 @@ const Home = () => {
           >
           </div>
           <div
-            className="col-md-4"
+            className="col-md-4 position-front"
           >
              <img
-                className="logo-style"
+                className="logo-style "
                 src={`/Assets/logo.svg`}
                 alt="Latix"
               />
