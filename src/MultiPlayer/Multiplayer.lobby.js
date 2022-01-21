@@ -116,9 +116,23 @@ export default function MultiplayerLobby({
         <Countdown className="lobby-countdown-img" />
       </div>
       <div className="container-fluid vh-100 ">
-        <div className="row vh-10 " style={{ backgroundColor: "red" }}>
-          <div className="col-md-12">
-            <h3>LOGO</h3>
+      <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style position-front"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 "
+          >
           </div>
         </div>
         <div className="row">
@@ -134,23 +148,23 @@ export default function MultiplayerLobby({
           <div className="col-md-6 text-center">
             <div className="row">
               <div className="col-md-12 text-center ">
-                <label className="lobby-title">Share with friends</label>
+                <label className="lobby-title position-front">Share with friends</label>
               </div>
             </div>
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                <label className="lobby-label">Game Link:</label>
+                <label className="lobby-label position-front">Game Link:</label>
                 <CopyButton value={url} />
               </div>
             </div>
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                <label className="lobby-label">Game Code:</label>
+                <label className="lobby-label position-front">Game Code:</label>
                 <CopyButton value={Gameid} />
               </div>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 ">
             <Leaderboard userList={userList} />
           </div>
         </div>
@@ -162,12 +176,12 @@ export default function MultiplayerLobby({
           </div>
           <div className="col-md-8 text-center">
             {tempCreator ? (
-                  userList.length <3 ? <label className="lobby-label">At least 3 players Need to Start Game</label> :
-                   <button className="lobby-start-game" onClick={handleStart}>
+                  userList.length <3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> :
+                   <button className="lobby-start-game position-front" onClick={handleStart}>
                     Start Game
                   </button>
             ) : (
-              <label className="lobby-label">Waiting for Start</label>
+              <label className="lobby-label position-front">Waiting for Start</label>
             )}
           </div>
           <div className="col-md-2  text-center"> </div>

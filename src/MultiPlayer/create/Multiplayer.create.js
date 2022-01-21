@@ -92,13 +92,13 @@ export default function MultiPlayerCreate({
             className="col-md-4"
           >
              <img
-                className="logo-style"
+                className="logo-style position-front"
                 src={`/Assets/logo.svg`}
                 alt="Latix"
               />
           </div>
           <div
-            className="col-md-4 position-front"
+            className="col-md-4 "
           >
           </div>
         </div>
@@ -111,14 +111,23 @@ export default function MultiPlayerCreate({
           <div className="col-md-2 "> 
           </div>
       </div>
+      <div className="row h-10">
+        <div className="col-md-12">
+          <div className="row justify-content-center">
+            <div className="col-md-12 text-center">
+              <label className="multi-create-title pt-2 position-front">Select your game Settings</label>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="row h-60">
         <div className="col-md-12">
           <div className="row align-items-center">
             <div className="col-md-6 text-center">
-              <h2 className="multi-create-option-title">Select operator</h2>
+              <h2 className="multi-create-option-title position-front">Select operator</h2>
             </div>
             <div className="col-md-6 text-center">
-              <h2 className="multi-create-option-title text-center">
+              <h2 className="multi-create-option-title text-center position-front">
                 Set time : minutes
               </h2>
             </div>
@@ -148,10 +157,10 @@ export default function MultiPlayerCreate({
           </div>
           <div className="row align-items-center mt-4">
             <div className="col-md-6 text-center">
-              <h2 className="multi-create-option-title">Set Grid size</h2>
+              <h2 className="multi-create-option-title position-front">Set Grid size</h2>
             </div>
             <div className="col-md-6 text-center">
-              <h2  className="text-center multi-create-option-title">
+              <h2  className="text-center multi-create-option-title position-front">
                 Set Number range
               </h2>
             </div>

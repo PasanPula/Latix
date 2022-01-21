@@ -89,7 +89,7 @@ export default function MultiplayerLogin({
               />
           </div>
           <div
-            className="col-md-4 position-front"
+            className="col-md-4 "
           >
           </div>
         </div>

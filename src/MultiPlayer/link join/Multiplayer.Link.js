@@ -61,11 +61,25 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
     // </div>
 
     <div className="container-fluid">
-      <div style={{ backgroundColor: "red" }} className="row position-front">
-        <div className="col-md-12">
-          <h3>LOGO</h3>
+      <div className="row align-items-center text-center   h-10">
+          <div
+            className="col-md-4 "
+          >
+          </div>
+          <div
+            className="col-md-4"
+          >
+             <img
+                className="logo-style position-front"
+                src={`/Assets/logo.svg`}
+                alt="Latix"
+              />
+          </div>
+          <div
+            className="col-md-4 "
+          >
+          </div>
         </div>
-      </div>
       <div className="row">
         <div className="col-md-2 text-center ">
           <button className="home-navigate-button">
@@ -116,7 +130,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
                     maxLength={15}
                   />
                 </div>
-                <div className="row pt-3 justify-content-center">
+                <div className="row pt-2 justify-content-center">
                   <button className="btnGame learn-more position-front">Login</button>
                 </div>
               </form>
@@ -127,7 +141,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
         <div className="col-md-2"></div>
       </div>
       <div className="row align-items-center">
-        <div className="col-md-2  mt-5 text-center">
+        <div className="col-md-2  mt-2 text-center">
           <button className="home-navigate-button">
             {" "}
             <IoHome />{" "}
