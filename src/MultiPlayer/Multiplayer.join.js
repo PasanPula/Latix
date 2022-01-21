@@ -83,7 +83,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
           </div>
           <div className="row pt-2 justify-content-center">
             <div className="col-md-12">
-              <label className="join-title-1 pt-2  position-front"> Hi {name} </label>
+              <label className="join-title-1 pt-2  position-front"> Hi {name} {avatar} </label>
             </div>
           </div>
         </div>
