@@ -15,7 +15,7 @@ const Card = ({id}) => (
 );
 
 const Carousel = ({children,OnChangeAvatar}) => {
-  const [active, setActive] = useState(8);
+  const [active, setActive] = useState(5);
   const count = React.Children.count(children);
 
   const OnleftChange = () => 
