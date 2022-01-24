@@ -1,6 +1,9 @@
 import { useHistory } from "react-router-dom";
 import Avatar from "../Componenet/avatar slider/Avatar";
-import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
+import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+import { TextButton } from "../Componenet/Button/TextButton/Button";
+
 
 
 function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
@@ -17,17 +20,25 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
 
   return (
     <div className="container-fluid vh-100">
-      <div style={{ backgroundColor: "red" }} className="row position-front vh-5">
-        <div className="col-md-12">
-          <h3>LOGO</h3>
+      <div className="row align-items-center text-center   h-10">
+        <div className="col-md-4 "></div>
+        <div className="col-md-4 position-front">
+          <img className="logo-style" src={`/Assets/logo.svg`} alt="Latix" />
         </div>
+        <div className="col-md-4 "></div>
       </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-          <button className="home-navigate-button">
+          {/* <button className="home-navigate-button">
             {" "}
             <IoChevronBackCircleSharp />{" "}
-          </button>
+          </button> */}
+          <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+          />
         </div>
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
@@ -72,8 +83,14 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
                     maxLength={15}
                   />
                 </div>
-                <div className="row pt-3 justify-content-center">
-                  <button className="btnGame learn-more position-front">Login</button>
+                <div className="row justify-content-center p-4 position-front">
+               <button
+                    type="submit"
+                    className="custom-btn btn-2 "
+                    style={{ width: "150px", height: "55px", fontSize: "35px" }}
+                  >
+                    <div className="btn-con">Login</div>
+                  </button>
                 </div>
               </form>
             </div>
@@ -84,10 +101,16 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
       </div>
       <div className="row align-items-center">
         <div className="col-md-2  mt-5 text-center">
-          <button className="home-navigate-button">
+          {/* <button className="home-navigate-button">
             {" "}
             <IoHome />{" "}
-          </button>
+          </button> */}
+          <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+          />
         </div>
         <div className="col-md-8 mt-5 text-center"></div>
         <div className="col-md-2  text-center"> </div>

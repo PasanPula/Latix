@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useParams, useHistory } from "react-router";
 import { useSocket } from "../../Services/SocketProvider";
 import Avatar from "../../Componenet/avatar slider/Avatar";
-import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
+import { IconButton } from '../../Componenet/Button/ButtonIcon/Button';
+import { TextButton } from "../../Componenet/Button/TextButton/Button";
+import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 
 export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, avatar}) {
@@ -89,17 +92,19 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
         </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-          <button className="home-navigate-button">
-            {" "}
-            <IoChevronBackCircleSharp />{" "}
-          </button>
+        <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+          />
         </div>
         <div className="col-md-8 text-center ">
-        <div className="Login-header-avatar-select position-front">Welcome to Latix</div>
+        <div  style={{fontSize: "5rem",color:"white", fontFamily: '"Dongle", sans-serif' }}className="position-front">Welcome to Latix</div>
         </div>
         <div className="col-md-2 "></div>
       </div>
-      <div className="row mt-5 ">
+      <div className="row mt-2 ">
         <div className="col-md-2"></div>
         <div className="col-md-8 ">
           
@@ -117,7 +122,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
             </div>
             <div className="col-md-2"></div>
           </div>
-          <div className="row mt-5 ">
+          <div className="row mt-3 ">
             <div className="col-md-2"></div>
             <div className="col-md-8 d-flex justify-content-center ">
             <div className="Login-header-avatar-select position-front">Enter Your Name:</div>
@@ -140,8 +145,14 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
                     maxLength={15}
                   />
                 </div>
-                <div className="row pt-2 justify-content-center">
-                  <button className="btnGame learn-more position-front">Login</button>
+                <div className="row pt-4 justify-content-center">
+                <button
+                    type="submit"
+                    className="custom-btn btn-2 "
+                    style={{ width: "150px", height: "55px", fontSize: "35px" }}
+                  >
+                    <div className="btn-con">Login</div>
+                  </button>
                 </div>
               </form>
             </div>
@@ -152,10 +163,12 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
       </div>
       <div className="row align-items-center">
         <div className="col-md-2  mt-2 text-center">
-          <button className="home-navigate-button">
-            {" "}
-            <IoHome />{" "}
-          </button>
+        <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+          />
         </div>
         <div className="col-md-8 mt-5 text-center"></div>
         <div className="col-md-2  text-center"> </div>
