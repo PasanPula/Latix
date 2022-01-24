@@ -82,7 +82,8 @@ html {
 .scroll {
   width: 50vw;
   height: 37vh;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

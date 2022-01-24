@@ -14,6 +14,8 @@ export default function MultiplayerResult({
   const socket = useSocket();
   // eslint-disable-next-line
   const [tempCreator, setTempCreator] = useState(isCreator);
+  const [playAgainInvite,setPlayAgainInvite] = useState(false);
+  const [creatorName,setCreatorName] = useState("Creator");
 
   useEffect(() => {
     socket.on("GetUser", (res) => {
@@ -26,13 +28,22 @@ export default function MultiplayerResult({
         }
         return user;
       });
+
+      console.log(res);
+      res.filter((user) => {
+          if (user.Owner) {
+            setCreatorName(user.User);
+          }
+        return user;
+      });
     });
 
     if (!isCreator) {
       socket.on("UpdateGame", (res) => {
         console.log("result", res);
         if (res.IsUpdate) {
-          history.push("/Multiplay/lobby");
+          setPlayAgainInvite(true);
+          // history.push("/Multiplay/lobby");
         }
       });
     }
@@ -43,22 +54,14 @@ export default function MultiplayerResult({
     };
   });
 
-  // eslint-disable-next-line
-  const Result = result.map((data, index) => {
-    return (
-      <li key={index}>
-        <label style={{ color: "white" }}>{index + 1}: </label>
-        <label style={{ color: "White" }}> {data.ClientName} </label>
-        <label style={{ color: "White" }}> {data.Result.Time} </label>
-        <label style={{ color: "White" }}> {data.Result.Correct} </label>
-        <label style={{ color: "White" }}> {data.Result.InCorrect} </label>
-      </li>
-    );
-  });
 
   // eslint-disable-next-line
   const handelPlayAgain = () => {
     history.push("/Multiplay/create");
+  };
+
+  const handelPlayAgainPlayer = () => {
+    history.push("/Multiplay/lobby");
   };
 
   return (
@@ -69,15 +72,14 @@ export default function MultiplayerResult({
   <div class="before"></div>
   <div class="after"></div>
 </div>
-      <FinalResult resultList={result} />
-      {/* {Result}
-      <div>
+      <FinalResult resultList={result} tempCreator={tempCreator} handelPlayAgain={handelPlayAgain} handelPlayAgainPlayer={handelPlayAgainPlayer}  playAgainInvite={playAgainInvite} creatorName={creatorName}/>
+      {/* <div>
         {tempCreator ? 
-          <Button onClick={handelPlayAgain}>Play Again</Button>
+          <button  onClick={handelPlayAgain}>Play Again</button>
          :
           <span></span>
         }
-      </div> */}
+      </div>  */}
     </div>
   );
 }

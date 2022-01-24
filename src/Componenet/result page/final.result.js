@@ -3,7 +3,14 @@ import "./final.result.css";
 import { Top } from "./component/top/top";
 import { List } from "./component/list/list";
 
-export default function FinalResult({ resultList }) {
+export default function FinalResult({
+  resultList,
+  tempCreator,
+  handelPlayAgain,
+  handelPlayAgainPlayer,
+  playAgainInvite,
+  creatorName,
+}) {
   const [anime, setanime] = useState("");
   useEffect(() => {
     setanime("anime");
@@ -71,6 +78,23 @@ export default function FinalResult({ resultList }) {
         ) : (
           <span></span>
         )}
+
+        <div className="list ">
+          {tempCreator ? (
+            <button onClick={handelPlayAgain}>Play Again</button>
+          ) : playAgainInvite ? (
+            <>
+              <label className="lobby-label position-front">
+                {creatorName} invite you to play again
+              </label>
+              <button onClick={handelPlayAgainPlayer}>Play </button>
+            </>
+          ) : (
+            <label className="lobby-label position-front">
+              Waiting for Creator response
+            </label>
+          )}
+        </div>
       </div>
     </>
   );

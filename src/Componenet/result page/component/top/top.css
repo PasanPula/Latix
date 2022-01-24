@@ -240,10 +240,15 @@
   }
 }
 
-.item.one .pic {
+.item.one .pic  {
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 30s 1 forwards;
 
 }
+/* .item.one .pos-avatar  {
+  animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 30s 1 forwards;
+
+} */
+
 
 .item.one .name {
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 31s 1 forwards;
@@ -256,6 +261,9 @@
 .item.two .pic {
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 18s 1 forwards;
 }
+/* .item.two .pos-avatar {
+  animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 18s 1 forwards;
+} */
 
 .item.two .name {
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 19s 1 forwards;
@@ -268,6 +276,9 @@
 .item.three .pic {
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 6s 1 forwards;
 }
+/* .item.three .pos-avatar {
+  animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 6s 1 forwards;
+} */
 .item.three .name {
   animation: twopa 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 7s 1 forwards;
 }
