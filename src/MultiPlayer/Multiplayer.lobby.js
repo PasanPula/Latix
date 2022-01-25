@@ -6,6 +6,8 @@ import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import Leaderboard from "../Componenet/leaderboard/leaderboard";
 import CopyButton from "../Componenet/copy button/copy.button";
 import { ReactComponent as Countdown } from "./lobby/countdown/countdown.svg";
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function MultiplayerLobby({
   setColoumNumbers,
@@ -79,6 +81,19 @@ export default function MultiplayerLobby({
     return Math.floor(Math.random() * 10000) + 10000;
   };
 
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+    history.go(0);
+  }
+
+  const onGoBack = () => 
+  {
+    socket.disconnect();
+    socket.connect();
+    history.push("/Multiplay/create");
+  }
+
   return (
     // <div>
     //   <div>
@@ -137,9 +152,13 @@ export default function MultiplayerLobby({
         </div>
         <div className="row">
           <div className="col-md-2 text-center ">
-            <button className="home-navigate-button">
-              <IoChevronBackCircleSharp />
-            </button>
+          <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBack}
+          />
           </div>
           <div className="col-md-8 "></div>
           <div className="col-md-2 "></div>
@@ -170,9 +189,13 @@ export default function MultiplayerLobby({
         </div>
         <div className="row justify-content-center">
           <div className="col-md-2  text-center">
-            <button className="home-navigate-button">
-              <IoHome />
-            </button>
+          <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBackHome}
+          />
           </div>
           <div className="col-md-8 text-center">
             {tempCreator ? (
