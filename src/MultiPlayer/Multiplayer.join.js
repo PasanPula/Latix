@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useSocket } from "../Services/SocketProvider";
 import { useHistory } from "react-router-dom";
 import "./join/Multiplayer.join.css";
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
+
 
 export default function MultiplayerJoin({ name, setGameId, avatar }) {
   const [gameCode, setGameCode] = useState("");
@@ -70,6 +74,22 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
           >
           </div>
         </div>
+        <div className="row justify-content-start">
+        <div className="col-md-2 text-center ">
+          <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+          />
+        </div>
+        <div className="col-md-8 p-3 justify-content-center ">
+        
+        </div>
+        <div className="col-md-2 ">
+          
+        </div>
+      </div>
       <div className="row align-items-end h-40">
         <div className="col-md-12">
           <div className="row pt-5 justify-content-center">
@@ -83,19 +103,19 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
           </div>
           <div className="row pt-2 justify-content-center">
             <div className="col-md-12">
-              <label className="join-title-1 pt-2  position-front"> Hi {name} {avatar} </label>
+              <label className="join-title-1   position-front"> Hi {name} {avatar} </label>
             </div>
           </div>
         </div>
       </div>
-      <div className="row h-40 align-items-center">
+      <div className="row align-items-center">
         <div className="col-md-2"></div>
         <div className="col-md-8  d-flex justify-content-center">
           <div>
-          <label className="join-textbox-text pt-4  position-front"> Enter Your Game code Here </label>
+          <label className="join-textbox-text pt-2  position-front"> Enter Your Game code Here </label>
           <div className="row pt-2 justify-content-center">
             <input
-              className="join-input-field  position-front"
+              className="input-field  position-front"
               placeholder="Code"
               type="text"
               name="Code"
@@ -105,14 +125,32 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
             />
           </div>
           <div className="row pt-3 justify-content-center">
-            <button onClick={onSubmit} className="btnGame learn-more join-btn  position-front">
+            {/* <button onClick={onSubmit} className="btnGame learn-more join-btn  position-front">
               Join
-            </button>
+            </button> */}
+            <button
+                    onClick={onSubmit}
+                    type="submit"
+                    className="custom-btn btn-2 "
+                    style={{ width: "150px", height: "55px", fontSize: "35px" }}
+                  >
+                    <div className="btn-con">Login</div>
+                  </button>
           </div>
           </div>
 
         </div>
         <div className="col-md-2"></div>
+      </div>
+      <div className="row  justify-content-start">
+        <div className="col-md-2 p-4 text-center">
+          <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+          />
+        </div>
       </div>
     </div>
   );

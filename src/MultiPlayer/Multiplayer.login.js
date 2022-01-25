@@ -4,8 +4,9 @@ import Avatar from "../Componenet/avatar slider/Avatar";
 import "./login/Multiplayer.creator.login.css";
 // import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
-import { TextButton } from "../Componenet/Button/TextButton/Button";
 import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
+
 export default function MultiplayerLogin({
   userName,
   setName,
@@ -39,6 +40,17 @@ export default function MultiplayerLogin({
       setIsJoinAsPlayer(false);
     }
   };
+
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+  }
+
+  const onGoBack = () => 
+  {
+    history.push("/Multiplay/Mode");
+  }
+
 
   return (
     // <div>
@@ -92,6 +104,7 @@ export default function MultiplayerLogin({
             height={"80px"}
             width={"100px"}
             fontSize={"40px"}
+            onClick={onGoBack}
           />
         </div>
         <div className="col-md-8 p-3 justify-content-center ">
@@ -191,24 +204,15 @@ export default function MultiplayerLogin({
       </div>
       <div className="row  justify-content-start">
         <div className="col-md-2 p-4 text-center">
-          {/* <button className="home-navigate-button">
-            <IoHome />
-          </button> */}
           <IconButton
             icon={faHome}
             height={"80px"}
             width={"100px"}
             fontSize={"40px"}
+            onClick={onGoBackHome}
           />
         </div>
-        {/* <div className="col-md-8 text-center">
-        </div>
-        <div className="col-md-2  text-center"> </div> */}
       </div>
-      {/* <div className="row">
-        <div className="col-md-12"></div>
-      </div> */}
-      {/* // </form> */}
     </div>
   );
 }
