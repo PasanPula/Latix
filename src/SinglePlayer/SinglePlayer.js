@@ -1,4 +1,4 @@
-import {useCallback, useRef} from "react";
+import {useCallback, useRef, useEffect} from "react";
 import {Switch, Route,Redirect} from 'react-router-dom';
 import SinglePlayerLogin from './SinglePlayer.Login';
 import SinglePlayerCreate from './SinglePlayer.Create';
@@ -6,6 +6,21 @@ import SinglePlayerPlay from "./SinglePlayer.Play";
 import { randomUnique } from "../Componenet/Game grid/components/getrandom";
 
 export default function SinglePlayer()  {
+
+
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent("navigationhandler"));
+    
+    const unloadCallback = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+      return "";
+    };
+  
+    window.addEventListener("beforeunload", unloadCallback);
+    return () => window.removeEventListener("beforeunload", unloadCallback);
+  },);
+  
 
 
 const name = useRef();

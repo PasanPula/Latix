@@ -2,7 +2,6 @@ import { useHistory } from "react-router-dom";
 import Avatar from "../Componenet/avatar slider/Avatar";
 import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
-import { TextButton } from "../Componenet/Button/TextButton/Button";
 
 
 
@@ -17,6 +16,11 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
   const onChange = (e) => {
     OnChangeName(e.target.value);
   };
+
+  const onGoBack = () => 
+  {
+    history.push("/");
+  }
 
   return (
     <div className="container-fluid vh-100">
@@ -38,6 +42,7 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
             height={"80px"}
             width={"100px"}
             fontSize={"40px"}
+            onClick={onGoBack}
           />
         </div>
         <div className="col-md-8 "></div>
@@ -101,16 +106,12 @@ function SinglePlayerLogin({ name, OnChangeName,OnChangeAvatar }) {
       </div>
       <div className="row align-items-center">
         <div className="col-md-2  mt-5 text-center">
-          {/* <button className="home-navigate-button">
-            {" "}
-            <IoHome />{" "}
-          </button> */}
-          <IconButton
+          {/* <IconButton
             icon={faHome}
             height={"80px"}
             width={"100px"}
             fontSize={"40px"}
-          />
+          /> */}
         </div>
         <div className="col-md-8 mt-5 text-center"></div>
         <div className="col-md-2  text-center"> </div>

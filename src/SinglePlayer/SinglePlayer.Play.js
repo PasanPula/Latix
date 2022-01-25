@@ -1,10 +1,13 @@
 import {memo, useRef} from 'react';
+import { useHistory } from "react-router";
 import Timer from '../Componenet/Timer/Timer';
 import Grid from '../Componenet/Game grid/grid';
 import Button from '../Componenet/Game grid/components/Button';
 import CorrectIncorrectDisplay from '../Componenet/crt.incrt.display/Correct.Incorrect.Display';
-import { IoHome} from "react-icons/io5";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import './play/singleplayer.play.css';
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+
 
 
 
@@ -12,6 +15,15 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
 
     const setShowRef = useRef(); 
     const resultValueCountRef = useRef();
+
+    const history = useHistory();
+
+
+    const onGoHome = () => 
+  {
+    history.push("/");
+  }
+
 
 
     return (
@@ -91,9 +103,13 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
     </div>
     <div className="row mt-2 align-items-center">
           <div  className="col-md-2 ">
-          <button className="home-navigate-button">
-            <IoHome />
-          </button>
+            <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoHome}
+          />
           </div>
           <div className="col-md-6 ">
           </div>

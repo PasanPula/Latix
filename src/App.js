@@ -5,8 +5,13 @@ import SinglePlayer from './SinglePlayer/SinglePlayer';
 // eslint-disable-next-line
 import Background from "./Componenet/background/background";
 import NoMobile from "./Componenet/not available mobile/no.mobile";
+// import {useEffect} from 'react';
+
 
 function App() {
+
+  
+
   return (
       <div style={{backgroundColor:"#8a2be2"}}>
          <NoMobile/>

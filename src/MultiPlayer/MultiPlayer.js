@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import MultiPlayerMode from "./MultiPlayer.mode";
 import MultiplayerLogin from "./Multiplayer.login";
@@ -32,8 +32,21 @@ export default function MultiPlayer() {
   const socket = useSocket();
   const userResult = useRef();
 
- 
 
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent("navigationhandler"));
+    
+    const unloadCallback = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+      return "";
+    };
+  
+    window.addEventListener("beforeunload", unloadCallback);
+    return () => window.removeEventListener("beforeunload", unloadCallback);
+  },);
+
+ 
   
   const setUserResult = (val) => {
     userResult.current = val;

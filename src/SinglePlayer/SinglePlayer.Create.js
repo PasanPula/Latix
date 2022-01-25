@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import SelectionButton from "../Componenet/select button/SelectionButton";
 import './create/singleplayer.create.css';
-import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import { ReactComponent as Countdown } from "../MultiPlayer/lobby/countdown/countdown.svg";
+import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+
 
 
 
@@ -86,6 +88,16 @@ function SinglePlayerCreate(props) {
     return Math.floor(Math.random() * 10000) + 10000;
   };
 
+  const onGoBack = () => 
+  {
+    history.push("/SinglePlayer/Login");
+  }
+
+  const onGoHome = () => 
+  {
+    history.push("/");
+  }
+
   return (
     // <div>
     //     <h5 style={{color:"white"}} >Welcome {props.name}</h5>
@@ -117,7 +129,7 @@ function SinglePlayerCreate(props) {
             className="col-md-4"
           >
              <img
-                className="logo-style"
+                className="logo-style position-front"
                 src={`/Assets/logo.svg`}
                 alt="Latix"
               />
@@ -129,10 +141,17 @@ function SinglePlayerCreate(props) {
         </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-          <button className="home-navigate-button position-front">
+          {/* <button className="home-navigate-button position-front">
             {" "}
             <IoChevronBackCircleSharp />{" "}
-          </button>
+          </button> */}
+          <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBack}
+          />
         </div>
         <div className="col-md-8 "></div>
         <div className="col-md-2 "></div>
@@ -180,13 +199,24 @@ function SinglePlayerCreate(props) {
       </div>
       <div className="row align-items-center vh-5">
         <div className="col-md-2  mt-5 text-center">
-          <button className="home-navigate-button">
-            {" "}
-            <IoHome />{" "}
-          </button>
+         <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoHome}
+          />
         </div>
         <div className="col-md-8 mt-5 text-center">
-           <button className ="single-create-button" type="button" onClick = {startGame}> Start Game</button>
+           {/* <button className ="single-create-button" type="button" onClick = {startGame}> Start Game</button> */}
+           <button
+                    type="submit"
+                    className="custom-btn btn-2 "
+                    style={{ width: "200px", height: "60px", fontSize: "35px" }}
+                    onClick = {startGame}
+                  >
+                    <div className="btn-con">Start Game</div>
+                  </button>
         </div>
         <div className="col-md-2  text-center"> </div>
       </div>
