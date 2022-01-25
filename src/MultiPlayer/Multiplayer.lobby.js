@@ -163,7 +163,7 @@ export default function MultiplayerLobby({
           <div className="col-md-8 "></div>
           <div className="col-md-2 "></div>
         </div>
-        <div className="row vh-70 align-items-center">
+        <div className="row vh-60 align-items-center">
           <div className="col-md-6 text-center">
             <div className="row">
               <div className="col-md-12 text-center ">
@@ -198,14 +198,14 @@ export default function MultiplayerLobby({
           />
           </div>
           <div className="col-md-8 text-center">
-            {tempCreator ? (
-                  userList.length <3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> :
+            {/* {tempCreator ? (
+                  userList.length <3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> : */}
                    <button className="lobby-start-game position-front" onClick={handleStart}>
                     Start Game
                   </button>
-            ) : (
-              <label className="lobby-label position-front">Waiting for Start</label>
-            )}
+           {/* ) : (
+             <label className="lobby-label position-front">Waiting for Start</label>
+           )} */}
           </div>
           <div className="col-md-2  text-center"> </div>
         </div>
