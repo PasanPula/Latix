@@ -22,6 +22,7 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
     const onGoHome = () => 
   {
     history.push("/");
+    history.go(0);
   }
 
 

@@ -188,6 +188,7 @@ const setisCreator = (value) =>
               HandleSetSize={HandleSetSize}
               HandleSetTime={HandleSetTime}
               HandleSelectedOperator={HandleSelectedOperator}
+              HandleShowCheckBox={HandleShowCheckBox}
             />
           )}
         />

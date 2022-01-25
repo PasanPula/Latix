@@ -8,7 +8,9 @@ import { useSocket } from "../../Services/SocketProvider";
 import { useHistory } from "react-router-dom";
 import CreatorControls from "./CreatorControls";
 import './Multiplayer.play.css';
-import { IoHome} from "react-icons/io5";
+import { IconButton } from "../../Componenet/Button/ButtonIcon/Button";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function MultiplayerPlay({
   SubmitAnswers,
@@ -50,6 +52,14 @@ export default function MultiplayerPlay({
       history.push("/Multiplay/result");
     });
   });
+
+
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+    history.go(0);
+  }
+
 
   return (
     // <div>
@@ -190,9 +200,13 @@ export default function MultiplayerPlay({
       </div>
       <div className="row mt-5 vh-5 align-items-center">
             <div  className="col-md-2 ">
-            <button className="home-navigate-button">
-              <IoHome />
-            </button>
+            <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBackHome}
+          />
             </div>
             <div className="col-md-6 ">
             </div>

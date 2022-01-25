@@ -4,7 +4,8 @@ import ValueButton from "../../Componenet/value button/ValueButton";
 import useSlider from "../../Componenet/range slider/RangeSlide";
 import { randomUnique } from "../../Componenet/Game grid/components/getrandom";
 import { useHistory } from "react-router-dom";
-import { IoHome,IoChevronBackCircleSharp } from "react-icons/io5";
+import { IconButton } from "../../Componenet/Button/ButtonIcon/Button";
+import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 
 import "./Multiplayer.create.css";
@@ -16,6 +17,7 @@ export default function MultiPlayerCreate({
   HandleSetSize,
   HandleSetTime,
   HandleSelectedOperator,
+  HandleShowCheckBox
 }) {
   const history = useHistory();
 
@@ -59,6 +61,20 @@ export default function MultiPlayerCreate({
       setOperator(val);
     }
   };
+
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+  }
+
+  const onGoBack = () => 
+  {
+    HandleShowCheckBox(true);
+    history.push("/Multiplay/Login");
+  }
+
+
+
 
   return (
     // <div>
@@ -104,7 +120,13 @@ export default function MultiPlayerCreate({
         </div>
       <div className="row">
         <div className="col-md-2 text-center "> 
-                <button className="home-navigate-button" onClick={HandleCreateGame}> <IoChevronBackCircleSharp/> </button>
+        <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBack}
+          />
           </div>
           <div className="col-md-8 "> 
           </div>
@@ -185,7 +207,13 @@ export default function MultiPlayerCreate({
           </div>
           <div className="row align-items-center h-10 mt-5">
           <div className="col-md-2  mt-5 text-center"> 
-                <button className="home-navigate-button" onClick={HandleCreateGame}> <IoHome/> </button>
+          <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBackHome}
+          />
           </div>
             <div className="col-md-8 mt-5 text-center">
               <button className="multi-create-button" onClick={HandleCreateGame}>Create game</button>
