@@ -15,6 +15,7 @@
     display: block;
     text-align: center;
     font-family: 'Short Stack', cursive;
+    display: block;
 }
 
 .join-input-field
@@ -43,8 +44,8 @@ height: 60px;
 
 .join-avatar
 {
-    width: 17rem;
-    height: 17rem;
+    width: 14rem;
+    height: 13rem;
     border-radius: 3rem;
     border: 6px solid #b18597;
     background-color: rgba(238, 238, 238, 0.295);
