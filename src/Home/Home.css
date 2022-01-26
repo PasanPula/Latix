@@ -55,12 +55,14 @@
 }
 
 .Welcome-text {
-  font-size: 6.5rem;
+  font-size: 8rem;
   color: white;
   display: block;
   text-align: center;
   font-family: "Dongle", sans-serif;
   cursor: default;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(55, 226, 155);
 }
 
 .home-button {
