@@ -146,6 +146,7 @@ export default function MultiPlayerCreate({
                     radioStyle="multi-create-radioPad__radio"
                     radioWrapper="multi-create-radioPad__wrapper"
                     radioSelected="multi-create-radioPad__wrapper multi-create-radioPad__wrapper--selected"
+                    labelText="operator-text"
                   />
                 </div>
               </div>

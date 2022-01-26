@@ -8,6 +8,7 @@ export default function SelectionButton({
   radioStyle,
   radioWrapper,
   radioSelected,
+  labelText
 }) {
   const handleRadios = (e) => {
     setPickvalue(e.target.value === "x" ? "*" : e.target.value);
@@ -27,7 +28,7 @@ export default function SelectionButton({
             value={loan}
             onChange={handleRadios}
           /> 
-         <span className="operator-text">{loan === "*" ? "x" : loan === "/" ? "÷" : loan}</span> 
+         <span className={labelText}>{loan === "*" ? "x" : loan === "/" ? "÷" : loan}</span> 
         </label>
       </div>
     );

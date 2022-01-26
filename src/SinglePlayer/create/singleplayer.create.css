@@ -35,45 +35,213 @@
 }
 
 
+/* dasun imports */
 
-.single-mode-create-radioPad {
+/* ============================= size slect button ========================================= */
+
+
+.single-create-size-radioPad {
+  position: relative;
+  display: inline-block;
+  }
+
+  .single-create-size-radioPad__wrapper {
+  
+  width: 10rem;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(195, 0, 255, 0.637);;
+  background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(195, 0, 255, 1) 100%);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5px;
+  text-align: center;
+  font-family: "Dongle", sans-serif;
+  border-radius: 0.2em;
+  will-change: transform;
+  transition: 0.2s all ease-in-out;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+}
+
+
+.single-create-size-radioPad__wrapper:active,
+.single-create-size-radioPad__wrapper--selected {
+  background: white !important;
+color:  rgba(195, 0, 255, 1);
+}
+.single-create-size-radioPad__wrapper:hover {
+  background: white;
+color:  rgba(195, 0, 255, 1);
+}
+.single-create-size-radioPad__radio {
+  height: 20px;
+visibility: hidden;
+height: 0;
+width: 0;
+opacity: 0;
+}
+
+/* newly added css for contol button */
+.single-create-size-radioPad__wrapper::before {
+transform: translate(-110%, -110%) translateZ(0);
+}
+
+.single-create-size-radioPad__wrapper:hover:before {
+transform: translate(-45%, -34%) translateZ(0);
+background: white;
+color:  rgba(195, 0, 255, 1);
+}
+
+.single-create-size-radioPad__wrapper:hover {
+transform: translateY(-5px);
+}
+
+.sizes-text
+{
+  cursor: pointer;
+}
+
+
+/* ============================= game mode button ========================================== */
+
+.single-create-modes-radioPad {
+  position: relative;
+  display: inline-block;
+  }
+
+.single-create-modes-radioPad__wrapper {
+  
+  width: 10rem;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(195, 0, 255, 0.637);;
+  background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(195, 0, 255, 1) 100%);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5px;
+  text-align: center;
+  font-family: "Dongle", sans-serif;
+  border-radius: 0.2em;
+  will-change: transform;
+  transition: 0.2s all ease-in-out;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+}
+
+
+.single-create-modes-radioPad__wrapper:active,
+.single-create-modes-radioPad__wrapper--selected {
+  background: white !important;
+color:  rgba(195, 0, 255, 1);
+}
+.single-create-modes-radioPad__wrapper:hover {
+  background: white;
+color:  rgba(195, 0, 255, 1);
+}
+.single-create-modes-radioPad__radio {
+  height: 20px;
+visibility: hidden;
+height: 0;
+width: 0;
+opacity: 0;
+}
+
+/* newly added css for contol button */
+.single-create-modes-radioPad__wrapper::before {
+transform: translate(-110%, -110%) translateZ(0);
+}
+
+.single-create-modes-radioPad__wrapper:hover:before {
+transform: translate(-45%, -34%) translateZ(0);
+background: white;
+color:  rgba(195, 0, 255, 1);
+}
+
+.single-create-modes-radioPad__wrapper:hover {
+transform: translateY(-5px);
+}
+
+.modes-text
+{
+  cursor: pointer;
+}
+
+
+
+  /* ========================= operator buttons ======================================= */
+
+  .single-create-operator-radioPad {
     position: relative;
-    display: inline;
-    height: 10px;
-  }
+    display: inline-block;
+   align-items: center;
+   justify-content: center;
+    }
 
-  .single-mode-create-radioPad__wrapper {
-    width: 200px;
+
+  .single-create-operator-radioPad__wrapper {
+    width: 10rem;
+    height: 5rem;
     cursor: pointer;
-    background: #fff0f0;
-    color: rgb(0, 0, 0);
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: bold;
+    color: white;
+    background-color: rgba(195, 0, 255, 0.637);;
+    background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(195, 0, 255, 1) 100%);
+    font-size: 5rem;
+    font-weight: 700;
     margin: 5px;
-    padding: 15px;
     text-align: center;
-    border-radius: 0.75em;
-    border: 3px solid #b18597;
-    font-family: 'Short Stack', cursive;
+    font-family: "Dongle", sans-serif;
+    border-radius: 0.2em;
+    will-change: transform;
+    transition: 0.2s all ease-in-out;
+       box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+       7px 7px 20px 0px rgba(0,0,0,.1),
+       4px 4px 5px 0px rgba(0,0,0,.1);
   }
-  .single-mode-create-radioPad__wrapper:active,
-  .single-mode-create-radioPad__wrapper--selected {
-    background: #f9c4d2 !important;
+
+
+  .single-create-operator-radioPad__wrapper:active,
+  .single-create-operator-radioPad__wrapper--selected {
+    background: white !important;
+  color:  rgba(195, 0, 255, 1);
   }
-  .single-mode-create-radioPad__wrapper:hover {
-    background: #f9c4d2;
+  .single-create-operator-radioPad__wrapper:hover {
+    background: white;
+  color:  rgba(195, 0, 255, 1);
   }
-  .single-mode-create-radioPad__radio {
+  .single-create-operator-radioPad__radio {
     height: 20px;
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    opacity: 0;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
   }
 
+  /* newly added css for contol button */
+.single-create-operator-radioPad__wrapper::before {
+  transform: translate(-110%, -110%) translateZ(0);
+}
 
+.single-create-operator-radioPad__wrapper:hover:before {
+  transform: translate(-45%, -34%) translateZ(0);
+  background: white;
+  color:  rgba(195, 0, 255, 1);
+}
 
+.single-create-operator-radioPad__wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.operator-text
+{
+  position: relative;
+  bottom:1rem;
+  cursor: pointer;
+}
+
+/* ====================================== create button================================= */
 
   .single-create-button {
     width: 210px;
