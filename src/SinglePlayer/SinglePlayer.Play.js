@@ -51,7 +51,7 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
             className="col-md-4 position-front"
           >
              <img
-                className="logo-style "
+                className="single-logo-style "
                 src={`/Assets/logo.svg`}
                 alt="Latix"
               />

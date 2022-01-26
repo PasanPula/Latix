@@ -1,6 +1,6 @@
-.vh-5
+.vh-10
 {
-    height: 5vh;
+    height: 10vh;
 }
 
 .vh-80 
@@ -36,4 +36,11 @@
 .multi-submit-row
 {
     padding-top: 3vh;
+}
+
+.multi-logo-style
+{
+    padding-top: 3px;
+    width:20vw;
+    height: 6vw; 
 }

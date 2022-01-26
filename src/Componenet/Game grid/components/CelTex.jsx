@@ -13,20 +13,29 @@ function CelTex(parms)
 
    useEffect(() => {
 
-    if(parms.gridSize === 4 || parms.gridSize === 6)
+    if(parms.gridSize < 6)
     {
-        console.log("parms.gridSize",parms.gridSize);
         setGridsizeClass("celtex celtex-size-5");
+    }
+    else if(parms.gridSize === 6)
+    {
+        setGridsizeClass("celtex celtex-size-6");
+    }
+    else if(parms.gridSize === 7)
+    {
+        setGridsizeClass("celtex celtex-size-7");
     }
     else if(parms.gridSize === 8)
     {
-        console.log("parms.gridSize",parms.gridSize);
         setGridsizeClass("celtex celtex-size-8");
     }
-    else if(parms.gridSize === 10)
+    else if(parms.gridSize > 8 && parms.gridSize < 11)
     {
-        console.log("parms.gridSize",parms.gridSize);
         setGridsizeClass("celtex celtex-size-10");
+    }
+    else
+    {
+        setGridsizeClass("celtex celtex-size-default");
     }
 
     if(parms.MathOperator==='X')

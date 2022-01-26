@@ -9,30 +9,42 @@
     pointer-events: none;
 }
 
-.operator-size-default >input[type="text"]
+
+
+  .operator-size-default > input[type="text"]
+{
+  height: 6vh;
+  width: 5vw; 
+}
+
+.operator-size-5  > input[type="text"]
+{
+    height: 10vh;
+    width: 9vw; 
+}
+
+.operator-size-6  > input[type="text"]
+{
+    height: 9vh;
+    width: 8vw; 
+}
+
+.operator-size-7  > input[type="text"]
+{
+    height: 7vh;
+    width: 7vw; 
+}
+.operator-size-8  > input[type="text"]
+{
+    height: 7vh;
+    width: 6vw; 
+}
+
+.operator-size-10  > input[type="text"]
 {
     height: 6vh;
     width: 5vw; 
 }
-
-  .operator-size-5  > input[type="text"]
-  {
-      height: 10vh;
-      width: 9vw; 
-  }
-  
-  .operator-size-8  > input[type="text"]
-  {
-      height: 7vh;
-      width: 6vw; 
-  }
-  
-  .operator-size-10  > input[type="text"]
-  {
-      height: 6vh;
-      width: 5vw; 
-  }
-
 
 
 

@@ -13,19 +13,31 @@
   height: 6vh;
   width: 5vw;
 }
+
 .CelDiv-size-5  > input[type="text"]
 {
     height: 10vh;
     width: 9vw; 
 }
 
+.CelDiv-size-6  > input[type="text"]
+{
+    height: 9vh;
+    width: 8vw; 
+}
+
+.CelDiv-size-7  > input[type="text"]
+{
+    height: 7vh;
+    width: 7vw; 
+}
 .CelDiv-size-8  > input[type="text"]
 {
     height: 7vh;
     width: 6vw; 
 }
 
-.CelDiv-size-10  > input[type="text"]
+.CelDiv-size-10 > input[type="text"]
 {
     height: 6vh;
     width: 5vw; 

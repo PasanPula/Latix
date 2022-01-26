@@ -7,18 +7,36 @@ function Cel(parms)
     const[gridsizeClass,setGridsizeClass] = useState("CelDiv CelDiv-size-default");
 
     useEffect(() => {
-        if(parms.gridSize === 4 || parms.gridSize === 6)
-        {
-            setGridsizeClass("CelDiv CelDiv-size-5");
-        }
-        else if(parms.gridSize === 8)
-        {
-            setGridsizeClass("CelDiv CelDiv-size-8");
-        }
-        else if(parms.gridSize === 10)
-        {
-            setGridsizeClass("CelDiv CelDiv-size-10");
-        }
+       
+        if(parms.gridSize < 6)
+    {
+        setGridsizeClass("CelDiv CelDiv-size-5");
+    }
+    else if(parms.gridSize === 6)
+    {
+        setGridsizeClass("CelDiv CelDiv-size-6");
+    }
+    else if(parms.gridSize === 7)
+    {
+        setGridsizeClass("CelDiv CelDiv-size-7");
+    }
+    else if(parms.gridSize === 8)
+    {
+        setGridsizeClass("CelDiv CelDiv-size-8");
+    }
+    else if(parms.gridSize > 8 && parms.gridSize < 11)
+    {
+        setGridsizeClass("CelDiv CelDiv-size-10");
+    }
+    else
+    {
+        setGridsizeClass("CelDiv CelDiv-size-default");
+    }
+
+
+
+
+
     
     }, [parms.gridSize]);
     

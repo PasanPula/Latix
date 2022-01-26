@@ -31,6 +31,17 @@
     width: 9vw; 
 }
 
+.celtex-size-6  > input[type="text"]
+{
+    height: 9vh;
+    width: 8vw; 
+}
+
+.celtex-size-7  > input[type="text"]
+{
+    height: 7vh;
+    width: 7vw; 
+}
 .celtex-size-8  > input[type="text"]
 {
     height: 7vh;
