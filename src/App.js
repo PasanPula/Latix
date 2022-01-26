@@ -5,6 +5,7 @@ import SinglePlayer from './SinglePlayer/SinglePlayer';
 // eslint-disable-next-line
 import Background from "./Componenet/background/background";
 import NoMobile from "./Componenet/not available mobile/no.mobile";
+// import RouteLoader from './Componenet/route loader/route.loader'
 // import {useEffect} from 'react';
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
       <div style={{backgroundColor:"#8a2be2"}}>
          <NoMobile/>
+         {/* <RouteLoader/> */}
         <Background />
         <Switch>
           <Route path="/" exact component={Home}/>

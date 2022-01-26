@@ -10,6 +10,7 @@ import MultiplayerPlay from "./play/Multiplayer.play";
 import MultiplayerResult from "./result/Multiplayer.result";
 import MultiplayerLinkJoin from "./link join/Multiplayer.Link";
 
+
 export default function MultiPlayer() {
   const [showCheckBox, setShowCheckBox] = useState(false); 
   const name = useRef();
@@ -31,6 +32,7 @@ export default function MultiPlayer() {
   const isFinished = useRef(false);
   const socket = useSocket();
   const userResult = useRef();
+
 
 
   useEffect(() => {
@@ -89,7 +91,7 @@ export default function MultiPlayer() {
         if (response.Game !== "") {
           isCreator.current = true;
           GameId.current = response.GameId;
-          history.push("/Multiplay/lobby");
+            history.push("/Multiplay/lobby");
         } else {
           alert("empty");
         }
