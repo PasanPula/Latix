@@ -169,10 +169,11 @@ function SinglePlayerCreate(props) {
         <div className="col-md-12 text-center position-front">
         <label className="single-create-subtitle position-front">Game Mode</label>
          <SelectionButton valueList={modes} pickedValue={selectedMode} setPickvalue={setMode}
-          radioPadStyle="single-mode-create-radioPad"
-          radioStyle="single-mode-create-radioPad__radio"
-          radioWrapper="single-mode-create-radioPad__wrapper"
-          radioSelected="single-mode-create-radioPad__wrapper single-mode-create-radioPad__wrapper--selected"
+         labelText="modes-text"
+          radioPadStyle="single-create-modes-radioPad"
+          radioStyle="single-create-modes-radioPad__radio"
+          radioWrapper="single-create-modes-radioPad__wrapper"
+          radioSelected="single-create-modes-radioPad__wrapper single-create-modes-radioPad__wrapper--selected"
          />
         </div>
       </div>
@@ -181,19 +182,20 @@ function SinglePlayerCreate(props) {
         <div className="col-md-6 text-center">
         <label className="single-create-subtitle  position-front">Mathamatical Operator</label>
         <SelectionButton valueList={operators} pickedValue={selectedOperator} setPickvalue={HandlesetOperator}
-        radioPadStyle="single-mode-create-radioPad"
-        radioStyle="single-mode-create-radioPad__radio"
-        radioWrapper="single-mode-create-radioPad__wrapper"
-        radioSelected="single-mode-create-radioPad__wrapper single-mode-create-radioPad__wrapper--selected"
+        labelText="operator-text"
+        radioPadStyle="single-create-operator-radioPad "
+        radioStyle="single-create-operator-radioPad__radio"
+        radioWrapper="single-create-operator-radioPad__wrapper"
+        radioSelected="single-create-operator-radioPad__wrapper single-create-operator-radioPad__wrapper--selected"
         />
         </div>
         <div className="col-md-6 text-center">
         <label className="single-create-subtitle  position-front">Worksheet Size</label>
          <SelectionButton valueList={size} pickedValue={selectedSize} setPickvalue={HandleSetSize}
-         radioPadStyle="single-mode-create-radioPad"
-         radioStyle="single-mode-create-radioPad__radio"
-         radioWrapper="single-mode-create-radioPad__wrapper"
-         radioSelected="single-mode-create-radioPad__wrapper single-mode-create-radioPad__wrapper--selected"
+         radioPadStyle="single-create-size-radioPad"
+         radioStyle="single-create-size-radioPad__radio"
+         radioWrapper="single-create-size-radioPad__wrapper"
+         radioSelected="single-create-size-radioPad__wrapper single-create-size-radioPad__wrapper--selected"
          />
         </div>
       </div>
