@@ -116,7 +116,7 @@ export default function MultiplayerPlay({
     // </div>
 
     <div className="container-fluid vh-100">
-     <div className="row align-items-center text-center   h-10">
+     <div className="row align-items-center text-center   vh-10">
           <div
             className="col-md-4 "
           >
@@ -125,7 +125,7 @@ export default function MultiplayerPlay({
             className="col-md-4"
           >
              <img
-                className="logo-style position-front"
+                className="multi-logo-style position-front"
                 src={`/Assets/logo.svg`}
                 alt="Latix"
               />
