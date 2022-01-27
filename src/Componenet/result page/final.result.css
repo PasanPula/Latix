@@ -36,7 +36,7 @@ html {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(150px);
+    transform: translateY(100px);
   }
 }
 @keyframes mover {
@@ -44,7 +44,7 @@ html {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(150px);
+    transform: translateY(100px);
   }
 }
 
