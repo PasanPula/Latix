@@ -48,8 +48,6 @@ export default function MultiplayerPlay({
      
     if(name === undefined)
     {
-      console.log("Name defined");
-      // history.push("/");
       onGoBackHome();
     }
 
