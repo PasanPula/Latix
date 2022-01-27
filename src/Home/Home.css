@@ -191,3 +191,8 @@
   line-height: 14px;
   font-size: 1.2rem;
 }
+
+.bottom-text:hover
+{
+ color: thistle;
+}

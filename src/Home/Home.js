@@ -103,8 +103,8 @@ const Home = () => {
             <div className="row justify-content-center mt-1">
               <div className="col-md-12 text-center">
                 {/* Made With ❤️ by USJ */}
-               <div className="bottom-credit">Copyright (©) 2022 </div>
-               <div className="bottom-credit">  All Rights Reserved</div>
+               <div className="bottom-credit">All Rights Reserved</div>
+               <div className="bottom-credit"> Copyright (©) 2022 </div>
               </div>
             </div>
           </div>
