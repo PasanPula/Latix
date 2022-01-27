@@ -17,7 +17,7 @@ function App() {
       <div style={{backgroundColor:"#8a2be2", overflow:"hidden"}}>
          <NoMobile/>
          {/* <RouteLoader/> */}
-        <Background />
+        {/* <Background /> */}
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/SinglePlayer" component={SinglePlayer}/>

@@ -2,11 +2,15 @@
 import "./btnStyle.css"
 import react from "react"
 
-function Button({onshow})
+function Button({onshow,onClicked})
 {
     function chnage(e){  // call parent onshow method for updating button click flag as TRUE
         
         onshow(true)
+        if(onClicked !== undefined)
+        {
+          onClicked()
+        }
     }
 
     // className="button"
