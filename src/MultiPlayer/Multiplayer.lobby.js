@@ -30,10 +30,7 @@ export default function MultiplayerLobby({
 
   useEffect(() => {
 
-    // if(name === undefined)
-    // {
-    //   onGoBackHome();
-    // }
+   
 
     socket.on("GetUser", (res) => {
       setUserList(res);
