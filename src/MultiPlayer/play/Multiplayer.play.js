@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect,useState } from "react";
 import Timer from "../../Componenet/Timer/Timer";
 import Grid from "../../Componenet/Game grid/grid";
 import Submitbutton from "../../Componenet/Game grid/components/Button";
@@ -33,8 +33,16 @@ export default function MultiplayerPlay({
 }) {
   const setShowRef = useRef();
   const resultValueCountRef = useRef();
+  // const timeSpentRef = useRef("0.0");
+  const [timeSpentRef, settimeSpentRef] = useState("0.0");
+  const showResult = useRef(false);
   const socket = useSocket();
   const history = useHistory();
+
+  const setshowResult = (val) =>
+  {
+    showResult.current = val;
+  }
 
   useEffect(() => {
     if (isCreator && !isJoinAsPlayer) {
@@ -60,61 +68,15 @@ export default function MultiplayerPlay({
     history.go(0);
   }
 
+  const handleTimeSpent = (val) => 
+  {
+    settimeSpentRef(val);
+    setTimeSpent(val);
+  }
+
 
   return (
-    // <div>
-    //   <div className="grid-Container">
-    //     <Grid
-    //       ref={setShowRef}
-    //       resultValueCountRef={resultValueCountRef}
-    //       setCorrectCount={setCorrectCount}
-    //       setinCorrectCount={setinCorrectCount}
-    //       gridSize={gridSize}
-    //       columnNumbers={columnNumbers}
-    //       rowNumbers={rowNumbers}
-    //       MathOperator={operator}
-    //     />
-
-    //     <div className="Grid2">
-    //       <div className="Fixed">
-    //         <div>
-    //           <Timer
-    //             isJoinAsPlayer={isJoinAsPlayer}
-    //             SubmitAnswers={SubmitAnswers}
-    //             setTimeSpent={setTimeSpent}
-    //             showValRef={isJoinAsPlayer ? setShowRef : false}
-    //             initMinute={time}
-    //           />
-    //         </div>
-
-    //         {isJoinAsPlayer ? (
-    //           <div>
-    //             <div className="bottom">
-    //               <Submitbutton
-    //                 onshow={() => {
-    //                   setShowRef.current.setShow(true);
-    //                 }}
-    //               />
-    //             </div>
-    //           </div>
-    //         ) : (
-    //           <span></span>
-    //         )}
-
-    //       </div>
-    //     </div>
-
-    //     {(isJoinAsPlayer && isJoinAsPlayer) ? (
-    //       <CorrectIncorrectDisplay ref={resultValueCountRef} />
-    //     ) : (
-    //       <span></span>
-    //     )}
-    //   </div>
-
-    //   <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
-
-    // </div>
-
+   
     <div className="container-fluid vh-100">
      <div className="row align-items-center text-center   vh-10">
           <div
@@ -154,7 +116,9 @@ export default function MultiplayerPlay({
           <div className="row align-items-center">
             <div className="col-md-12 d-flex justify-content-between">
             {(isJoinAsPlayer && isJoinAsPlayer) ? (
-          <CorrectIncorrectDisplay ref={resultValueCountRef} />
+              // showResult.current?
+          <CorrectIncorrectDisplay ref={resultValueCountRef} timeSpentRef={timeSpentRef} showResult={showResult.current} /> 
+          // : <span></span>
         ) : (
           <span></span>
         )}
@@ -168,7 +132,7 @@ export default function MultiplayerPlay({
             <Timer
                 isJoinAsPlayer={isJoinAsPlayer}
                 SubmitAnswers={SubmitAnswers}
-                setTimeSpent={setTimeSpent}
+                setTimeSpent={handleTimeSpent}
                 showValRef={isJoinAsPlayer ? setShowRef : false}
                 initMinute={time}
               />
@@ -187,6 +151,7 @@ export default function MultiplayerPlay({
                   <Submitbutton
                     onshow={() => {
                       setShowRef.current.setShow(true);
+                      setshowResult(true)
                     }}
                   />
                 </div>
