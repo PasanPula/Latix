@@ -164,7 +164,7 @@ export default function MultiplayerLobby({
           <div className="col-md-2 "></div>
         </div>
         <div className="row vh-60 align-items-center">
-          <div className="col-md-6 text-center">
+          <div className="col-md-7 text-center">
             <div className="row">
               <div className="col-md-12 text-center ">
                 <label className="lobby-title position-front">Share with friends</label>
@@ -183,11 +183,11 @@ export default function MultiplayerLobby({
               </div>
             </div>
           </div>
-          <div className="col-md-6 ">
+          <div className="col-md-5 ">
             <Leaderboard userList={userList} />
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center mt-4">
           <div className="col-md-2  text-center">
           <IconButton
             icon={faHome}
@@ -197,11 +197,20 @@ export default function MultiplayerLobby({
             onClick={onGoBackHome}
           />
           </div>
-          <div className="col-md-8 text-center">
+          <div className="col-md-8 text-center position-front">
             {/* {tempCreator ? (
                   userList.length <3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> : */}
-                   <button className="lobby-start-game position-front" onClick={handleStart}>
+                   {/* <button className="lobby-start-game " onClick={handleStart}>
                     Start Game
+                  </button> */}
+
+                  <button
+                    type="submit"
+                    className="custom-btn btn-2 "
+                    style={{ width: "200px", height: "60px", fontSize: "38px" }}
+                    onClick={handleStart}
+                  >
+                    <div className="btn-con">Start Game</div>
                   </button>
            {/* ) : (
              <label className="lobby-label position-front">Waiting for Start</label>

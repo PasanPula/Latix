@@ -1,74 +1,79 @@
-
 /*--------------------
 Leaderboard
 --------------------*/
 .leaderboard {
   width: 70%;
   height: 50vh;
-  background: #fff0f0;
+  background: rgba(129, 5, 240, 1);
   border-radius: 10px;
-  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   position: relative;
   left: 15%;
-  font-family: 'Short Stack', cursive;
+  font-family: "Dongle", sans-serif;
+ 
 }
 
-.Leaderboard-icon
-{
-  font-size: 1.4rem;
-  padding-left: 3px;
+.Leaderboard-icon {
+  font-size: 1.7rem;
+  /* padding-left: 3px; */
   position: relative;
-  top: -5px;
+
 }
-.leaderboard h1
-{
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #b18597;
+.leaderboard h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
   padding: 12px 13px 18px;
   text-align: center;
+  font-family: "Dongle", sans-serif;
 }
 
-.leaderboard-list
-{
+.leaderboard-list {
   width: 100%;
-  height: 82%;
-  position: relative;
-  overflow: auto;
+  display: inline;
+  overflow-y: scroll;
   overflow-x: hidden;
+  height: 35vh;
+  
+  
 }
 
 .leaderboard ol {
   list-style: none;
-  counter-reset: leaderboard;
+
   padding: 0;
+  z-index: -1;
 }
 
-
-
-.leaderboard-avatar
-{
-  width: 8vw;
-  height: 4vh;
-  
+.leaderboard-avatar {
+  width: 10vw;
+  height: 5vh;
 }
 
 .leaderboard ol li {
   position: relative;
   z-index: 2;
   font-size: 14px;
-  counter-increment: leaderboard;
-  padding: 18px 10px 18px 50px;
+  /* counter-increment: leaderboard; */
+  /* padding: 18px 10px 18px 50px; */
+  /* padding: 5px; */
   cursor: pointer;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
+  color: rgba(129, 5, 240, 1);
+  background: white;
   /* transform: translateZ(0) scale(1, 1); */
-  border-bottom: 2px solid #b18597;
+  /* border-bottom: 2px solid #b18597; */
   border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  
+
 }
 
 .leaderboard ol li::before {
-  content: counter(leaderboard);
+  /* content: counter(leaderboard); */
   position: absolute;
   z-index: 2;
   top: 22px;
@@ -88,20 +93,27 @@ Leaderboard
   height: 100%;
   margin: 0;
   background: none;
-  color: rgb(0, 0, 0);
-  font-size: 1.5rem;
+  color: rgba(129, 5, 240, 1);
+  font-size: 1.7rem;
+  font-family: "Dongle", sans-serif;
 }
 
 .leaderboard ol li:hover {
   /* z-index: 2; */
-  background-color: lightblue;
+  background-color: white;
+  color: rgba(129, 5, 240, 1);
   overflow: visible;
 }
+
+.leaderboard ol li:hover mark
+{
+  color:rgba(129, 5, 240, 1) ;
+}
 .leaderboard ol li:hover {
+
   opacity: 1;
   transition: all 0.35s ease-in-out;
 }
-
 
 ::-webkit-scrollbar {
   width: 15px;
@@ -119,11 +131,18 @@ Leaderboard
   border-radius: 10px;
 }
 
-
-.leaderboard-breakline
-{
+.leaderboard-breakline {
   content: " ";
   height: 2px;
   width: 100%;
-  border: 2px solid #b18597;
+  /* border: 2px solid white; */
+  color: white;
+}
+
+.Number-leader {
+  padding: 5px;
+  background: white;
+  color: rgba(129, 5, 240, 1);
+  font-size: 20px;
+  border-radius: 20px;
 }
