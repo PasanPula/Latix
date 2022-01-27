@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect,useHistory } from "react-router-dom";
 import MultiPlayerMode from "./MultiPlayer.mode";
 import MultiplayerLogin from "./Multiplayer.login";
 import MultiPlayerCreate from "./create/Multiplayer.create";
@@ -32,6 +32,9 @@ export default function MultiPlayer() {
   const isFinished = useRef(false);
   const socket = useSocket();
   const userResult = useRef();
+
+  const history = useHistory();
+
 
 
 

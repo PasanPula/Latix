@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useSocket } from "../Services/SocketProvider";
 import { useHistory } from "react-router-dom";
 import "./lobby/Multiplayer.Lobby.css";
-import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import Leaderboard from "../Componenet/leaderboard/leaderboard";
 import CopyButton from "../Componenet/copy button/copy.button";
 import { ReactComponent as Countdown } from "./lobby/countdown/countdown.svg";
@@ -26,7 +25,20 @@ export default function MultiplayerLobby({
   const history = useHistory();
   const [url, setURL] = useState("Empty");
 
+
+  const onGoBackHome = useCallback(() => 
+  {
+    history.push("/");
+    history.go(0);
+  })
+
   useEffect(() => {
+
+    if(name === undefined)
+    {
+      onGoBackHome();
+    }
+
     socket.on("GetUser", (res) => {
       setUserList(res);
       console.log("lobby", res);
@@ -63,7 +75,7 @@ export default function MultiplayerLobby({
       socket.off("GetGame");
       setshowCountdown("lobby-countdown");
     };
-  }, [Gameid, HandleSelectedOperator, HandleSetSize, HandleSetTime, history, setColoumNumbers, setRowNumbers, setisCreator, socket, userList]);
+  }, [Gameid, HandleSelectedOperator, HandleSetSize, HandleSetTime, history, name, onGoBackHome, setColoumNumbers, setRowNumbers, setisCreator, socket, userList]);
 
   const handleStart = () => {
     socket.emit(
@@ -81,11 +93,7 @@ export default function MultiplayerLobby({
     return Math.floor(Math.random() * 10000) + 10000;
   };
 
-  const onGoBackHome = () => 
-  {
-    history.push("/");
-    history.go(0);
-  }
+  
 
   const onGoBack = () => 
   {
