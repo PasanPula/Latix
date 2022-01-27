@@ -104,7 +104,7 @@ const Home = () => {
               <div className="col-md-12 text-center">
                 {/* Made With ❤️ by USJ */}
                <div className="bottom-credit">Copyright (©) 2022 </div>
-               <div className="bottom-credit">  All Rights Reserved.</div>
+               <div className="bottom-credit">  All Rights Reserved</div>
               </div>
             </div>
           </div>
