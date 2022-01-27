@@ -15,24 +15,29 @@ Leaderboard
 }
 
 .Leaderboard-icon {
-  font-size: 1.7rem;
+  font-size: 2rem;
   /* padding-left: 3px; */
   position: relative;
+  background-color: yellow;
+  padding: 6px;
+  border-radius: 10rem;
 
 }
 .leaderboard h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: white;
-  padding: 12px 13px 18px;
+  padding: 9px 9px 15px;
   text-align: center;
   font-family: "Dongle", sans-serif;
+  position: relative;
+  top:15px;
 }
 
 .leaderboard-list {
   width: 100%;
   display: inline;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 35vh;
   
@@ -46,7 +51,7 @@ Leaderboard
 }
 
 .leaderboard-avatar {
-  width: 10vw;
+  width: 5vw;
   height: 5vh;
 }
 
@@ -64,9 +69,10 @@ Leaderboard
   background: white;
   /* transform: translateZ(0) scale(1, 1); */
   /* border-bottom: 2px solid #b18597; */
-  border-radius: 1rem;
+  border-radius: 5px;
   align-items: center;
   justify-content: center;
+  padding: 5px;
   
 
 }
@@ -114,19 +120,19 @@ Leaderboard
   transition: all 0.35s ease-in-out;
 }
 
-::-webkit-scrollbar {
-  width: 15px;
+.leaderboard-list::-webkit-scrollbar {
+  width: 8px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 3px grey;
+.leaderboard-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px rgb(233, 229, 229);
   border-radius: 10px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
-  background: #b18597;
+.leaderboard-list::-webkit-scrollbar-thumb {
+  background: #ffffffe7;
   border-radius: 10px;
 }
 
@@ -143,5 +149,5 @@ Leaderboard
   background: white;
   color: rgba(129, 5, 240, 1);
   font-size: 20px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
