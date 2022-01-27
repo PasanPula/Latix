@@ -1,4 +1,4 @@
-import {memo, useRef,useEffect} from 'react';
+import {memo, useRef,useEffect ,useState} from 'react';
 import { useHistory } from "react-router";
 import Timer from '../Componenet/Timer/Timer';
 import Grid from '../Componenet/Game grid/grid';
@@ -13,7 +13,8 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
 
     const setShowRef = useRef(); 
     const resultValueCountRef = useRef();
-
+    const [timeSpentRef, settimeSpentRef] = useState("0.0");
+    const showResult = useRef(true);
     const history = useHistory();
 
     useEffect(() => {
@@ -30,6 +31,19 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
     history.push("/");
     history.go(0);
   }
+
+  const handleTimeSpent = (val) => 
+  {
+    settimeSpentRef(val);
+    setTimeSpent(val);
+  }
+
+  const setshowResult = (val) =>
+  {
+    showResult.current = val;
+  }
+
+
 
 
 
@@ -63,7 +77,7 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
         </div>
         <div className="row align-items-center">
           <div className="col-md-12 d-flex justify-content-between">
-          < CorrectIncorrectDisplay ref={resultValueCountRef}  />
+          < CorrectIncorrectDisplay ref={resultValueCountRef} timeSpentRef={timeSpentRef} showResult={showResult.current} />
           </div>
         </div>
       </div>
@@ -83,13 +97,13 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
         <div className="row align-items-center">
           <div className="col-md-12">
           <label className="single-play-subtitle-2 position-front">Time Remaining</label>
-            <Timer setTimeSpent={setTimeSpent} showValRef={setShowRef} initMinute={time} />
+            <Timer setTimeSpent={handleTimeSpent} showValRef={setShowRef} initMinute={time} />
           </div>
         </div>
         <div className="row single-play-submit-wrapper">
           <div className="col-md-12 ">
               <div className="bottom">
-              <Button onshow={ () =>{setShowRef.current.setShow(true)}}/>
+              <Button onshow={ () =>{setShowRef.current.setShow(true); setshowResult(true);}}/>
               </div>
           </div>
         </div>

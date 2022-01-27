@@ -26,18 +26,14 @@ export default function MultiplayerLobby({
   const [url, setURL] = useState("Empty");
 
 
-  const onGoBackHome = () => 
-  {
-    history.push("/");
-    history.go(0);
-  }
+  
 
   useEffect(() => {
 
-    if(name === undefined)
-    {
-      onGoBackHome();
-    }
+    // if(name === undefined)
+    // {
+    //   onGoBackHome();
+    // }
 
     socket.on("GetUser", (res) => {
       setUserList(res);
@@ -75,7 +71,7 @@ export default function MultiplayerLobby({
       socket.off("GetGame");
       setshowCountdown("lobby-countdown");
     };
-  });
+  }, [name, socket, Gameid, setisCreator, setColoumNumbers, setRowNumbers, HandleSelectedOperator, HandleSetSize, HandleSetTime, history]);
 
   const handleStart = () => {
     socket.emit(
@@ -100,6 +96,12 @@ export default function MultiplayerLobby({
     socket.disconnect();
     socket.connect();
     history.push("/Multiplay/create");
+  }
+
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+    history.go(0);
   }
 
   return (
