@@ -38,6 +38,7 @@ function CorrectIncorrectDisplay(props,ref) {
           readOnly={true}
         />
       </div>
+      <br></br>
       <div className="CorrectIncorrect-top">
         <label className="CorrectIncorrect-lable"> Incorrect: </label>
         <input
@@ -49,26 +50,29 @@ function CorrectIncorrectDisplay(props,ref) {
           readOnly={true}
         />
       </div>
+      <br></br>
      { minitSpend === "0" ?
       <div className="CorrectIncorrect-top">
-        <label className="CorrectIncorrect-lable"> Time Spent: </label>
-        <input
+        <label className="CorrectIncorrect-lable"> Time Spend: </label>
+        <label className="CorrectIncorrect-lable">  {secondsSpend} Seconds </label>
+        {/* <input
           type="text"
           name="text"
           id="text"
           value={ `${secondsSpend} Seconds` }
           readOnly={true}
-        />
+        /> */}
       </div> :
       <div className="CorrectIncorrect-top">
-        <label className="CorrectIncorrect-lable"> Time Spent: </label>
-        <input
+        <label className="CorrectIncorrect-lable"> Time Spend: </label>
+        <label className="CorrectIncorrect-lable">  {minitSpend} Minitues and  {secondsSpend} Seconds </label>
+        {/* <input
           type="text"
           name="text"
           id="text"
           value={ `${minitSpend} Minitues and ${secondsSpend} Seconds` }
           readOnly={true}
-        />
+        /> */}
       </div>
       }
       </> :

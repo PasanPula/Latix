@@ -41,7 +41,7 @@ export default function CreatorControls({ isCreator,setisCreator,Gameid }) {
 
   return (
     <div>
-      {tempCreator ? <button className="multi-play-admin-btn" onClick={endGame}>END Game For ALL</button> : <span></span>}
+      {tempCreator ? <button className="multi-play-admin-btn" onClick={endGame}>End & Generate Final Result</button> : <span className="Cretaor-controls-msg"> Waiting for Game end..</span>}
     </div>
   );
 }

@@ -26,11 +26,11 @@ export default function MultiplayerLobby({
   const [url, setURL] = useState("Empty");
 
 
-  const onGoBackHome = useCallback(() => 
+  const onGoBackHome = () => 
   {
     history.push("/");
     history.go(0);
-  })
+  }
 
   useEffect(() => {
 
@@ -75,7 +75,7 @@ export default function MultiplayerLobby({
       socket.off("GetGame");
       setshowCountdown("lobby-countdown");
     };
-  }, [Gameid, HandleSelectedOperator, HandleSetSize, HandleSetTime, history, name, onGoBackHome, setColoumNumbers, setRowNumbers, setisCreator, socket, userList]);
+  });
 
   const handleStart = () => {
     socket.emit(

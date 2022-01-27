@@ -250,6 +250,7 @@ const setisCreator = (value) =>
               isCreator={isCreator.current}
               setisCreator={setisCreator}
               userResult={userResult.current}
+              name={name.current}
             />
           )}
         />

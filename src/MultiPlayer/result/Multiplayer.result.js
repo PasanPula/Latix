@@ -8,6 +8,7 @@ export default function MultiplayerResult({
   isCreator,
   setisCreator,
   userResult,
+  name
 }) {
   const [result] = useState(userResult);
   const history = useHistory();
@@ -18,6 +19,13 @@ export default function MultiplayerResult({
   const [creatorName,setCreatorName] = useState("Creator");
 
   useEffect(() => {
+
+    if(name === undefined)
+    {
+      onGoBackHome();
+    }
+
+
     socket.on("GetUser", (res) => {
       res.filter((user) => {
         if (user.UserId === socket.id) {
@@ -53,6 +61,13 @@ export default function MultiplayerResult({
       socket.off("GetUser");
     };
   });
+
+
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+    history.go(0);
+  }
 
 
   // eslint-disable-next-line

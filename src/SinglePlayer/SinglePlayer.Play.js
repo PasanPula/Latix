@@ -1,4 +1,4 @@
-import {memo, useRef} from 'react';
+import {memo, useRef,useEffect} from 'react';
 import { useHistory } from "react-router";
 import Timer from '../Componenet/Timer/Timer';
 import Grid from '../Componenet/Game grid/grid';
@@ -9,8 +9,6 @@ import './play/singleplayer.play.css';
 import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
 
 
-
-
 function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorrectCount,setCorrectCount,time,operator,gridSize,columnNumbers,rowNumbers}) {
 
     const setShowRef = useRef(); 
@@ -18,7 +16,15 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
 
     const history = useHistory();
 
+    useEffect(() => {
 
+      if(name === undefined)
+    {
+      onGoHome();
+    }
+      
+    },);
+  
     const onGoHome = () => 
   {
     history.push("/");
@@ -28,19 +34,6 @@ function SinglePlayerPlay({name,avatar,setTimeSpent,Correct,incorrect ,setinCorr
 
 
     return (
-    //     <div  className="Container">
-    //           <Grid ref={setShowRef} resultValueCountRef={resultValueCountRef} setCorrectCount={setCorrectCount} setinCorrectCount={setinCorrectCount} gridSize ={gridSize} columnNumbers={columnNumbers} rowNumbers={rowNumbers} MathOperator={operator}/>
-
-    //     <div className="Grid2">
-    //         <div className="Fixed">
-    //             <div> <Timer setTimeSpent={setTimeSpent} showValRef={setShowRef} initMinute={time} /> </div>
-    //             <div> <div className="bottom"><Button onshow={ () =>{setShowRef.current.setShow(true)}}/> </div></div>
-                 
-    //           </div>
-    //     </div>
-    //     < CorrectIncorrectDisplay ref={resultValueCountRef}  />
-    // </div> 
-
     <div className="container-fluid vh-100">
      <div className="row align-items-center text-center   h-10">
           <div

@@ -39,6 +39,8 @@ export default function MultiplayerPlay({
   const socket = useSocket();
   const history = useHistory();
 
+  const [isSubmitClick, setisSubmitClick] = useState(false);;
+
   const setshowResult = (val) =>
   {
     showResult.current = val;
@@ -132,6 +134,7 @@ export default function MultiplayerPlay({
           </div>
         </div>
         <div className=" pe-3 col-md-4 text-center ">
+          { !isSubmitClick ?
           <div className="row align-items-center">
             <div className="col-md-12">
             <label className="multi-play-time-label position-front">Time Remaining</label>
@@ -143,10 +146,22 @@ export default function MultiplayerPlay({
                 initMinute={time}
               />
             </div>
-          </div>
+          </div> : <span></span>}
           <div className="row ">
             <div className=" col-md-12 gx-0">
             <FinishList />
+            
+            </div>
+          </div>
+          <div className="row ">
+            <div className=" col-md-12 gx-0">
+            {(isJoinAsPlayer && isJoinAsPlayer) ? (
+              // showResult.current?
+          <CorrectIncorrectDisplay ref={resultValueCountRef} timeSpentRef={timeSpentRef} showResult={showResult.current} /> 
+          // : <span></span>
+        ) : (
+          <span></span>
+        )}
             </div>
           </div>
           <div className="row multi-submit-row">
@@ -154,12 +169,16 @@ export default function MultiplayerPlay({
             {isJoinAsPlayer ? (
               <div>
                 <div className="bottom">
+                  { !isSubmitClick ?
                   <Submitbutton
                     onshow={() => {
                       setShowRef.current.setShow(true);
-                      setshowResult(true)
+                      setshowResult(true);
+                      setisSubmitClick(true);
                     }}
-                  />
+                  /> :
+                  <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
+}
                 </div>
               </div>
             ) : (
@@ -169,7 +188,7 @@ export default function MultiplayerPlay({
           </div>
         </div>
       </div>
-      <div className="row mt-5 vh-5 align-items-center">
+      <div className="row vh-5 align-items-center">
             <div  className="col-md-2 ">
             <IconButton
             icon={faHome}
@@ -182,7 +201,7 @@ export default function MultiplayerPlay({
             <div className="col-md-6 ">
             </div>
             <div  className="col-md-4 text-center">
-            <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
+            
             </div>
           </div>
     </div>
