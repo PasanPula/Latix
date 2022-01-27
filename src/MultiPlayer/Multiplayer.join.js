@@ -38,8 +38,6 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
     history.push("/");
   };
 
- 
-
   return (
     //     <div>
 
@@ -67,14 +65,13 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
         <div className="col-md-4 position-front"></div>
       </div>
       <div className="row justify-content-start">
-        <div className="col-md-2 text-center ">
-        </div>
+        <div className="col-md-2 text-center "></div>
         <div className="col-md-8 p-3 justify-content-center "></div>
         <div className="col-md-2 "></div>
       </div>
       <div className="row align-items-end h-40">
         <div className="col-md-12">
-          <div className="row pt-3 justify-content-center">
+          <div className="row pt-3 justify-content-center mt-5">
             <div className="col-md-12 d-flex justify-content-center">
               <img
                 className="join-avatar position-front"
@@ -85,10 +82,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
           </div>
           <div className="row pt-2 justify-content-center">
             <div className="col-md-12">
-              <label className="join-title-1   position-front">
-                {" "}
-                Hi {name} {avatar}{" "}
-              </label>
+              <label className="join-title-1   position-front">Hi {name}</label>
             </div>
           </div>
         </div>
@@ -96,28 +90,28 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
       <div className="row align-items-center">
         <div className="col-md-2"></div>
         <div className="col-md-8  ">
-          <div className="row pt-2 justify-content-center">
+          <div className="row  justify-content-center">
             <div className="col-md-12  d-flex justify-content-center">
-              <label className="join-textbox-text pt-2  position-front">
-               Enter Your Game code Here
+              <label className="join-textbox-text  position-front">
+                Enter Your Game code Here
               </label>
               <div></div>
             </div>
           </div>
           <div>
-          <div className="row pt-2 justify-content-center">
-          <div className="col-md-12  d-flex justify-content-center">
-            <input
-              className="input-field  position-front"
-              placeholder="Code"
-              type="text"
-              name="Code"
-              value={gameCode}
-              onChange={handleGameCode}
-              required
-            />
+            <div className="row pt-2 justify-content-center">
+              <div className="col-md-12  d-flex justify-content-center">
+                <input
+                  className="input-field  position-front"
+                  placeholder="Code"
+                  type="text"
+                  name="Code"
+                  value={gameCode}
+                  onChange={handleGameCode}
+                  required
+                />
+              </div>
             </div>
-          </div>
           </div>
         </div>
         <div className="col-md-2"></div>
