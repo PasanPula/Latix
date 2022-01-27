@@ -61,8 +61,7 @@
   text-align: center;
   font-family: "Dongle", sans-serif;
   cursor: default;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(55, 226, 155);
+  
 }
 
 .home-button {
