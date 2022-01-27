@@ -45,6 +45,14 @@ export default function MultiplayerPlay({
   }
 
   useEffect(() => {
+     
+    if(name === undefined)
+    {
+      console.log("Name defined");
+      // history.push("/");
+      onGoBackHome();
+    }
+
     if (isCreator && !isJoinAsPlayer) {
       setShowRef.current.setShow(true);
     }
