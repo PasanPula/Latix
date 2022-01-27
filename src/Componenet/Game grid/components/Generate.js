@@ -1,10 +1,9 @@
 import "./Styles/GenerateStyle.css";
 import "./Styles/GridStyle.css"
-import { useState, useCallback, memo, forwardRef,useImperativeHandle} from "react";
+import { useState,useEffect, useCallback, memo, forwardRef,useImperativeHandle} from "react";
 import Cel from "./Cel";
 import CelTex from "./CelTex";
 import Operator from "./Operator";
-
 
 function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowNumbers,coloumNumbers,gridSize,MathOperator},ref)
 { 
@@ -15,9 +14,31 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
   const[rowstat,setrow] = useState(''); // store the value chage row 
   const[column,setcolumn] = useState(""); //  store the value chnage column
   const[showBool,setshow] = useState(false); //  store wether submit button is click or not
-
+  const[Color,setColor] = useState('');
+ useEffect(()=>
+ {
+   color();
+   function color()
+   {
+     if(MathOperator === "+")
+     {
+         setColor('LightBule')
+     }
+     else if (MathOperator==='-')
+     {
+       setColor('LightYellow')
+     }
+     else if(MathOperator==='/')
+     {
+       setColor('LightOrang')
+     }
+     else
+     {
+       setColor('LightRed')
+     }
+   }
+ })
  
-
   
   const setShowbool  =useCallback((bool)=> // handdling the sumbit or not 
   {
@@ -117,15 +138,15 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
     
      
      
-     let operator =  <Operator key="Operator" gridSize={gridSize} Operator={MathOperator} color="blue" />    //<Cel key="Operator" id="Operator" No="+" />
+     let operator =  <Operator key="Operator" gridSize={gridSize} Operator={MathOperator} color={Color} />    //<Cel key="Operator" id="Operator" No="+" />
     const row1 = rowNumbers.map((item,index)=>
       { 
-       return <Cel  gridSize={gridSize} key={"col-"+index} id={"col-"+index} No={item} iden={column} />
+       return <Cel  gridSize={gridSize} key={"col-"+index} id={"col-"+index} No={item} iden={column} color={Color} />
        } );
          const rows = coloumNumbers.map((item,index)=>
          {
              let row =[];
-             let cell = <Cel gridSize={gridSize} key={"row-"+index} id={"row-"+index} No={item} iden={rowstat} />;
+             let cell = <Cel gridSize={gridSize} key={"row-"+index} id={"row-"+index} No={item} iden={rowstat} color={Color} />;
              
             row.push(cell);
             

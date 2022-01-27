@@ -47,7 +47,8 @@ function Cel(parms)
     {
         if(parms.id === parms.iden)
         {
-            color='enter';
+           // color='enter';
+           color = parms.color;
         }
     }
 
