@@ -200,7 +200,7 @@ function SinglePlayerCreate(props) {
         </div>
       </div>
       <div className="row align-items-center vh-5">
-        <div className="col-md-2  mt-5 text-center">
+        <div className="col-md-2  text-center">
          <IconButton
             icon={faHome}
             height={"80px"}
@@ -209,7 +209,7 @@ function SinglePlayerCreate(props) {
             onClick={onGoHome}
           />
         </div>
-        <div className="col-md-8 mt-5 text-center">
+        <div className="col-md-8 text-center">
            {/* <button className ="single-create-button" type="button" onClick = {startGame}> Start Game</button> */}
            <button
                     type="submit"
