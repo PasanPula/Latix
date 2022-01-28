@@ -65,13 +65,11 @@ export default function Leaderboard({ userList, title }) {
         <hr className="leaderboard-breakline"></hr>
         {/* <div className="leaderboard-list"> */}
         <div className="row justify-content-center leaderboard-list gx-0">
-        <div className="col-md-1"> </div>
-          <div className="col-md-10 ">
+          <div className="col-md-12 ">
             <ol>
               {users}
             </ol>
           </div>
-          <div className="col-md-1"> </div>
         </div>
         {/* </div> */}
       </div>
