@@ -1,90 +1,100 @@
-import { useState, forwardRef,useImperativeHandle,useEffect } from "react";
-import '../crt.incrt.display/Correct.incorrect.display.css';
+import { useState, forwardRef, useImperativeHandle, useEffect } from "react";
+import "../crt.incrt.display/Correct.incorrect.display.css";
 
-function CorrectIncorrectDisplay(props,ref) {
-
+function CorrectIncorrectDisplay(props, ref) {
   const [correctCount, setCorrectCount] = useState(0);
   const [incorrectCount, setInCorrectCount] = useState(0);
 
   const [minitSpend, setMinitSpend] = useState("0");
   const [secondsSpend, setSecondsSpend] = useState("00");
-  useImperativeHandle(ref, () => ({setResultValueCount: (crt,incrt) => {return setResultValueCount(crt,incrt)}}), []);
+  useImperativeHandle(
+    ref,
+    () => ({
+      setResultValueCount: (crt, incrt) => {
+        return setResultValueCount(crt, incrt);
+      },
+    }),
+    []
+  );
 
-  const setResultValueCount = (correct,incorrect) =>
-  {
+  const setResultValueCount = (correct, incorrect) => {
     setCorrectCount(correct);
     setInCorrectCount(incorrect);
-  }
+  };
 
   useEffect(() => {
-    let times = props.timeSpentRef.split('.')
-    setMinitSpend(times[0])
-    setSecondsSpend(times[1])
+    let times = props.timeSpentRef.split(".");
+    setMinitSpend(times[0]);
+    setSecondsSpend(times[1]);
   }, [props.timeSpentRef]);
-  
 
   return (
     <>
-     { props.showResult ?
-     <>
-      <div className="CorrectIncorrect-top">
-        <label className="CorrectIncorrect-lable"> Correct: </label>
-        <br></br>
-        <label className="CorrectIncorrect-lable"> {correctCount} </label>
-        
-        {/* <input
-          type="text"
-          className="Correct-text"
-          name="text"
-          id="text"
-          value={correctCount}
-          readOnly={true}
-        /> */}
+      <div className="crt-incrt-wrap">
+        {props.showResult ? (
+          <>
+            <div className="row CorrectIncorrect-row">
+              <div className="col-md-5 d-flex justify-content-end">
+                <label className="CorrectIncorrect-lable"> Correct: </label>
+              </div>
+              <div className="col-md-7">
+                <label className="CorrectIncorrect-value">
+                  {" "}
+                  {correctCount}{" "}
+                </label>
+              </div>
+            </div>
+
+            <div className="row CorrectIncorrect-row">
+              <div className="col-md-5 d-flex justify-content-end">
+                <label className="CorrectIncorrect-lable"> Incorrect: </label>
+              </div>
+              <div className="col-md-7">
+                <label className="CorrectIncorrect-value">
+                  {" "}
+                  {incorrectCount}{" "}
+                </label>
+              </div>
+            </div>
+
+            {minitSpend === "0" ? (
+              <div className="row CorrectIncorrect-row">
+                <div className="col-md-5 d-flex justify-content-end">
+                  <label className="CorrectIncorrect-lable">
+                    {" "}
+                    Time Spend:{" "}
+                  </label>
+                </div>
+                <div className="col-md-7">
+                  <label className="CorrectIncorrect-value">
+                    {" "}
+                    00m : {secondsSpend}s
+                  </label>
+                </div>
+              </div>
+            ) : (
+              <div className="row CorrectIncorrect-row">
+                <div className="col-md-5 d-flex justify-content-end">
+                  <label className="CorrectIncorrect-lable">
+                    {" "}
+                    Time Spend:{" "}
+                  </label>
+                </div>
+                <div className="col-md-7">
+                  <label className="CorrectIncorrect-lable">
+                    {" "}
+                    {minitSpend}m :{secondsSpend}s{" "}
+                  </label>
+                </div>
+              </div>
+            )}
+          </>
+        ) : (
+          <span></span>
+        )}
       </div>
-      <br></br>
-      <div className="CorrectIncorrect-top">
-        <label className="CorrectIncorrect-lable"> Incorrect: </label>
-        <br></br>
-        <label className="CorrectIncorrect-lable"> {incorrectCount} </label>
-        {/* <input
-          type="text"
-          className="InCorrect-text"
-          name="text"
-          id="text"
-          value={incorrectCount}
-          readOnly={true}
-        /> */}
-      </div>
-      <br></br>
-     { minitSpend === "0" ?
-      <div className="CorrectIncorrect-top">
-        <label className="CorrectIncorrect-lable"> Time Spend: </label>
-        <label className="CorrectIncorrect-lable">  {secondsSpend} Seconds </label>
-        {/* <input
-          type="text"
-          name="text"
-          id="text"
-          value={ `${secondsSpend} Seconds` }
-          readOnly={true}
-        /> */}
-      </div> :
-      <div className="CorrectIncorrect-top">
-        <label className="CorrectIncorrect-lable"> Time Spend: </label>
-        <label className="CorrectIncorrect-lable">  {minitSpend} Minitues and  {secondsSpend} Seconds </label>
-        {/* <input
-          type="text"
-          name="text"
-          id="text"
-          value={ `${minitSpend} Minitues and ${secondsSpend} Seconds` }
-          readOnly={true}
-        /> */}
-      </div>
-      }
-      </> :
-           <span></span> 
-      }
     </>
   );
 }
 
-export default  forwardRef(CorrectIncorrectDisplay);
+export default forwardRef(CorrectIncorrectDisplay);

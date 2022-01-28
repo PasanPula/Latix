@@ -161,7 +161,7 @@ export default function MultiplayerPlay({
             </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-md-12">
+            <div className="col-md-12 gx-0 d-flex justify-content-center position-front">
             {(isJoinAsPlayer && isJoinAsPlayer) ? (
           <CorrectIncorrectDisplay ref={resultValueCountRef} timeSpentRef={timeSpentRef} showResult={showResult.current} /> 
         ) : (
