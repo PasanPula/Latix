@@ -2,8 +2,8 @@
   
   .avatar-Carousel {
     position: relative;
-    width: 14rem;
-    height: 14rem;
+    width: 26vh;
+    height: 26vh;
     perspective: 800px;
     transform-style: preserve-3d;
   }
