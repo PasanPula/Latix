@@ -99,11 +99,11 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
           />
         </div>
         <div className="col-md-8 text-center ">
-        <div  style={{fontSize: "5rem",color:"white", fontFamily: '"Dongle", sans-serif' }}className="position-front">Welcome to Latix</div>
+        {/* <div  style={{fontSize: "5rem",color:"white", fontFamily: '"Dongle", sans-serif' }}className="position-front">Welcome to Latix</div> */}
         </div>
         <div className="col-md-2 "></div>
       </div>
-      <div className="row mt-2 ">
+      <div className="row mt-2 h-60">
         <div className="col-md-2"></div>
         <div className="col-md-8 ">
           
