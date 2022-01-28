@@ -51,20 +51,26 @@ function SinglePlayerPlay({
   return (
     <div className="container-fluid vh-100">
       <div className="row align-items-center text-center   h-10">
-        <div className="col-md-4 "></div>
-        <div className="col-md-4 position-front">
+        <div className="col-md-2 mt-2">  <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoHome}
+          /></div>
+        <div className="col-md-8 position-front">
           <img
             className="single-logo-style "
             src={`/Assets/logo.svg`}
             alt="Latix"
           />
         </div>
-        <div className="col-md-4 "></div>
+        <div className="col-md-2 "></div>
       </div>
       <div className="row vh-80  align-items-center">
         <div className="col-md-8 ">
           <div className="row">
-            <div className="col-md-12 position-front">
+            <div className="col-md-12 position-front mt-4">
               <Grid
                 ref={setShowRef}
                 resultValueCountRef={resultValueCountRef}
@@ -129,13 +135,13 @@ function SinglePlayerPlay({
       </div>
       <div className="row mt-2 align-items-center">
         <div className="col-md-2 ">
-          <IconButton
+          {/* <IconButton
             icon={faHome}
             height={"80px"}
             width={"100px"}
             fontSize={"40px"}
             onClick={onGoHome}
-          />
+          /> */}
         </div>
         <div className="col-md-6 "></div>
         <div className="col-md-4 text-center"></div>
