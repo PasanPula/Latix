@@ -80,12 +80,12 @@ export default function MultiplayerResult({
   };
 
   return (
-    <div>
+    <div className="scroll-hide">
 
       
-<div class="pyro">
-  <div class="before"></div>
-  <div class="after"></div>
+<div className="pyro">
+  <div className="before"></div>
+  <div className="after"></div>
 </div>
       <FinalResult resultList={result} tempCreator={tempCreator} handelPlayAgain={handelPlayAgain} handelPlayAgainPlayer={handelPlayAgainPlayer}  playAgainInvite={playAgainInvite} creatorName={creatorName}/>
       {/* <div>
