@@ -143,3 +143,17 @@
   /* top: 2px; */
  
 }
+
+
+.btn-con {
+  position: relative;
+  bottom: 5px;
+  margin: 0;
+}
+
+.btn-2 {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
