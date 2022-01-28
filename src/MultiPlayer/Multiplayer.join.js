@@ -3,6 +3,7 @@ import { useSocket } from "../Services/SocketProvider";
 import { useHistory } from "react-router-dom";
 import "./join/Multiplayer.join.css";
 import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+// eslint-disable-next-line
 import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function MultiplayerJoin({ name, setGameId, avatar }) {

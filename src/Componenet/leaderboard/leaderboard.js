@@ -5,6 +5,7 @@ import { FaCrown } from "react-icons/fa";
 export default function Leaderboard({ userList, title }) {
   const users = userList.map((user, index) => {
     return (
+      //old one
       // <li key={index} className="mt-2">
       //   <div className="row justify-content-center">
       //     <div className="col-md-2 text-center">

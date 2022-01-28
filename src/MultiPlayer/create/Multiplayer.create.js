@@ -6,7 +6,6 @@ import { randomUnique } from "../../Componenet/Game grid/components/getrandom";
 import { useHistory } from "react-router-dom";
 import { IconButton } from "../../Componenet/Button/ButtonIcon/Button";
 import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import TextButton from "../../Componenet/Button/TextButton/Button";
 import "./Multiplayer.create.css";
 
 export default function MultiPlayerCreate({
@@ -31,7 +30,6 @@ export default function MultiPlayerCreate({
     parseInt(rangeStarts) + size,
     30
   );
-
 
   const HandleCreateGame = () => {
     setRowNumbers(

@@ -4,6 +4,7 @@ import Avatar from "../Componenet/avatar slider/Avatar";
 import "./login/Multiplayer.creator.login.css";
 // import { IoHome, IoChevronBackCircleSharp } from "react-icons/io5";
 import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
+// eslint-disable-next-line
 import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 

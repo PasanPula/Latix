@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import Avatar from "../Componenet/avatar slider/Avatar";
+ // eslint-disable-next-line
 import { faHome, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { IconButton } from "../Componenet/Button/ButtonIcon/Button";
 
