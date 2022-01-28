@@ -58,11 +58,12 @@
 }
 
 .top3 .item .name {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.9rem;
+  /* margin-bottom: 0.5rem; */
   opacity: 0;
 }
 .top3 .item .score {
+  font-size: 1.3rem;
   opacity: 0;
 }
 
@@ -345,18 +346,18 @@
 .one .top-body
 {
   padding: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .two .top-body
 {
  padding: 0.3rem;
- line-height: 1.5;
+ line-height: 1.2;
 }
 
 .three .top-body
 {
   position: relative;
   bottom: 0.7rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
