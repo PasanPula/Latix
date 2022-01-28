@@ -20,14 +20,35 @@ export default function FinishList() {
 
   const users = userList.map((user, index) => {
     return (
-      <li key={index}>
-        <img
-          className="FinishList-avatar"
-          src={`/Assets/Avatar list/${user.Avatar}.svg`}
-          alt="avatar"
-        />
-        <mark>{user.User}</mark>
-        {user.Owner ? <FaCrown className="FinishList-icon" /> : <span></span>}
+      // <li key={index}>
+      //   <img
+      //     className="FinishList-avatar"
+      //     src={`/Assets/Avatar list/${user.Avatar}.svg`}
+      //     alt="avatar"
+      //   />
+      //   <mark>{user.User}</mark>
+      //   {user.Owner ? <FaCrown className="FinishList-icon" /> : <span></span>}
+      // </li>
+      <li key={index} className="mt-2">
+        <div className="row align-items-center ">
+          <div className="col-md-2 text-center">
+            <img
+              className="leaderboard-avatar"
+              src={`/Assets/Avatar list/${user.Avatar}.svg`}
+              alt="avatar"
+            />
+          </div>
+          <div className="col-md-8 text-center">
+            <mark>{user.User}</mark>
+          </div>
+          <div className="col-md-2">
+            {user.Owner ? (
+              <FaCrown className="FinishList-icon" />
+            ) : (
+              <span></span>
+            )}
+          </div>
+        </div>
       </li>
     );
   });
@@ -37,7 +58,7 @@ export default function FinishList() {
         <div className="FinishList">
           <h1>
           Finished Players-
-          <samp className="finishlist-Number-leader"> {userList.length} </samp>
+          <samp className="finishlist-Number-leader">{userList.length} </samp>
         </h1>
           <hr className="leaderboard-breakline"></hr>
           <div className="row justify-content-center  gx-0">
