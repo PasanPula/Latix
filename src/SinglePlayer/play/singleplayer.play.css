@@ -10,36 +10,43 @@
 
 .single-play-subtitle-1
 {
-    font-family: 'Short Stack', cursive;;
+    /* font-family: 'Short Stack', cursive;; */
     color: white;
-    font-size: 1.8rem;
-    padding-bottom: 2vh;
-    margin-bottom: 5vh;
+    font-size: 3rem;
+    padding-bottom: 1vh;
+    margin-bottom: 1vh;
+    font-weight: 500;
 }
 .single-play-subtitle-2
 {
-    font-family: 'Short Stack', cursive;;
+    /* font-family: 'Short Stack', cursive;; */
     color: white;
-    font-size: 1.8rem;
+    font-size: 3rem;
     padding-bottom: 2vh;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
-.single-play-submit-wrapper
+/* .single-play-submit-wrapper
 {
-    margin-top: 4vh;
-}
+    margin-top: 5vh;
+} */
 
 .single-play-avatar
 {
     width: 10rem;
     height: 10rem;
     border-radius: 3rem;
-    border: 6px solid #b18597;
-    background-color: rgba(255, 255, 255, 0.932);
+    /* border: 6px solid #b18597; */
+    /* background-color: rgba(255, 255, 255, 0.932); */
     padding: 20px;
     margin-top: 4vh;
     margin-bottom: 1vh;
+    background-color: #e4ebf5;
+    /* background-color: rgba(255, 255, 255, 0.781); */
+      box-shadow: inset 0.15em 0.15em 0.15em white,
+        inset -0.15em -0.15em 0.15em #c8d0e7,
+        0.3rem 0.3rem 0.6rem #c8d0e7,
+        -0.3rem -0rem 0.6rem white;
 }
 
 .single-logo-style
