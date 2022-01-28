@@ -99,11 +99,18 @@ export default function MultiplayerPlay({
     <div className="container-fluid vh-100">
      <div className="row align-items-center text-center   vh-10">
           <div
-            className="col-md-4 "
+            className="col-md-2 "
           >
+            <IconButton
+            icon={faHome}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBackHome}
+          />
           </div>
           <div
-            className="col-md-4"
+            className="col-md-8"
           >
              <img
                 className="multi-logo-style position-front"
@@ -112,7 +119,7 @@ export default function MultiplayerPlay({
               />
           </div>
           <div
-            className="col-md-4 "
+            className="col-md-2"
           >
           </div>
         </div>
@@ -170,13 +177,7 @@ export default function MultiplayerPlay({
       </div>
       <div className="row vh-5 align-items-center">
             <div  className="col-md-2 ">
-            <IconButton
-            icon={faHome}
-            height={"80px"}
-            width={"100px"}
-            fontSize={"40px"}
-            onClick={onGoBackHome}
-          />
+            
             </div>
             <div className="col-md-6 ">
             </div>

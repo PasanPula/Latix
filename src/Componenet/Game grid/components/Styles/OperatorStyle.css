@@ -1,7 +1,8 @@
 .operator >input[type="text"] {
    
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 6rem;
+    padding-top: 14px;
     /* height: 6vh;
     width: 5vw; */
     text-align: center;
