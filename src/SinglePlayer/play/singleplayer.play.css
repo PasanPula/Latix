@@ -13,8 +13,6 @@
     /* font-family: 'Short Stack', cursive;; */
     color: white;
     font-size: 3rem;
-    padding-bottom: 1vh;
-    margin-bottom: 1vh;
     font-weight: 500;
 }
 .single-play-subtitle-2
@@ -33,13 +31,13 @@
 
 .single-play-avatar
 {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 3rem;
     /* border: 6px solid #b18597; */
     /* background-color: rgba(255, 255, 255, 0.932); */
     padding: 20px;
-    margin-top: 4vh;
+    margin-top: 1vh;
     margin-bottom: 1vh;
     background-color: #e4ebf5;
     /* background-color: rgba(255, 255, 255, 0.781); */

@@ -117,7 +117,6 @@ export default function MultiplayerLogin({
       </div>
       <div className="row h-60">
         <div className="col-md-2 ">
-        
         </div>
         <div className="col-md-8 ">
           <div className="row mb-2">

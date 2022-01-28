@@ -39,6 +39,12 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
     history.push("/");
   };
 
+  const onGoBack = () => 
+  {
+    history.push("/Multiplay/login");
+  }
+
+
   return (
     //     <div>
 
@@ -66,7 +72,15 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
         <div className="col-md-4 position-front"></div>
       </div>
       <div className="row justify-content-start">
-        <div className="col-md-2 text-center "></div>
+        <div className="col-md-2 text-center ">
+        <IconButton
+            icon={faArrowLeft}
+            height={"80px"}
+            width={"100px"}
+            fontSize={"40px"}
+            onClick={onGoBack}
+          />
+        </div>
         <div className="col-md-8 p-3 justify-content-center "></div>
         <div className="col-md-2 "></div>
       </div>

@@ -91,12 +91,12 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
         </div>
       <div className="row">
         <div className="col-md-2 text-center ">
-        <IconButton
+        {/* <IconButton
             icon={faArrowLeft}
             height={"80px"}
             width={"100px"}
             fontSize={"40px"}
-          />
+          /> */}
         </div>
         <div className="col-md-8 text-center ">
         {/* <div  style={{fontSize: "5rem",color:"white", fontFamily: '"Dongle", sans-serif' }}className="position-front">Welcome to Latix</div> */}

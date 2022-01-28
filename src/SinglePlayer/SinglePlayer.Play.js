@@ -28,6 +28,9 @@ function SinglePlayerPlay({
   const showResult = useRef(true);
   const history = useHistory();
 
+  // const isSubmitClick = use(false);
+  const [isSubmitClick, setisSubmitClick] = useState(false);
+
   useEffect(() => {
     if (name === undefined) {
       onGoHome();
@@ -46,7 +49,14 @@ function SinglePlayerPlay({
 
   const setshowResult = (val) => {
     showResult.current = val;
+    setisSubmitClick(true);
   };
+
+  const handlePlayAgain = () => 
+  {
+    history.push("/SinglePlayer/Create");
+  }
+
 
   return (
     <div className="container-fluid vh-100">
@@ -84,30 +94,13 @@ function SinglePlayerPlay({
             </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-md-12 d-flex justify-content-between">
-              <CorrectIncorrectDisplay
-                ref={resultValueCountRef}
-                timeSpentRef={timeSpentRef}
-                showResult={showResult.current}
-              />
+            <div className="col-md-12 d-flex justify-content-between position-front">
+             
             </div>
           </div>
         </div>
         <div className=" pe-3 col-md-4 text-center vh-80 ">
           <div className="row align-items-center ">
-            <div className="col-md-12">
-              <img
-                className="single-play-avatar  position-front"
-                src={`/Assets/Avatar list/${avatar}.svg`}
-                alt="avatar"
-              />
-              <br></br>
-              <label className="single-play-subtitle-1  position-front">
-                {name}
-              </label>
-            </div>
-          </div>
-          <div className="row align-items-center">
             <div className="col-md-12">
               <label className="single-play-subtitle-2 position-front">
                 Time Remaining
@@ -119,32 +112,53 @@ function SinglePlayerPlay({
               />
             </div>
           </div>
+          <div className="row align-items-center">
+            <div className="col-md-12 position-front">
+           <img
+                className="single-play-avatar  position-front"
+                src={`/Assets/Avatar list/${avatar}.svg`}
+                alt="avatar"
+              />
+              <br></br>
+              <label className="single-play-subtitle-1  position-front">
+                {name}
+              </label>
+            </div>
+          </div>
+          <div className="row align-items-center">
+            <div className="col-md-12 position-front">
+            <CorrectIncorrectDisplay
+                ref={resultValueCountRef}
+                timeSpentRef={timeSpentRef}
+                showResult={showResult.current}
+              />
+            </div>
+          </div>
           <div className="row single-play-submit-wrapper mt-4">
             <div className="col-md-12 ">
               <div className="bottom">
-                <Button
-                  onshow={() => {
-                    setShowRef.current.setShow(true);
-                    setshowResult(true);
-                  }}
-                />
+               
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="row mt-2 align-items-center">
+      <div className="row align-items-center">
         <div className="col-md-2 ">
-          {/* <IconButton
-            icon={faHome}
-            height={"80px"}
-            width={"100px"}
-            fontSize={"40px"}
-            onClick={onGoHome}
-          /> */}
         </div>
-        <div className="col-md-6 "></div>
-        <div className="col-md-4 text-center"></div>
+        <div className="col-md-8 text-center">
+          { !isSubmitClick?
+        <Button
+                  onshow={() => {
+                    setShowRef.current.setShow(true);
+                    setshowResult(true);
+                  }}
+                /> : 
+                
+                <button className="multi-play-admin-btn" onClick={handlePlayAgain}>Play Again</button>
+                }
+        </div>
+        <div className="col-md-2 text-center"></div>
       </div>
     </div>
   );

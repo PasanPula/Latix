@@ -91,7 +91,6 @@ export default function MultiplayerPlay({
   {
     setshowResult(true);
     setisSubmitClick(true);
-    console.log("btnClik");
   }
 
   return (
