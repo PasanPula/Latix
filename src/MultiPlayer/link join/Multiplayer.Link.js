@@ -69,7 +69,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
     //   </form>
     // </div>
 
-    <div className="container-fluid">
+    <div className="container-fluid vh-100">
       <div className="row align-items-center text-center   h-10">
           <div
             className="col-md-4 "
