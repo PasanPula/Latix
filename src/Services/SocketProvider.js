@@ -22,7 +22,7 @@ export function SocketProvider({children}) {
     });
 
     socket.on("connect_error", () => {
-      // setShowLoader(true);
+      setShowLoader(true);
       setTimeout(() => {
         socket.connect();
       }, 1000);
