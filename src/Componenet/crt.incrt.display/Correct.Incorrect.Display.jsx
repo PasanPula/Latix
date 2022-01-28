@@ -29,26 +29,31 @@ function CorrectIncorrectDisplay(props,ref) {
      <>
       <div className="CorrectIncorrect-top">
         <label className="CorrectIncorrect-lable"> Correct: </label>
-        <input
+        <br></br>
+        <label className="CorrectIncorrect-lable"> {correctCount} </label>
+        
+        {/* <input
           type="text"
           className="Correct-text"
           name="text"
           id="text"
           value={correctCount}
           readOnly={true}
-        />
+        /> */}
       </div>
       <br></br>
       <div className="CorrectIncorrect-top">
         <label className="CorrectIncorrect-lable"> Incorrect: </label>
-        <input
+        <br></br>
+        <label className="CorrectIncorrect-lable"> {incorrectCount} </label>
+        {/* <input
           type="text"
           className="InCorrect-text"
           name="text"
           id="text"
           value={incorrectCount}
           readOnly={true}
-        />
+        /> */}
       </div>
       <br></br>
      { minitSpend === "0" ?

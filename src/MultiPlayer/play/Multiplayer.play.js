@@ -139,15 +139,7 @@ export default function MultiplayerPlay({
         />
             </div>
           </div>
-          <div className="row align-items-center">
-            <div className="col-md-12 d-flex justify-content-between">
-            {(isJoinAsPlayer && isJoinAsPlayer) ? (
-          <CorrectIncorrectDisplay ref={resultValueCountRef} timeSpentRef={timeSpentRef} showResult={showResult.current} /> 
-        ) : (
-          <span></span>
-        )}
-            </div>
-          </div>
+          
         </div>
         <div className=" pe-3 col-md-4 text-center ">
           { !isSubmitClick.current ?
@@ -168,6 +160,15 @@ export default function MultiplayerPlay({
             <FinishList />
             </div>
           </div>
+          <div className="row align-items-center">
+            <div className="col-md-12">
+            {(isJoinAsPlayer && isJoinAsPlayer) ? (
+          <CorrectIncorrectDisplay ref={resultValueCountRef} timeSpentRef={timeSpentRef} showResult={showResult.current} /> 
+        ) : (
+          <span></span>
+        )}
+            </div>
+          </div>
           {/* <div className="row multi-submit-row">
             <div className="col-md-12 ">
            
@@ -177,11 +178,8 @@ export default function MultiplayerPlay({
       </div>
       <div className="row vh-5 align-items-center">
             <div  className="col-md-2 ">
-            
             </div>
-            <div className="col-md-6 ">
-            </div>
-            <div  className="col-md-4 text-center">
+            <div className="col-md-8 text-center">
             {isJoinAsPlayer ? (
               <div>
                 <div className="bottom">
@@ -199,6 +197,8 @@ export default function MultiplayerPlay({
             ) : (
               <span></span>
             )}
+            </div>
+            <div  className="col-md-2 text-center">
             </div>
           </div>
     </div>
