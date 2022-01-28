@@ -207,8 +207,16 @@ export default function MultiplayerLobby({
           <div className="col-md-8 text-center position-front">
             {tempCreator ? (
                   userList.length <3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> :
-                   <button className="lobby-start-game " onClick={handleStart}>
-                    Start Game
+                  //  <button className="lobby-start-game " onClick={handleStart}>
+                  //   Start Game
+                  // </button>
+                  <button
+                    type="submit"
+                    className="custom-btn btn-2 "
+                    style={{ width: "200px", height: "60px", fontSize: "38px" }}
+                    onClick={handleStart}
+                  >
+                    <div className="btn-con">Start Game</div>
                   </button>
                   
             ) : (
