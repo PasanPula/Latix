@@ -157,7 +157,7 @@ export default function MultiplayerPlay({
             </div>
           </div> : <span></span>}
           <div className="row ">
-            <div className=" col-md-12 gx-0">
+            <div className=" col-md-12 gx-0 d-flex justify-content-center">
             <FinishList />
             </div>
           </div>

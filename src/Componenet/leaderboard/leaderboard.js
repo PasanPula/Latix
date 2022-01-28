@@ -67,8 +67,8 @@ export default function Leaderboard({ userList, title }) {
           {/* <div className="col-md-12 "> */}
           <div className="col-md-12 m-0 ps-2 pe-2 leaderboard-list">
             <ol>
-              {/* {users} */}
-              <li key={1} className="mt-2">
+              {users}
+              {/* <li key={1} className="mt-2">
                 <div className="row align-items-center ">
                   <div className="col-md-2 text-center">
                     <img
@@ -265,7 +265,7 @@ export default function Leaderboard({ userList, title }) {
                     <span></span>
                   </div>
                 </div>
-              </li>
+              </li> */}
             </ol>
           </div>
         </div>

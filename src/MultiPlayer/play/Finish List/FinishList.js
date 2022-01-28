@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSocket } from "../../../Services/SocketProvider";
 // eslint-disable-next-line
 import Leaderboard from "../../../Componenet/leaderboard/leaderboard";
-import { IoCreate } from "react-icons/io5";
+import { FaCrown } from "react-icons/fa";
 import "./FinishList.css";
 
 export default function FinishList() {
@@ -27,30 +27,25 @@ export default function FinishList() {
           alt="avatar"
         />
         <mark>{user.User}</mark>
-        {user.Owner ? <IoCreate className="FinishList-icon" /> : <span></span>}
+        {user.Owner ? <FaCrown className="FinishList-icon" /> : <span></span>}
       </li>
     );
   });
 
   return (
-    {
-      /* <label style={{ color: "blue" }}>Leaderboard</label>
-      <ul style={ { listStyleType: "none"}} >
-      {users}
-      </ul> */
-    },
-    (
       <>
         <div className="FinishList">
-          <h1>Finished Users-{userList.length}</h1>
-          {/* <span className="leaderboard-breakline"></span>
-           */}
+          <h1>
+          Finished Players-
+          <samp className="finishlist-Number-leader"> {userList.length} </samp>
+        </h1>
           <hr className="leaderboard-breakline"></hr>
-          <div className="FinishList-list">
+          <div className="row justify-content-center  gx-0">
+          <div className=" col-md-12 m-0 ps-2 pe-2 FinishList-list">
             <ol>{users}</ol>
+          </div>
           </div>
         </div>
       </>
-    )
   );
 }
