@@ -120,18 +120,18 @@ Leaderboard
   transition: all 0.35s ease-in-out;
 }
 
-.leaderboard-list::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
 }
 
 /* Track */
-.leaderboard-list::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   box-shadow: inset 0 0 3px rgb(233, 229, 229);
   border-radius: 10px;
 }
 
 /* Handle */
-.leaderboard-list::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #ffffffe7;
   border-radius: 10px;
 }
