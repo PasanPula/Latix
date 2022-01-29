@@ -1,12 +1,10 @@
-
-.logo-style
-{
+.logo-style {
   /* position: absolute;
   top:10px;
   left:12px; */
   padding-top: 2vh;
-  width:22vw;
-  height: 10vw; 
+  width: 22vw;
+  height: 10vw;
   /* rtemp height */
 }
 
@@ -20,13 +18,15 @@
 .h-20 {
   height: 20%;
 }
+.h-15 {
+  height: 15%;
+}
 
 .h-60 {
   height: 60%;
 }
 
-.h-5
-{
+.h-5 {
   height: 5%;
 }
 
@@ -62,39 +62,35 @@
   text-align: center;
   font-family: "Dongle", sans-serif;
   cursor: default;
-    
+
   background: linear-gradient(-45deg, #ffffff, #fffefe00, #ffffff, #ffffff);
-	background-size: 300%;
-	font-weight: 600;
-	letter-spacing: 10px;
-	text-transform: uppercase;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	animation: animated_text 10s ease-in-out infinite;
-	-moz-animation: animated_text 10s ease-in-out infinite;
-	-webkit-animation: animated_text 10s ease-in-out infinite;
-  
+  background-size: 300%;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated_text 10s ease-in-out infinite;
+  -moz-animation: animated_text 10s ease-in-out infinite;
+  -webkit-animation: animated_text 10s ease-in-out infinite;
 }
-
-
-
 
 @keyframes animated_text {
-	0% { background-position: 0px 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0px 50%; }
+  0% {
+    background-position: 0px 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0px 50%;
+  }
 }
 
-
-
-
-.home-hint
-{
+.home-hint {
   color: #ffffff;
   font-size: 6vh;
 }
-
-
 
 .home-button {
   height: 22vh;
@@ -214,16 +210,13 @@
   transform: translate3d(0, 0, -1em);
 }
 
-
-.bottom-credit
-{
+.bottom-credit {
   color: white;
   padding-top: 0;
   line-height: 14px;
   font-size: 1.2rem;
 }
 
-.bottom-text:hover
-{
- color: thistle;
+.bottom-text:hover {
+  color: thistle;
 }
