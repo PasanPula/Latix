@@ -48,8 +48,8 @@ function SinglePlayerPlay({
   };
 
   const setshowResult = (val) => {
-    showResult.current = val;
     setisSubmitClick(true);
+    showResult.current = val;
   };
 
   const handlePlayAgain = () => 
@@ -119,6 +119,7 @@ function SinglePlayerPlay({
                 setTimeSpent={handleTimeSpent}
                 showValRef={setShowRef}
                 initMinute={time}
+                TimeOutBtn = {setshowResult}
               />
             </div>
           </div>

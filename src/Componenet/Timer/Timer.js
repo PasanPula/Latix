@@ -2,7 +2,7 @@ import { useState,useEffect,Fragment  } from 'react'
 import './Timer.css'
 
 
-export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,initMinute,showValRef}) {
+export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,initMinute,showValRef,TimeOutBtn}) {
     const [minutes, setMinutes] = useState(initMinute-1)
     const [seconds, setSeconds] = useState(59);
 
@@ -15,6 +15,7 @@ export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,init
        {
          if(isJoinAsPlayer)
          {
+          setTimeSpent(String((initMinute-1) - minutes).concat("."+String(60 - seconds)));
           SubmitAnswers();
          }
        }
@@ -32,8 +33,15 @@ export default function Timer({ isJoinAsPlayer, SubmitAnswers, setTimeSpent,init
             clearInterval(myInterval)
             if(!(showValRef.current===undefined))
             {
-              showValRef.current.setShow(true);
               MultitPlayerSubmit();
+              if(TimeOutBtn !== undefined)
+              {
+      setTimeSpent(String((initMinute-1) - minutes).concat("."+String(60 - seconds)));
+
+                TimeOutBtn();
+              }
+              showValRef.current.setShow(true);
+              
             }
           } else {
             setMinutes(minutes - 1)

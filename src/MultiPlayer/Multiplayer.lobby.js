@@ -206,7 +206,7 @@ export default function MultiplayerLobby({
           </div>
           <div className="col-md-8 text-center position-front">
             {tempCreator ? (
-                  userList.length <3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> :
+                  userList.length < 3 ? <label className="lobby-label position-front">At least 3 players Need to Start Game</label> :
                   //  <button className="lobby-start-game " onClick={handleStart}>
                   //   Start Game
                   // </button>

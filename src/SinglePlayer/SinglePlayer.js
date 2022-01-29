@@ -33,7 +33,8 @@ const timeSpent = useRef("00:00");
 
 const gridSize = useRef(4);
 const operator = useRef('+');
-const time = useRef(5);
+// const time = useRef(1);
+const time = useRef(5);   //chnage again
 const numberRangeStart = useRef(1);
 const numberRangeEnd = useRef(10);
 

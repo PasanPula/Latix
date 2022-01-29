@@ -39,6 +39,8 @@ export default function MultiplayerPlay({
   const socket = useSocket();
   const history = useHistory();
 
+  const [timeSubmit, settimeSubmit] = useState(false);
+
   const isSubmitClick = useRef(false);
 
   const setshowResult = (val) =>
@@ -93,6 +95,13 @@ export default function MultiplayerPlay({
     setisSubmitClick(true);
   }
 
+  const ans = () => 
+  {
+    clickBtn();
+    settimeSubmit(true);
+    SubmitAnswers();
+  }
+
   return (
    
     <div className="container-fluid vh-100">
@@ -141,16 +150,17 @@ export default function MultiplayerPlay({
           
         </div>
         <div className=" pe-3 col-md-4 text-center ">
-          { !isSubmitClick.current ?
+          { !isSubmitClick.current ||  !timeSubmit  ?
           <div className="row align-items-center">
             <div className="col-md-12">
             <label className="multi-play-time-label position-front">Time Remaining</label>
             <Timer
                 isJoinAsPlayer={isJoinAsPlayer}
-                SubmitAnswers={SubmitAnswers}
+                SubmitAnswers={ans}
                 setTimeSpent={handleTimeSpent}
                 showValRef={isJoinAsPlayer ? setShowRef : false}
                 initMinute={time}
+                TimeOutBtn = {clickBtn}
               />
             </div>
           </div> : <span></span>}
@@ -182,7 +192,7 @@ export default function MultiplayerPlay({
             {isJoinAsPlayer ? (
               <div>
                 <div className="bottom">
-                  { !isSubmitClick.current ?
+                  { !isSubmitClick.current || !timeSubmit ?
                   <Submitbutton
                     onshow={() => {
                       setShowRef.current.setShow(true);
