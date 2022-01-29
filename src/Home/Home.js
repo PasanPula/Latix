@@ -35,7 +35,7 @@ const Home = () => {
           </div>
         </div>
         <div className="row h-20 align-items-center ">
-          <div className="col-md-12 mt-5  justify-content-center">
+          <div className="col-md-12 mt-2  justify-content-center">
             <div className="Welcome-text position-front">Welcome to Latix </div>
           </div>
         </div>
