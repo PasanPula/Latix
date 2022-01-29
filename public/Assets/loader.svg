@@ -75,18 +75,18 @@
         }
 
         .cls-5{
-            animation: colorChanger1 4s step-start infinite ;
+            animation: colorChanger1 0.25s ease-in infinite ;
         }
 
         .cls-3 {
-            animation: colorChanger2 4s step-start infinite ; 
+            animation: colorChanger2 0.25s ease-in infinite ; 
         }
         
         .cls-4 {
-            animation: colorChanger3 4s step-start infinite ;
+            animation: colorChanger3 0.25s ease-in infinite ;
         }
         .cls-2 {
-            animation: colorChanger4 4s step-start infinite ;
+            animation: colorChanger4 0.25s ease-in infinite ;
         }
 
 
