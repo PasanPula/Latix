@@ -34,8 +34,8 @@ const Home = () => {
           >
           </div>
         </div>
-        <div className="row h-20 align-items-center ">
-          <div className="col-md-12 mt-2  justify-content-center">
+        <div className="row h-10 align-items-center mt-5">
+          <div className="col-md-12  justify-content-center">
             <div className="Welcome-text position-front">Welcome to Latix </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ const Home = () => {
           <div className="col-md-2"></div>
           <div className="col-md-8">
             <div className='row '>
-            <div className="col-md-12 d-flex justify-content-center">
+            <div className="col-md-12 d-flex justify-content-center mt-3">
               <label className="home-hint position-front"> What would  like to Play?</label>
               </div>
             </div>
@@ -72,7 +72,7 @@ const Home = () => {
           </div>
           <div className="col-md-2"></div>
         </div>
-        <div className="row bottom-bar position-front h-10">
+        <div className="row bottom-bar position-front h-15">
           <div className="col-md-12 ">
             <div className="row justify-content-center mt-2">
               <div className="col-md-4 d-flex justify-content-center">
@@ -106,10 +106,10 @@ const Home = () => {
               </div>
             </div>
             <div className="row justify-content-center mt-1">
-              <div className="col-md-12 text-center">
+              <div className="col-md-12 text-center ">
                 {/* Made With ❤️ by USJ */}
                <div className="bottom-credit">All Rights Reserved</div>
-               <div className="bottom-credit"> Copyright (©) 2022 </div>
+               <div className="bottom-credit "> Copyright (©) 2022 </div>
               </div>
             </div>
           </div>
