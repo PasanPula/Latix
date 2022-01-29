@@ -2,13 +2,15 @@
 
 .clock {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .clock div {
   position: relative;
   margin: 0 5px;
-  width: 80%;
-  height: 80%;
+  width: 25vh;
+  height: 25vh;
 }
 
 .clock div p {
