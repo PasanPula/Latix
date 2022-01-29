@@ -5,8 +5,11 @@ import "./Home.css";
 import { faUsers, faUser } from "@fortawesome/free-solid-svg-icons";
 // import { ModelPRIVACY,ModelTerm,ContactUs} from "../modals/newmodel";
 import { Card3D } from "../Componenet/3Dcard/3DCard";
-import { ModelPRIVACY,ModelTerm,ContactUs } from "../Componenet/modals/newmodel"
-
+import {
+  ModelPRIVACY,
+  ModelTerm,
+  ContactUs,
+} from "../Componenet/modals/newmodel";
 
 const Home = () => {
   const [modalpry, setModalpry] = React.useState(false);
@@ -16,23 +19,11 @@ const Home = () => {
     <>
       <div className="container-fluid vh-100 ">
         <div className="row align-items-center text-center   h-10">
-          <div
-            className="col-md-4 "
-          >
+          <div className="col-md-4 "></div>
+          <div className="col-md-4 position-front">
+            <img className="logo-style " src={`/Assets/logo.svg`} alt="Latix" />
           </div>
-          <div
-            className="col-md-4 position-front"
-          >
-             <img
-                className="logo-style "
-                src={`/Assets/logo.svg`}
-                alt="Latix"
-              />
-          </div>
-          <div
-            className="col-md-4 "
-          >
-          </div>
+          <div className="col-md-4 "></div>
         </div>
         <div className="row h-10 align-items-center mt-5">
           <div className="col-md-12  justify-content-center">
@@ -42,9 +33,12 @@ const Home = () => {
         <div className="row h-60 align-items-center">
           <div className="col-md-2"></div>
           <div className="col-md-8">
-            <div className='row '>
-            <div className="col-md-12 d-flex justify-content-center mt-3">
-              <label className="home-hint position-front"> What would  like to Play?</label>
+            <div className="row ">
+              <div className="col-md-12 d-flex justify-content-center mt-3">
+                <label className="home-hint position-front">
+                  {" "}
+                  What would like to Play?
+                </label>
               </div>
             </div>
             <div className="row">
@@ -72,12 +66,12 @@ const Home = () => {
           </div>
           <div className="col-md-2"></div>
         </div>
-        <div className="row bottom-bar position-front h-10 mt-4">
+        <div className="row bottom-bar position-front h-20 ">
           <div className="col-md-12 ">
-            <div className="row justify-content-center mt-1">
+            <div className="row justify-content-center mt-3">
               <div className="col-md-4 d-flex justify-content-center">
                 <div className="model-link" onClick={() => setModalterm(true)}>
-                <div className="bottom-text">Terms of Service</div> 
+                  <div className="bottom-text">Terms of Service</div>
                 </div>
                 <ModelTerm
                   show={modalterm}
@@ -86,7 +80,7 @@ const Home = () => {
               </div>
               <div className="col-md-4 d-flex justify-content-center">
                 <div className="model-link" onClick={() => setModalpry(true)}>
-                <div className="bottom-text">  Privacy </div>
+                  <div className="bottom-text"> Privacy </div>
                 </div>
 
                 <ModelPRIVACY
@@ -97,19 +91,16 @@ const Home = () => {
               <div className="col-md-4 d-flex justify-content-center">
                 {/* Privacy policy */}
                 <div className="model-link" onClick={() => setModalcon(true)}>
-                <div className="bottom-text">  About Us </div>
+                  <div className="bottom-text"> About Us </div>
                 </div>
-                <ContactUs
-                  show={modalcon}
-                  onHide={() => setModalcon(false)}
-                />
+                <ContactUs show={modalcon} onHide={() => setModalcon(false)} />
               </div>
             </div>
-            <div className="row justify-content-center mt-1">
+            <div className="row justify-content-center ">
               <div className="col-md-12 text-center ">
                 {/* Made With ❤️ by USJ */}
-               <div className="bottom-credit">All Rights Reserved</div>
-               <div className="bottom-credit "> Copyright (©) 2022 </div>
+                <div className="bottom-credit">All Rights Reserved</div>
+                <div className="bottom-credit "> Copyright (©) 2022 </div>
               </div>
             </div>
           </div>
