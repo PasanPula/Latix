@@ -11,10 +11,13 @@
         rgba(0, 195, 255, 0.719),
         rgba(195, 0, 255, 0.637)
       ); */
-      background: #992ef7;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #5b0cfa, #992ef7);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #5b0cfa, #992ef7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     
+      background: rgb(153,46,247);
+background: linear-gradient(101deg, rgba(153,46,247,1) 14%, rgba(127,59,244,1) 65%, rgba(91,12,250,1) 100%);
+
       
+      
+
       /* background-color: #8a2be2; */
     /* background: rgb(172, 161, 161); */
     display: felx;
