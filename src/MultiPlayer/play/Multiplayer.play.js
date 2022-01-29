@@ -30,6 +30,7 @@ export default function MultiplayerPlay({
   columnNumbers,
   rowNumbers,
   setUserResult,
+  avatar
 }) {
   const setShowRef = useRef();
   const resultValueCountRef = useRef();
@@ -127,8 +128,17 @@ export default function MultiplayerPlay({
               />
           </div>
           <div
-            className="col-md-2"
+            className="col-md-2 d-flex text-center justify-content-center profile"
           >
+            <img
+                className="single-play-avatar  position-front"
+                src={`/Assets/Avatar list/${avatar}.svg`}
+                alt="avatar"
+              />
+              <br></br>
+              <label className="single-play-subtitle-1  position-front">
+                {name}
+              </label>
           </div>
         </div>
       <div className="row  align-items-center">

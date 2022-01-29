@@ -17,20 +17,20 @@
 
 .single-create-title
 {
-    font-size: 2rem;
+    font-size: 3.3rem;
     color: white;
     display: block;
     text-align: center;
-    font-family: 'Short Stack', cursive;
+    /* font-family: 'Short Stack', cursive; */
 }
 
 .single-create-subtitle
 {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
     color: white;
     display: block;
     text-align: center;
-    font-family: 'Short Stack', cursive;
+    /* font-family: 'Short Stack', cursive; */
     margin-bottom: 2vh;
 }
 

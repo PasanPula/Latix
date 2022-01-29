@@ -225,6 +225,7 @@ const setisCreator = (value) =>
           path="/Multiplay/play"
           component={() => (
             <MultiplayerPlay
+              avatar={avatar.current}
               setUserResult={setUserResult}
               SubmitAnswers={SubmitAnswers}
               isJoinAsPlayer={isJoinAsPlayer.current}
