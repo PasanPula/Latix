@@ -195,6 +195,7 @@ const setisCreator = (value) =>
               HandleSetTime={HandleSetTime}
               HandleSelectedOperator={HandleSelectedOperator}
               HandleShowCheckBox={HandleShowCheckBox}
+              name={name.current}
             />
           )}
         />

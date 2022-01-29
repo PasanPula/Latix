@@ -116,7 +116,7 @@ const Setavatar = (value) =>
             <div>
             <Switch>
             <Route  path="/SinglePlayer/Login" component={()=> <SinglePlayerLogin name={name.current} OnChangeName={changeName} OnChangeAvatar = {Setavatar} />}/>
-            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate avatar={avatar.current} HandleNumberGenarate={HandleNumberGenarate} name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
+            <Route  path="/SinglePlayer/Create" component={()=> <SinglePlayerCreate name={name.current} avatar={avatar.current} HandleNumberGenarate={HandleNumberGenarate} name={name.current} SetGridSize={SetGridSize} SetOperator={SetOperator} SetTime={SetTime} SetnumberRangeStart={SetnumberRangeStart} SetnumberRangeEnd={SetnumberRangeEnd} />} />
             <Route  path="/SinglePlayer/play" component={()=> < SinglePlayerPlay name={name.current}avatar={avatar.current} columnNumbers={columnNumbers.current} rowNumbers={rowNumbers.current} setTimeSpent={setTimeSpent} Correct={Correct.current} incorrect={incorrect.current}  setinCorrectCount={setinCorrectCount} setCorrectCount={setCorrectCount} time={time.current}  gridSize ={gridSize.current} operator = {operator.current} />} />
             <Redirect to="/SinglePlayer/Login" />  
           </Switch>

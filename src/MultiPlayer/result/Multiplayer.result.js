@@ -19,7 +19,7 @@ export default function MultiplayerResult({
   const [creatorName, setCreatorName] = useState("Creator");
 
   useEffect(() => {
-    if (name === undefined) {
+    if (name === undefined || userResult === undefined ) {
       onGoBackHome();
     }
 

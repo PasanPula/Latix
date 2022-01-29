@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useHistory } from "react-router";
 import SelectionButton from "../Componenet/select button/SelectionButton";
 import './create/singleplayer.create.css';
@@ -19,6 +19,19 @@ function SinglePlayerCreate(props) {
   const [selectedMode, setSelectedMode] = useState("Easy");
   const [selectedOperator, setSelectedOperator] = useState("+");
   const [selectedSize, setSelectedSize] = useState("4X4");
+
+
+
+  useEffect(() => {
+    
+    if(props.name === undefined)
+    {
+      onGoHome();
+    }
+
+  },);
+  
+
 
   const setMode = (mode) => {
     if (mode === "Easy") {

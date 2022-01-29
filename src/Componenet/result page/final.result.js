@@ -6,8 +6,6 @@ import { List } from "./component/list/list";
 import { IconButton } from "../Button/ButtonIcon/Button";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 
-
-
 export default function FinalResult({
   resultList,
   tempCreator,
@@ -23,51 +21,51 @@ export default function FinalResult({
     setanime("anime");
   }, [anime]);
 
-
-  const onGoBackHome = () => 
-  {
+  const onGoBackHome = () => {
     history.push("/");
     history.go(0);
-  }
+  };
 
-  const TopResult = resultList.map((data, index) => {
-    return index === 0 ? (
-      <Top
-        key={index}
-        place="one"
-        No={1}
-        Image={`/Assets/Avatar list/${data.Avatar}.svg`}
-        Name={data.ClientName}
-        time={data.Result.Time}
-        correct={data.Result.Correct}
-        incorrect={data.Result.InCorrect}
-      />
-    ) : index === 1 ? (
-      <Top
-        key={index}
-        place="two"
-        No={2}
-        Image={`/Assets/Avatar list/${data.Avatar}.svg`}
-        Name={data.ClientName}
-        time={data.Result.Time}
-        correct={data.Result.Correct}
-        incorrect={data.Result.InCorrect}
-      />
-    ) : index === 2 ? (
-      <Top
-        place="three"
-        key={index}
-        No={3}
-        Image={`/Assets/Avatar list/${data.Avatar}.svg`}
-        Name={data.ClientName}
-        time={data.Result.Time}
-        correct={data.Result.Correct}
-        incorrect={data.Result.InCorrect}
-      />
-    ) : (
-      <span key={index}></span>
-    );
-  });
+  try {
+    const TopResult = resultList.map((data, index) => {
+      return index === 0 ? (
+        <Top
+          key={index}
+          place="one"
+          No={1}
+          Image={`/Assets/Avatar list/${data.Avatar}.svg`}
+          Name={data.ClientName}
+          time={data.Result.Time}
+          correct={data.Result.Correct}
+          incorrect={data.Result.InCorrect}
+        />
+      ) : index === 1 ? (
+        <Top
+          key={index}
+          place="two"
+          No={2}
+          Image={`/Assets/Avatar list/${data.Avatar}.svg`}
+          Name={data.ClientName}
+          time={data.Result.Time}
+          correct={data.Result.Correct}
+          incorrect={data.Result.InCorrect}
+        />
+      ) : index === 2 ? (
+        <Top
+          place="three"
+          key={index}
+          No={3}
+          Image={`/Assets/Avatar list/${data.Avatar}.svg`}
+          Name={data.ClientName}
+          time={data.Result.Time}
+          correct={data.Result.Correct}
+          incorrect={data.Result.InCorrect}
+        />
+      ) : (
+        <span key={index}></span>
+      );
+    });
+  
 
   const SecondaryResult = resultList.map((data, index) => {
     return (
@@ -84,9 +82,7 @@ export default function FinalResult({
 
   return (
     <>
-    
       <div className="center">
-      
         <div className="top3">{TopResult}</div>
         {resultList.length > 3 ? (
           <div className="list scroll">{SecondaryResult}</div>
@@ -97,19 +93,27 @@ export default function FinalResult({
         <div className="list ">
           {tempCreator ? (
             <>
-            <div className="d-flex justify-content-center mt-3">
-              <IconButton
-            icon={faHome}
-            height={"55px"}
-            width={"80px"}
-            fontSize={"20px"}
-            onClick={onGoBackHome}
-          />
-             <button onClick={handelPlayAgain}  className="custom-btn btn-2 "
-                    style={{ width: "150px", height: "55px", fontSize: "20px" ,marginLeft:"20px"}}>Play Again</button>
-
-            </div>
-            
+              <div className="d-flex justify-content-center mt-3">
+                <IconButton
+                  icon={faHome}
+                  height={"55px"}
+                  width={"80px"}
+                  fontSize={"20px"}
+                  onClick={onGoBackHome}
+                />
+                <button
+                  onClick={handelPlayAgain}
+                  className="custom-btn btn-2 "
+                  style={{
+                    width: "150px",
+                    height: "55px",
+                    fontSize: "20px",
+                    marginLeft: "20px",
+                  }}
+                >
+                  Play Again
+                </button>
+              </div>
             </>
           ) : playAgainInvite ? (
             <>
@@ -120,20 +124,25 @@ export default function FinalResult({
             </>
           ) : (
             <div className="d-flex justify-content-center mt-3">
-            <IconButton
-          icon={faHome}
-          height={"55px"}
-          width={"80px"}
-          fontSize={"20px"}
-          onClick={onGoBackHome}
-        />
-            <label className="lobby-label position-front ms-5">
-              Waiting for {creatorName} response
-            </label>
+              <IconButton
+                icon={faHome}
+                height={"55px"}
+                width={"80px"}
+                fontSize={"20px"}
+                onClick={onGoBackHome}
+              />
+              <label className="lobby-label position-front ms-5">
+                Waiting for {creatorName} response
+              </label>
             </div>
           )}
         </div>
       </div>
     </>
   );
+
+} catch (e) {
+  console.log("error:", e);
+  onGoBackHome();
+}
 }

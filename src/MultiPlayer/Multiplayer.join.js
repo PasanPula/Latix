@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useSocket } from "../Services/SocketProvider";
 import { useHistory } from "react-router-dom";
 import "./join/Multiplayer.join.css";
@@ -10,6 +10,15 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
   const [gameCode, setGameCode] = useState("");
   const socket = useSocket();
   const history = useHistory();
+
+  useEffect(() => {
+    if(name === undefined)
+    {
+      onGoBackHome();
+    }
+
+  },);
+  
 
   const handleGameCode = (val) => {
     setGameCode(val.target.value);
@@ -46,23 +55,6 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
 
 
   return (
-    //     <div>
-
-    //    <input
-    //    placeholder="Game Code"
-    //     type="text"
-    //     name="GameCode"
-    //     value={gameCode}
-    //     onChange={handleGameCode}
-    //     required
-    //   />
-
-    // <div>
-    //    <button onClick={onSubmit} >Login
-    //    </button>
-    // </div>
-
-    // </div>
     <div className="container-fluid vh-100">
       <div className="row align-items-center text-center   h-10">
         <div className="col-md-4 "></div>

@@ -25,12 +25,22 @@ export default function MultiplayerLobby({
   const history = useHistory();
   const [url, setURL] = useState("Empty");
 
-
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+    history.go(0);
+  }
   
 
   useEffect(() => {
 
+    // if(socket === undefined || name === undefined)
+    // {
+    //   onGoBackHome();
+    // }
    
+  try {
+
 
     socket.on("GetUser", (res) => {
       setUserList(res);
@@ -62,6 +72,13 @@ export default function MultiplayerLobby({
     });
 
     setURL(window.location.origin.concat("/Multiplay/join/" + Gameid));
+
+  }
+  catch(e)
+  {
+    console.log(e);
+    onGoBackHome();
+  }
 
     return () => {
       socket.off("GetUser");
@@ -95,44 +112,9 @@ export default function MultiplayerLobby({
     history.push("/Multiplay/create");
   }
 
-  const onGoBackHome = () => 
-  {
-    history.push("/");
-    history.go(0);
-  }
+ 
 
   return (
-    // <div>
-    //   <div>
-    //     <label style={{ color: "white" }}>Userlist</label>
-    //     {users}
-    //   </div>
-    //   {tempCreator ?
-    //     <div>
-    //       <label style={{ color: "white" }}>Game Code:</label>
-    //       <input
-    //         placeholder="Game Code"
-    //         type="text"
-    //         name="GameCode"
-    //         value={Gameid}
-    //         disabled={true}
-    //       />
-    //       <label style={{ color: "white" }}>Game Link:</label>
-    //       <input
-    //         placeholder="Game Code"
-    //         type="text"
-    //         name="GameCode"
-    //         value={url}
-    //         disabled={true}
-    //       />
-    //       <div>
-    //         <Button onClick={handleStart}>Start Game</Button>
-    //       </div>
-    //     </div>
-    //    :
-    //     <span></span>
-    //   }
-    // </div>
     <>
       <div key={randomKey()} className={showCountdown}>
         <Countdown className="lobby-countdown-img" />
