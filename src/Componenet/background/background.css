@@ -12,8 +12,8 @@
         rgba(195, 0, 255, 0.637)
       ); */
       background: #8E2DE2;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: -webkit-linear-gradient(to right, #5b0cfa, #992ef7);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #5b0cfa, #992ef7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       
       /* background-color: #8a2be2; */
     /* background: rgb(172, 161, 161); */
