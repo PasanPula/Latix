@@ -63,7 +63,8 @@ Leaderboard
     overflow-y: auto;
     overflow-x: hidden;
     /* height: 35vh; */
-    height: 82%;
+    /* height: 82%; */
+    height: 36vh;
   }
   
   .FinishList ol {
@@ -162,18 +163,18 @@ Leaderboard
     transition: all 0.35s ease-in-out;
   }
 
-  .FinishList::-webkit-scrollbar {
+  .FinishList-list::-webkit-scrollbar {
     width: 8px;
   }
   
   /* Track */
-  .FinishList::-webkit-scrollbar-track {
+  .FinishList-list::-webkit-scrollbar-track {
     box-shadow: inset 0 0 3px rgb(233, 229, 229);
     border-radius: 10px;
   }
   
   /* Handle */
-  .FinishList::-webkit-scrollbar-thumb {
+  .FinishList-list::-webkit-scrollbar-thumb {
     background: #ffffffe7;
   border-radius: 10px;
   }

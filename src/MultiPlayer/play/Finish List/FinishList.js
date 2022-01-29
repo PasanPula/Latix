@@ -54,19 +54,169 @@ export default function FinishList() {
   });
 
   return (
-      <>
-        <div className="FinishList">
-          <h1>
+    <>
+      <div className="FinishList">
+        <h1>
           Finished Players-
           <samp className="finishlist-Number-leader">{userList.length} </samp>
         </h1>
-          <hr className="leaderboard-breakline"></hr>
-          <div className="row justify-content-center  gx-0">
+        <hr className="leaderboard-breakline"></hr>
+        <div className="row justify-content-center  gx-0">
           <div className=" col-md-12 m-0 ps-2 pe-2 FinishList-list">
-            <ol>{users}</ol>
-          </div>
+            {/* <ol>{users}</ol> */}
+
+            <ol>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+              <li key={1} className="mt-2">
+                <div className="row align-items-center ">
+                  <div className="col-md-2 text-center">
+                    <img
+                      className="leaderboard-avatar"
+                      src={`/Assets/Avatar list/${2}.svg`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="col-md-8 text-center">
+                    <mark>dfgdfggf</mark>
+                  </div>
+                  <div className="col-md-2">
+                    {/* {user.Owner ? ( */}
+                    <FaCrown className="FinishList-icon" />
+                    {/* ) : (
+              <span></span>
+            )} */}
+                  </div>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
-      </>
+      </div>
+    </>
   );
 }
