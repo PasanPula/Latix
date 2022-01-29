@@ -62,8 +62,39 @@
   text-align: center;
   font-family: "Dongle", sans-serif;
   cursor: default;
+    
+  background: linear-gradient(-45deg, #ffffff, #fffefe00, #ffffff, #ffffff);
+	background-size: 300%;
+	font-weight: 600;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
   
 }
+
+
+
+
+@keyframes animated_text {
+	0% { background-position: 0px 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0px 50%; }
+}
+
+
+
+
+.home-hint
+{
+  color: #ffffff;
+  font-size: 6vh;
+}
+
+
 
 .home-button {
   height: 22vh;

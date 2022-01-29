@@ -42,6 +42,11 @@ const Home = () => {
         <div className="row h-60 align-items-center">
           <div className="col-md-2"></div>
           <div className="col-md-8">
+            <div className='row '>
+            <div className="col-md-12 d-flex justify-content-center">
+              <label className="home-hint position-front"> What would  like to Play?</label>
+              </div>
+            </div>
             <div className="row">
               <div className="col-md-6 d-flex justify-content-end">
                 <Link to="/Singleplayer" className="cardstyle">
