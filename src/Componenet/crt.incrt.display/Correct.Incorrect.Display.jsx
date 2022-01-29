@@ -81,7 +81,7 @@ function CorrectIncorrectDisplay(props, ref) {
                   </label>
                 </div>
                 <div className="col-md-7">
-                  <label className="CorrectIncorrect-lable">
+                  <label className="CorrectIncorrect-lable CorrectIncorrect-value">
                     {" "}
                     {minitSpend}m :{secondsSpend}s{" "}
                   </label>

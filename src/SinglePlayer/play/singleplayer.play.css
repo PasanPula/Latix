@@ -7,13 +7,29 @@
 {
     height: 80vh;
 }
-
+.vh-60{
+    height: 60vh;
+}
+.button-top
+{
+    position: relative;
+    top: -0.5rem;
+}
+.profile
+{
+    position: relative;
+    left: -4rem;
+}
 .single-play-subtitle-1
 {
     /* font-family: 'Short Stack', cursive;; */
+    position: relative;
+    top: 2rem;
+    left: 1rem;
     color: white;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 500;
+    line-height: 1;
 }
 .single-play-subtitle-2
 {
@@ -31,8 +47,8 @@
 
 .single-play-avatar
 {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 3rem;
     /* border: 6px solid #b18597; */
     /* background-color: rgba(255, 255, 255, 0.932); */
@@ -49,7 +65,7 @@
 
 .single-logo-style
 {
-    padding-top: 3px;
-    width:20vw;
+    /* padding-top: 3px; */
+    width:15vw;
     height: 6vw; 
 }

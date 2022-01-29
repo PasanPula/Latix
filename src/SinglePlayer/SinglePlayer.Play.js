@@ -75,7 +75,17 @@ function SinglePlayerPlay({
             alt="Latix"
           />
         </div>
-        <div className="col-md-2 "></div>
+        <div className="col-md-2 d-flex text-center justify-content-center profile">
+        <img
+                className="single-play-avatar  position-front"
+                src={`/Assets/Avatar list/${avatar}.svg`}
+                alt="avatar"
+              />
+              <br></br>
+              <label className="single-play-subtitle-1  position-front">
+                {name}
+              </label>
+        </div>
       </div>
       <div className="row vh-80  align-items-center">
         <div className="col-md-8 ">
@@ -99,7 +109,7 @@ function SinglePlayerPlay({
             </div>
           </div>
         </div>
-        <div className=" pe-3 col-md-4 text-center vh-80 ">
+        <div className=" pe-3 col-md-4 text-center vh-60 ">
           <div className="row align-items-center ">
             <div className="col-md-12">
               <label className="single-play-subtitle-2 position-front">
@@ -112,7 +122,7 @@ function SinglePlayerPlay({
               />
             </div>
           </div>
-          <div className="row align-items-center">
+          {/* <div className="row align-items-center">
             <div className="col-md-12 position-front">
            <img
                 className="single-play-avatar  position-front"
@@ -124,7 +134,7 @@ function SinglePlayerPlay({
                 {name}
               </label>
             </div>
-          </div>
+          </div> */}
           <div className="row align-items-center">
             <div className="col-md-12 position-front">
             <CorrectIncorrectDisplay
@@ -134,7 +144,7 @@ function SinglePlayerPlay({
               />
             </div>
           </div>
-          <div className="row single-play-submit-wrapper mt-4">
+          <div className="row single-play-submit-wrapper ">
             <div className="col-md-12 ">
               <div className="bottom">
                
@@ -146,7 +156,7 @@ function SinglePlayerPlay({
       <div className="row align-items-center">
         <div className="col-md-2 ">
         </div>
-        <div className="col-md-8 text-center">
+        <div className="col-md-8 text-center button-top">
           { !isSubmitClick?
         <Button
                   onshow={() => {
