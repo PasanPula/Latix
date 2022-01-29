@@ -86,7 +86,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
       </div>
       <div className="row align-items-end h-40">
         <div className="col-md-12">
-          <div className="row pt-3 justify-content-center mt-5">
+          <div className="row pt-3 justify-content-center">
             <div className="col-md-12 d-flex justify-content-center">
               <img
                 className="join-avatar position-front"
