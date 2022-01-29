@@ -66,9 +66,9 @@ const Home = () => {
           </div>
           <div className="col-md-2"></div>
         </div>
-        <div className="row bottom-bar position-front h-20 ">
+        <div className="row bottom-bar position-front h-15">
           <div className="col-md-12 ">
-            <div className="row justify-content-center mt-3">
+            <div className="row justify-content-center mt-1">
               <div className="col-md-4 d-flex justify-content-center">
                 <div className="model-link" onClick={() => setModalterm(true)}>
                   <div className="bottom-text">Terms of Service</div>
