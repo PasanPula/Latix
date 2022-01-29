@@ -2,29 +2,26 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSocket } from "../../Services/SocketProvider";
 import FinalResult from "../../Componenet/result page/final.result";
-import "./celebration.style.css"
+import "./celebration.style.css";
 
 export default function MultiplayerResult({
   isCreator,
   setisCreator,
   userResult,
-  name
+  name,
 }) {
   const [result] = useState(userResult);
   const history = useHistory();
   const socket = useSocket();
   // eslint-disable-next-line
   const [tempCreator, setTempCreator] = useState(isCreator);
-  const [playAgainInvite,setPlayAgainInvite] = useState(false);
-  const [creatorName,setCreatorName] = useState("Creator");
+  const [playAgainInvite, setPlayAgainInvite] = useState(false);
+  const [creatorName, setCreatorName] = useState("Creator");
 
   useEffect(() => {
-
-    if(name === undefined)
-    {
+    if (name === undefined) {
       onGoBackHome();
     }
-
 
     socket.on("GetUser", (res) => {
       res.filter((user) => {
@@ -39,9 +36,9 @@ export default function MultiplayerResult({
 
       console.log(res);
       res.filter((user) => {
-          if (user.Owner) {
-            setCreatorName(user.User);
-          }
+        if (user.Owner) {
+          setCreatorName(user.User);
+        }
         return user;
       });
     });
@@ -51,7 +48,7 @@ export default function MultiplayerResult({
         console.log("result", res);
         if (res.IsUpdate) {
           setPlayAgainInvite(true);
-          // history.push("/Multiplay/lobby");
+          history.push("/Multiplay/lobby");
         }
       });
     }
@@ -62,32 +59,34 @@ export default function MultiplayerResult({
     };
   });
 
-
-  const onGoBackHome = () => 
-  {
+  const onGoBackHome = () => {
     history.push("/");
     history.go(0);
-  }
-
+  };
 
   // eslint-disable-next-line
   const handelPlayAgain = () => {
     history.push("/Multiplay/create");
   };
 
-  const handelPlayAgainPlayer = () => {
-    history.push("/Multiplay/lobby");
-  };
+  // const handelPlayAgainPlayer = () => {
+  //   history.push("/Multiplay/lobby");
+  // };
 
   return (
     <div className="scroll-hide">
-
-      
-<div className="pyro">
-  <div className="before"></div>
-  <div className="after"></div>
-</div>
-      <FinalResult resultList={result} tempCreator={tempCreator} handelPlayAgain={handelPlayAgain} handelPlayAgainPlayer={handelPlayAgainPlayer}  playAgainInvite={playAgainInvite} creatorName={creatorName}/>
+      <div className="pyro position-front">
+        <div className="before position-front"></div>
+        <div className="after position-front"></div>
+      </div>
+      <FinalResult
+        resultList={result}
+        tempCreator={tempCreator}
+        handelPlayAgain={handelPlayAgain}
+        // handelPlayAgainPlayer={handelPlayAgainPlayer}
+        playAgainInvite={playAgainInvite}
+        creatorName={creatorName}
+      />
       {/* <div>
         {tempCreator ? 
           <button  onClick={handelPlayAgain}>Play Again</button>

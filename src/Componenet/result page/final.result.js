@@ -1,20 +1,34 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./final.result.css";
 import { Top } from "./component/top/top";
 import { List } from "./component/list/list";
+import { IconButton } from "../Button/ButtonIcon/Button";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+
+
 
 export default function FinalResult({
   resultList,
   tempCreator,
   handelPlayAgain,
-  handelPlayAgainPlayer,
+  // handelPlayAgainPlayer,
   playAgainInvite,
   creatorName,
 }) {
   const [anime, setanime] = useState("");
+  const history = useHistory();
+
   useEffect(() => {
     setanime("anime");
   }, [anime]);
+
+
+  const onGoBackHome = () => 
+  {
+    history.push("/");
+    history.go(0);
+  }
 
   const TopResult = resultList.map((data, index) => {
     return index === 0 ? (
@@ -70,9 +84,10 @@ export default function FinalResult({
 
   return (
     <>
+    
       <div className="center">
+      
         <div className="top3">{TopResult}</div>
-
         {resultList.length > 3 ? (
           <div className="list scroll">{SecondaryResult}</div>
         ) : (
@@ -81,18 +96,41 @@ export default function FinalResult({
 
         <div className="list ">
           {tempCreator ? (
-            <button onClick={handelPlayAgain}>Play Again</button>
+            <>
+            <div className="d-flex justify-content-center mt-3">
+              <IconButton
+            icon={faHome}
+            height={"55px"}
+            width={"80px"}
+            fontSize={"20px"}
+            onClick={onGoBackHome}
+          />
+             <button onClick={handelPlayAgain}  className="custom-btn btn-2 "
+                    style={{ width: "150px", height: "55px", fontSize: "20px" ,marginLeft:"20px"}}>Play Again</button>
+
+            </div>
+            
+            </>
           ) : playAgainInvite ? (
             <>
               <label className="lobby-label position-front">
                 {creatorName} invite you to play again
               </label>
-              <button onClick={handelPlayAgainPlayer}>Play </button>
+              {/* <button onClick={handelPlayAgainPlayer}>Play </button> */}
             </>
           ) : (
-            <label className="lobby-label position-front">
-              Waiting for Creator response
+            <div className="d-flex justify-content-center mt-3">
+            <IconButton
+          icon={faHome}
+          height={"55px"}
+          width={"80px"}
+          fontSize={"20px"}
+          onClick={onGoBackHome}
+        />
+            <label className="lobby-label position-front ms-5">
+              Waiting for {creatorName} response
             </label>
+            </div>
           )}
         </div>
       </div>

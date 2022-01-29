@@ -14,7 +14,7 @@ function App() {
   
 
   return (
-      <div style={{backgroundColor:"#8a2be2", overflow:"hidden"}}>
+      <div style={{backgroundColor:"#8a2be2", overflow:"hidden" ,overflowY: "hidden"  }}>
          <NoMobile/>
          {/* <RouteLoader/> */}
         <Background />
