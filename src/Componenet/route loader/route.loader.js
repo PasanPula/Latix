@@ -6,7 +6,7 @@ export default function RouteLoader({loaderVal,loaderMsg}) {
   const [showLoader] = useState(loaderVal);
 
   useEffect(() => {
-    console.log(loaderVal);
+    // console.log(loaderVal);
   });
   
  

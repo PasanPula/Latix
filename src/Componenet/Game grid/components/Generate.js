@@ -43,7 +43,7 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
   const setShowbool  =useCallback((bool)=> // handdling the sumbit or not 
   {
     if(!(resultValueCountRef.current === undefined)){
-    console.log(resultValueCountRef);
+    // console.log(resultValueCountRef);
     resultValueCountRef.current.setResultValueCount(Correct.length,wrong.length);
     }
     setshow(bool);
@@ -64,7 +64,7 @@ function Generate({resultValueCountRef,setCorrectCount , setinCorrectCount ,rowN
 
     const Update = useCallback (() => //  updating current correct and wrong answers
     {
-      console.log(Correct.length ,wrong.length );
+      // console.log(Correct.length ,wrong.length );
       setCorrectCount(Correct.length);
       setinCorrectCount(wrong.length);
     },[setCorrectCount,setinCorrectCount,Correct.length,wrong.length]);

@@ -282,7 +282,7 @@ export default function MultiPlayerCreate({
     );
   } catch (e) 
   {
-    console.log(e);
+    // console.log(e);
     onGoBackHome();
   }
 }

@@ -44,7 +44,7 @@ export default function MultiplayerLobby({
 
     socket.on("GetUser", (res) => {
       setUserList(res);
-      console.log("lobby", res);
+      // console.log("lobby", res);
       res.filter((user) => {
         if (user.UserId === socket.id) {
           if (user.Owner) {
@@ -76,7 +76,7 @@ export default function MultiplayerLobby({
   }
   catch(e)
   {
-    console.log(e);
+    // console.log(e);
     onGoBackHome();
   }
 

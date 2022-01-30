@@ -23,7 +23,7 @@ export default function MultiplayerLinkJoin({name,setName,setGameId, Setavatar, 
 
   const handleSubmit = (e) => {
 
-    console.log(name);
+    // console.log(name);
 
     e.preventDefault();
     

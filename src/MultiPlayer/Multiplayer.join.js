@@ -37,7 +37,7 @@ export default function MultiplayerJoin({ name, setGameId, avatar }) {
           alert(`${res.Message}`);
         } else if (res.Status === 1) {
           setGameId(gameCode);
-          console.log(res);
+          // console.log(res);
           history.push("/Multiplay/lobby");
         }
       }

@@ -8,7 +8,7 @@ export default function CreatorControls({ isCreator,setisCreator,Gameid }) {
 
   useEffect(() => {
 
-    console.log("isCreator",isCreator);
+    // console.log("isCreator",isCreator);
 
     socket.on("GetUser", (res) => {
       res.filter((user) => {
@@ -34,7 +34,7 @@ export default function CreatorControls({ isCreator,setisCreator,Gameid }) {
         GameId: Gameid,
       },
       (res) => {
-        console.log("get result", res);
+        // console.log("get result", res);
       }
     );
   };

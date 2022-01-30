@@ -34,7 +34,7 @@ export default function MultiplayerResult({
         return user;
       });
 
-      console.log(res);
+      // console.log(res);
       res.filter((user) => {
         if (user.Owner) {
           setCreatorName(user.User);
@@ -45,7 +45,7 @@ export default function MultiplayerResult({
 
     if (!isCreator) {
       socket.on("UpdateGame", (res) => {
-        console.log("result", res);
+        // console.log("result", res);
         if (res.IsUpdate) {
           setPlayAgainInvite(true);
           history.push("/Multiplay/lobby");

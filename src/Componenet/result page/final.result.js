@@ -142,7 +142,7 @@ export default function FinalResult({
   );
 
 } catch (e) {
-  console.log("error:", e);
+  // console.log("error:", e);
   onGoBackHome();
 }
 }
