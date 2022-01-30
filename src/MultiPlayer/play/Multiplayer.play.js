@@ -214,7 +214,7 @@ export default function MultiplayerPlay({
                 </div>
               </div>
             ) : (
-              <span></span>
+              <CreatorControls isCreator={isCreator} setisCreator={setisCreator} Gameid = {Gameid}/>
             )}
             </div>
             <div  className="col-md-2 text-center">
