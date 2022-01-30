@@ -130,7 +130,7 @@ export default function MultiplayerPlay({
           <div
             className="col-md-2 d-flex text-center justify-content-center profile"
           >
-            <img
+            {/* <img
                 className="single-play-avatar  position-front"
                 src={`/Assets/Avatar list/${avatar}.svg`}
                 alt="avatar"
@@ -138,7 +138,7 @@ export default function MultiplayerPlay({
               <br></br>
               <label className="single-play-subtitle-1  position-front">
                 {name}
-              </label>
+              </label> */}
           </div>
         </div>
       <div className="row  align-items-center">
