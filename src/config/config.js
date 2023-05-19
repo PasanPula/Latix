@@ -1,1 +1,1 @@
-export const BASE_URL = "https://mytix-api.herokuapp.com";
+export const BASE_URL = "https://latix.azurewebsites.net";
