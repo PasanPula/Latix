@@ -1,4 +1,4 @@
-# Latix Web Based Multiplayer Game : [www.latix.xyz](https://www.latix.xyz/)
+# Latix Web Based Multiplayer Game : [www.latix.xyz](https://www.latix.me/)
 
 ## Introduction
 This project was created for digitalize the lattice wokrsheet (Delisa).The game target for school childrens that studying in Grade 3 to 5 for improve thier basic mathamatic operations handling skill.This repostory contains the uptodate frontend of the Game.
