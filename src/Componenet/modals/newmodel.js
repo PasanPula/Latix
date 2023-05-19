@@ -272,7 +272,7 @@ export function ContactUs(props) {
           <h5>Back-end By Dasun Sennath, Iresh Madushan</h5>
           <h5>Front-end By Pasan pulathisi, Kavindu Jayamal</h5>
           <h5>Animations & UI by Krishan Kanishka</h5>
-          <h4>Copyright (©) 2022</h4>
+          <h4>Copyright (©) 2023</h4>
           <h4>All Rights Reserved.</h4>
         </div>
       </Modal.Body>
