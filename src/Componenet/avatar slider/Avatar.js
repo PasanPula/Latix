@@ -36,7 +36,7 @@ const Carousel = ({children,OnChangeAvatar}) => {
         <div key={i} className='avatar-card-container' style={{
             '--active': i === active ? 1 : 0,
             '--offset': (active - i) / 3,
-            '--abs-offset': Math.abs(active - i) / 3,
+            '--abs-offset': i === active ? "" : Math.abs(active - i) / 3,
             'pointerEvents': active === i ? 'auto' : 'none',
             'opacity': Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1',
             'display': Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
